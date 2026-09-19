@@ -136,7 +136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &40554898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -805,10 +805,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08c44d6fd9133ae488243fb046876bec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ImageManager
-  smallCup: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  smallCup: {fileID: 3962876823413388152, guid: c6c2706350d9f3d4fa7b1059863d85ba, type: 3}
   mediumCup: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   largeCup: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  syrup1: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  syrup1: {fileID: -6701621311137658697, guid: c737e6f3f08e3e04e8b87ba3c9e4d810, type: 3}
   syrup2: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   syrup3: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   syrup4: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
@@ -816,7 +816,7 @@ MonoBehaviour:
   syrup6: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   syrup7: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
   syrup8: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  topping: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  topping: {fileID: -918469870158230175, guid: 319b8d68fc3a3df4e946b74c687233de, type: 3}
   topping2: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   topping3: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   topping4: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
@@ -828,6 +828,39 @@ MonoBehaviour:
   TicketImg2: {fileID: 1671913526}
   TicketImg3: {fileID: 1759071513}
   SpeechImg: {fileID: 1389338698}
+  TicketParnet: {fileID: 1122690279}
+  Ticket: {fileID: 741488796}
+--- !u!1 &1122690278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1122690279}
+  m_Layer: 0
+  m_Name: TicketParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1122690279
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122690278}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.501, y: 3.33, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1207390424
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,6 +1023,7 @@ GameObject:
   - component: {fileID: 1472193889}
   - component: {fileID: 1472193888}
   - component: {fileID: 1472193887}
+  - component: {fileID: 1472193890}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1061,13 +1095,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DialogInteraction, Assembly-CSharp
-        m_MethodName: StartDiologue
-        m_Mode: 1
+      - m_Target: {fileID: 1472193890}
+        m_TargetAssemblyTypeName: Dialog, Assembly-CSharp
+        m_MethodName: StartDialog
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 75f64e11fd5c7194fa79e123fcec1b49, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Order, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1111,6 +1145,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472193883}
   m_CullTransparentMesh: 1
+--- !u!114 &1472193890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472193883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bcdfc8d41099d4596f685eb2190708, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Dialog
+  DialogPanel: {fileID: 40554897}
+  imgManager: {fileID: 970262826}
+  waitForImg: 0
+  imgCount: 0
 --- !u!1 &1671913524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,3 +1759,4 @@ SceneRoots:
   - {fileID: 591599458}
   - {fileID: 970262825}
   - {fileID: 238588726}
+  - {fileID: 1122690279}
