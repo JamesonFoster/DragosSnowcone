@@ -6,12 +6,15 @@ public class AddonPhysics : MonoBehaviour
     private Rigidbody2D rb;
     private Camera mainCamera;
     private int mode;
+    public GameObject targetParent;
 
     void Start()
     {
         mode = 0;
         rb = GetComponent<Rigidbody2D>();
         mainCamera = Camera.main;
+        float randomZ = Random.Range(0f, 360f);
+        transform.rotation = Quaternion.Euler(0f, 0f, randomZ);
 
         rb.simulated = false;
 
@@ -53,7 +56,7 @@ public class AddonPhysics : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
             rb.angularVelocity = 0f;
 
-            transform.SetParent(other.transform);
+            transform.SetParent(targetParent.transform);
             Destroy(this);
         }
     }

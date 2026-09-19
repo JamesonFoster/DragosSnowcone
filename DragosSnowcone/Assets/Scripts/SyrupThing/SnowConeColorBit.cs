@@ -15,5 +15,6 @@ public class SnowConeColorBit : MonoBehaviour
         sprrend.color = newColor;
 
         sCC.IncreaseColorTally(bottleNumb);
+        Destroy(this);
     }
 }
