@@ -47,7 +47,6 @@ public class CustomerMovement : MonoBehaviour
         if (order.orderLVL > GlobalPlayerVars.lvl)
             order = null;
         }
-        Debug.Log("Chosen Order: " + order);
     }
 
     void Update()
