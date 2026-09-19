@@ -1,17 +1,22 @@
-//using UnityEngine;
-//using XNode;
+using System;
+using UnityEngine;
+using XNode;
 
-//public class DialogSegment : Node
-//{
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-//    void Start()
-//    {
-        
-//    }
+[Serializable]
+public struct Connection {}
+public class DialogSegment : Node
+{
+    public Sprite portrait;
 
-    // Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
-//}
+    [Input]
+    public Connection input;
+
+     [Output]
+
+    public Connection output;
+
+    public override object GetValue(NodePort port)
+    {
+        return null;
+    }
+}

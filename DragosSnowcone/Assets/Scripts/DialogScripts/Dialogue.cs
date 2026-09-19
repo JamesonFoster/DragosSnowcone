@@ -57,44 +57,20 @@ public class Dialogue : MonoBehaviour
                 UpdateDialog(node);
             }
         }
-        TextBoxManager.Instance.nameText.text = activeSegment.speakerName;
         TextBoxManager.Instance.portrait.sprite = activeSegment.portrait;
         textActive = true;
 
         TextBoxManager.Instance.textComponent.text = string.Empty;
         index = 0;
 
-        StartCoroutine(TypeLine());
+        
     }
 
-    IEnumerator TypeLine()
-    {
-        foreach (char c in activeSegment.DialogText[index].ToCharArray())
-        {
-            TextBoxManager.Instance.textComponent.text += c;
-            yield return new WaitForSecondsRealtime(textSpeed);
-        }
-    }
 
     public void LineSkip()
     {
 
-        if (TextBoxManager.Instance.textComponent.text == activeSegment.DialogText[index])
-        {
-            if (index < activeSegment.DialogText.Length - 1)
-            {
-                NextLine();
-            }
-            else
-            {
-                NextNode();
-            }
-        }
-        else
-        {
-            StopAllCoroutines();
-            TextBoxManager.Instance.textComponent.text = activeSegment.DialogText[index];
-        }
+        NextNode();
     }
 
 
@@ -102,107 +78,27 @@ public class Dialogue : MonoBehaviour
     {
         index++;
         TextBoxManager.Instance.textComponent.text = string.Empty;
-        StartCoroutine(TypeLine());
+        
     }
 
     public void NextNode()
     {
-        if (activeSegment is DialogAnswerSegments)
-        {
-
-            if ((activeSegment as DialogAnswerSegments).Answers.Count > 0)
-            {
-                int answerIndex = 0;
-                foreach (Transform child in TextBoxManager.Instance.buttonParent)
-                {
-                    Destroy(child.gameObject);
-                }
-
-                foreach (string answer in (activeSegment as DialogAnswerSegments).Answers)
-                {
-                    Debug.Log("should instantiate buttons");
-                    GameObject btn = Instantiate(TextBoxManager.Instance.buttonPrefab, TextBoxManager.Instance.buttonParent);
-                    btn.GetComponentInChildren<TMP_Text>().text = answer;
-
-                    int index = answerIndex;
-
-                    btn.GetComponentInChildren<Button>().onClick.AddListener((() => { AnswerClicked(index); }));
-
-                    answerIndex++;
-                }
-            }
-
-            else
-            {
-                if (activeSegment.GetPort("output").IsConnected)
-                {
-                    UpdateDialog(activeSegment.GetPort("output").Connection.node as DialogSegment);
-                    TextBoxManager.Instance.textComponent.text = string.Empty;
-                    StartCoroutine(TypeLine());
-                }
-                else
-                {
-                    Debug.Log("no output detected");
-                    EndDialogue();
-                }
-            }
-
-        }
-        else if (activeSegment is QuestGiverSegment)
-        {
-            if ((activeSegment as QuestGiverSegment).quest != null)
-            {
-                questGiver.GetComponent<QuestGiver>().GiveQuest((activeSegment as QuestGiverSegment).quest);
-                Debug.Log("gave questid");
-            }
-
-
-            if (activeSegment.GetPort("output").IsConnected)
-            {
-                Debug.Log("new segment");
-                UpdateDialog(activeSegment.GetPort("output").Connection.node as DialogSegment);
-                TextBoxManager.Instance.textComponent.text = string.Empty;
-                StartCoroutine(TypeLine());
-            }
-            else
-            {
-                Debug.Log("no output detected");
-                EndDialogue();
-            }
-            
-            
-        }
-        else
-        {
+        
             if (activeSegment.GetPort("output").IsConnected)
             {
                 UpdateDialog(activeSegment.GetPort("output").Connection.node as DialogSegment);
                 TextBoxManager.Instance.textComponent.text = string.Empty;
-                StartCoroutine(TypeLine());
+                
             }
             else
             {
                 EndDialogue();
             }
 
-        }
+        
     }
 
-    public void AnswerClicked(int clickedIndex)
-    {
-        XNode.NodePort port = activeSegment.GetPort("Answers " + clickedIndex);
-        if (port.IsConnected)
-        {
-            UpdateDialog(port.Connection.node as DialogSegment);
-            LineSkip();
-        }
-
-        else
-        {
-            EndDialogue();
-        }
-
-    }
+    
 
     public void EndDialogue()
     {
@@ -225,8 +121,8 @@ public class Dialogue : MonoBehaviour
     {
         index = 0;
         activeSegment = newSegment;
-        dialogText = newSegment.DialogText;
-        TextBoxManager.Instance.nameText.text = activeSegment.speakerName;
+        
+        
         TextBoxManager.Instance.portrait.sprite = activeSegment.portrait;
         foreach (Transform child in TextBoxManager.Instance.buttonParent)
         {
