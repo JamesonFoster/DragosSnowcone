@@ -9,8 +9,9 @@ public class CustomerMovement : MonoBehaviour
     public Order order;
     public GameObject targetMain1;
     public List<GameObject> orderLine; // line where they wait for the order
+    public List<GameObject> waitLine; // line where they wait for the snowcone
     private GameObject currentTarg;
-    public GameObject secndTarget;
+    public GameObject targetMain2;
     public float walkSpeed;
     public float bob;
     public GameObject takeOrderButton;
@@ -25,6 +26,7 @@ public class CustomerMovement : MonoBehaviour
     private CustWaitSpot CWS;
     private CustWaitSpot currCWS;
     private int currentWaitPos;
+    private Vector2 startingPos;
 
     void Awake()
     {
@@ -34,6 +36,7 @@ public class CustomerMovement : MonoBehaviour
     void Start()
     {
         CWSStar1 = targetMain1.GetComponent<CustWaitSpot>();
+        startingPos = new Vector2(transform.position.x, transform.position.y);
         sprrend.sprite = customer.walkSpr1;
         for (int i = 0; i < customer.orders.Count; i++)
         {
@@ -118,13 +121,14 @@ public class CustomerMovement : MonoBehaviour
         if (mode == 3)
         {
             takeOrderButton.SetActive(false);
-            //fliped
+            sprrend.flipX = true;
             HandleWalkSpr();
-            transform.position = Vector2.MoveTowards(transform.position, secndTarget.transform.position, walkSpeed * Time.deltaTime);
+            //transform.position = Vector2.MoveTowards(transform.position, secndTarget.transform.position, walkSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, startingPos, walkSpeed * Time.deltaTime);
             Vector2 position2D = new Vector2(transform.position.x, transform.position.y);
-            Vector2 secPos2D = new Vector2(secndTarget.transform.position.x, secndTarget.transform.position.y);
-            if (position2D == secPos2D)
+            if (position2D == startingPos)
             {
+                sprrend.flipX = false;
                 mode = 4;
             }
         }
@@ -150,5 +154,9 @@ public class CustomerMovement : MonoBehaviour
                 itmer1 = 0f;
             }
         }
+    }
+    public void SetMode(int modeNum)
+    {
+        mode = modeNum;
     }
 }
