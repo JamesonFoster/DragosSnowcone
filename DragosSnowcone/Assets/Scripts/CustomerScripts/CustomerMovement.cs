@@ -10,6 +10,7 @@ public class CustomerMovement : MonoBehaviour
     public GameObject targetMain1;
     public List<GameObject> orderLine; // line where they wait for the order
     public List<GameObject> waitLine; // line where they wait for the snowcone
+    private List<Order> orderRand = new List<Order>();
     private GameObject currentTarg;
     public GameObject targetMain2;
     public float bob;
@@ -33,6 +34,7 @@ public class CustomerMovement : MonoBehaviour
     void Awake()
     {
         sprrend = GetComponent<SpriteRenderer>();
+        ShuffleList( customer.orders, orderRand);
     }
 
     void Start()
@@ -41,13 +43,7 @@ public class CustomerMovement : MonoBehaviour
         CWSStar2 = targetMain2.GetComponent<CustWaitSpot>();
         startingPos = new Vector2(transform.position.x, transform.position.y);
         sprrend.sprite = customer.walkSpr1;
-        for (int i = 0; i < customer.orders.Count; i++)
-        {
-        Order order = customer.orders[i];
-        if (order.orderLVL > GlobalPlayerVars.lvl)
-            order = null;
-        }
-        Debug.Log("Chosen Order: " + order);
+        ChooseOrder();
     }
 
     void Update()
@@ -258,8 +254,41 @@ public class CustomerMovement : MonoBehaviour
             }
         }
     }
+
+    public void ChooseOrder()
+    {
+        for (int i = 0; i < orderRand.Count; i++)
+        {
+        Order orderss = orderRand[i];
+        if (orderss.orderLVL > GlobalPlayerVars.lvl)
+        {
+            orderRand.RemoveAt(i);
+            order = null;
+        }
+        else
+        {
+            order = orderss;
+            orderRand.RemoveAt(i);
+            break;
+        }
+        }
+    }
+
     public void SetMode(int modeNum)
     {
         mode = modeNum;
+    }
+
+    public void ShuffleList(List<Order> list, List<Order> listTarg)
+    {
+        List<Order> temp = new List<Order>();
+        temp.AddRange(list);
+
+        for (int i = 0; i < list.Count; i++)
+        {
+            int index = Random.Range(0, temp.Count - 1);
+            listTarg.Add(temp[index]);
+            temp.RemoveAt(index);
+        }
     }
 }
