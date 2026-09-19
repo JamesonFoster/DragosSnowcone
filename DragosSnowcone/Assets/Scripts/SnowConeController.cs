@@ -14,6 +14,9 @@ public class SnowConeController : MonoBehaviour
     public int colCount6;
     public int colCount7;
     public int colCount8;
+    public float finalScale;
+    public string cupSize;
+    public int score;
 
     private void Start()
     {
@@ -23,7 +26,13 @@ public class SnowConeController : MonoBehaviour
     {
     }
 
+    public void ReceiveSnowConeData(SnowBallMiniGame miniGame)
+    {
+        finalScale = miniGame.GetFinalScale();
+        cupSize = miniGame.GetFinalCupSize();
+        score = miniGame.GetFinalScore();
 
+    }
 
 
     // EVERYTHING PAST THIS POINT HERE IS FOR THE COLOR TALLY TEST!!!!
