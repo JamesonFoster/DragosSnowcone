@@ -14,6 +14,7 @@ public class CustomerMovement : MonoBehaviour
     public GameObject targetMain2;
     public float bob;
     public GameObject takeOrderButton;
+    public int spawnWhen;
 
 
 
@@ -27,6 +28,7 @@ public class CustomerMovement : MonoBehaviour
     private CustWaitSpot currCWS;
     private int currentWaitPos;
     private Vector2 startingPos;
+    private int posBius;
 
     void Awake()
     {
@@ -50,12 +52,13 @@ public class CustomerMovement : MonoBehaviour
 
     void Update()
     {
-        if (mode == 0)
+        if (mode == 0) // moving towards line spot
         {
-            sprrend.sortingOrder = 5;
+            sprrend.sortingOrder = 50 + posBius + spawnWhen;
             if (CWSStar1.isOn == false)
             {
                 currentTarg = targetMain1;
+                posBius = 9;
             }
             else
             {
@@ -67,6 +70,7 @@ public class CustomerMovement : MonoBehaviour
                     {
                         currentTarg = currOb;
                         currCWS = CWS;
+                        posBius = 8 - i;
                         currentWaitPos = i;
                         break;
                     }
@@ -89,13 +93,14 @@ public class CustomerMovement : MonoBehaviour
                 mode = 2;
             }
         }
-        if (mode == 1)
+        if (mode == 1) // waiting in non-star line spot
         {
-            sprrend.sortingOrder = 4;
+            sprrend.sortingOrder = 40 + posBius;
             if (customer.joyful == true)
                 HandleWalkSpr();
             if (CWSStar1.isOn == false)
             {
+                posBius = 9;
                 currentTarg = targetMain1;
                 currCWS.setIsON(false);
                 mode = 0;
@@ -110,6 +115,7 @@ public class CustomerMovement : MonoBehaviour
                     {
                         currentTarg = currOb;
                         currCWS.setIsON(false);
+                        posBius = 8 - i;
                         currCWS = CWS;
                         currentWaitPos = i;
                         mode = 0;
@@ -118,17 +124,17 @@ public class CustomerMovement : MonoBehaviour
                 }
             }
         }
-        if (mode == 2)
+        if (mode == 2) // waiting in starspot
         {
-            sprrend.sortingOrder = 4;
+            sprrend.sortingOrder = 40 + posBius;
             if (customer.joyful == true)
                 HandleWalkSpr();
             takeOrderButton.SetActive(true);
             //whatever is handling the customers ordering will tell this to go to mode 2
         }
-        if (mode == 3)
+        if (mode == 3) // move back
         {
-            sprrend.sortingOrder = 3;
+            sprrend.sortingOrder = 30 + posBius + spawnWhen;
             takeOrderButton.SetActive(false);
             sprrend.flipX = true;
             HandleWalkSpr();
@@ -142,12 +148,13 @@ public class CustomerMovement : MonoBehaviour
                 mode = 4;
             }
         }
-        if (mode == 4)
+        if (mode == 4) // move towards waiting spot
         {
-            sprrend.sortingOrder = 2;
+            sprrend.sortingOrder = 20 + posBius + spawnWhen;
             if (CWSStar2.isOn == false)
             {
                 currentTarg = targetMain2;
+                posBius = 9;
             }
             else
             {
@@ -158,6 +165,7 @@ public class CustomerMovement : MonoBehaviour
                     if (CWS.isOn == false)
                     {
                         currentTarg = currOb;
+                        posBius = 8 - i;
                         currCWS = CWS;
                         currentWaitPos = i;
                         break;
@@ -181,14 +189,15 @@ public class CustomerMovement : MonoBehaviour
                 mode = 6;
             }
         }
-        if (mode == 5)
+        if (mode == 5) // non-star wait
         {
-            sprrend.sortingOrder = 1;
+            sprrend.sortingOrder = 10 + posBius;
             if (customer.joyful == true)
                 HandleWalkSpr();
             if (CWSStar2.isOn == false)
             {
                 currentTarg = targetMain2;
+                posBius = 9;
                 currCWS.setIsON(false);
                 mode = 4;
             }
@@ -202,6 +211,7 @@ public class CustomerMovement : MonoBehaviour
                     {
                         currentTarg = currOb;
                         currCWS.setIsON(false);
+                        posBius = 8 - i;
                         currCWS = CWS;
                         currentWaitPos = i;
                         mode = 4;
@@ -210,15 +220,15 @@ public class CustomerMovement : MonoBehaviour
                 }
             }
         }
-        if (mode == 6)
+        if (mode == 6) // star wait
         {
-            sprrend.sortingOrder = 1;
+            sprrend.sortingOrder = 10 + posBius;
             if (customer.joyful == true)
                 HandleWalkSpr();
         }
-        if (mode == 7)
+        if (mode == 7) // leave
         {
-            sprrend.sortingOrder = 0;
+            sprrend.sortingOrder = 00 + posBius + spawnWhen;
             sprrend.flipX = true;
             HandleWalkSpr();
             Vector2 goToHere = new Vector2 (startingPos.x, targetMain2.transform.position.y);
