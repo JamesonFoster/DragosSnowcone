@@ -7,6 +7,7 @@ public class Customer : ScriptableObject
 {
     [Header("Customer Settings")]
     public string customerName;
+    public int custLvl;
     public float patience; // How long till the customer loses points from waiting
     public float maxTip; // What is the max the customer can tip
     public float walkSpeed;
