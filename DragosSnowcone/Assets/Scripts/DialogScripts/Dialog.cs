@@ -8,11 +8,13 @@ public class Dialog : MonoBehaviour
     public ImageManager imgManager;
     public bool waitForImg = false;
     public int imgCount = 1;
+    public CustomerMovement customer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         DialogPanel.SetActive(false);
+        imgManager.Ticket.SetActive(false);
     }
 
     // Update is called once per frame
@@ -20,23 +22,27 @@ public class Dialog : MonoBehaviour
     {
 
     }
-    public void StartDialog(Order order)
+    public void StartDialog()
     {
+        
         DialogPanel.SetActive(true);
+        imgManager.Ticket.SetActive(true);
 
-        NextImg(order);
+        NextImg(customer.order);
     }
 
     public void EndDialog()
     {
         DialogPanel.SetActive(false);
+        imgManager.Ticket.SetActive(false);
         GameObject dupliTicket = Instantiate(imgManager.Ticket, imgManager.TicketParnet);
+        dupliTicket.SetActive(true);
         dupliTicket.transform.position = imgManager.TicketParnet.position;
         dupliTicket.transform.localScale = new Vector3(1.3f, 3.3f, 1f);
         imgManager.TicketImg1.enabled = false;
         imgManager.TicketImg2.enabled = false;
         imgManager.TicketImg3.enabled = false;
-
+        customer.mode = 3;
     }
     public void NextImg(Order order)
     {
@@ -65,8 +71,7 @@ public class Dialog : MonoBehaviour
                         break;
                 }
             }
-            //StartCoroutine(Wait1Sec(order));
-            Debug.Log("should do img 2");
+
             if (waitForImg == false && imgCount == 2)
             {
                 switch (order.syrup1)
@@ -96,8 +101,7 @@ public class Dialog : MonoBehaviour
                         break;
                 }
             }
-            //StartCoroutine(Wait1Sec(order));
-            Debug.Log("should do img 3");
+
             if (waitForImg == false && imgCount == 3)
             {
                 switch (order.topping1)
@@ -127,7 +131,7 @@ public class Dialog : MonoBehaviour
                         break;
                 }
             }
-            if (imgCount < 3)
+            if (imgCount < 4)
                 StartCoroutine(Wait1Sec(order));
             else
             {
@@ -159,7 +163,7 @@ public class Dialog : MonoBehaviour
                     imgManager.SpeechImg.sprite = imgManager.largeCup;
                     break;
             }
-            StartCoroutine(Wait1Sec(order));
+            
 
             switch (order.syrup1)
             {
@@ -187,7 +191,7 @@ public class Dialog : MonoBehaviour
                     imgManager.SpeechImg.sprite = imgManager.syrup3;
                     break;
             }
-            StartCoroutine(Wait1Sec(order));
+            
 
             switch (order.syrup2)
             {
@@ -215,7 +219,7 @@ public class Dialog : MonoBehaviour
                     imgManager.SpeechImg.sprite = imgManager.syrup3;
                     break;
             }
-            StartCoroutine(Wait1Sec(order));
+
 
             switch (order.topping1)
             {
@@ -243,7 +247,7 @@ public class Dialog : MonoBehaviour
                     imgManager.SpeechImg.sprite = imgManager.topping3;
                     break;
             }
-            StartCoroutine(Wait1Sec(order));
+
 
             switch (order.topping2)
             {
@@ -270,6 +274,14 @@ public class Dialog : MonoBehaviour
                     imgManager.TicketImg2.sprite = imgManager.topping3;
                     imgManager.SpeechImg.sprite = imgManager.topping3;
                     break;
+            }
+            if (imgCount < 5)
+                StartCoroutine(Wait1Sec(order));
+            else
+            {
+                EndDialog();
+                Debug.Log("Ending dialog");
+                imgCount = 1;
             }
 
         }
@@ -296,7 +308,7 @@ public class Dialog : MonoBehaviour
                     imgManager.SpeechImg.sprite = imgManager.largeCup;
                     break;
             }
-            StartCoroutine(Wait1Sec(order));
+
             switch (order.syrup1)
             {
                 case Order.syrup.none:
@@ -323,7 +335,7 @@ public class Dialog : MonoBehaviour
                     imgManager.SpeechImg.sprite = imgManager.syrup3;
                     break;
             }
-            StartCoroutine(Wait1Sec(order));
+
             switch (order.syrup2)
             {
                 case Order.syrup.none:
@@ -350,7 +362,7 @@ public class Dialog : MonoBehaviour
                     imgManager.SpeechImg.sprite = imgManager.syrup3;
                     break;
             }
-            StartCoroutine(Wait1Sec(order));
+
             switch (order.syrup3)
             {
                 case Order.syrup.none:
@@ -377,7 +389,7 @@ public class Dialog : MonoBehaviour
                     imgManager.SpeechImg.sprite = imgManager.syrup3;
                     break;
             }
-            StartCoroutine(Wait1Sec(order));
+
             switch (order.topping1)
             {
                 case Order.topping.none:
@@ -404,7 +416,7 @@ public class Dialog : MonoBehaviour
                     imgManager.SpeechImg.sprite = imgManager.topping3;
                     break;
             }
-            StartCoroutine(Wait1Sec(order));
+
             switch (order.topping2)
             {
                 case Order.topping.none:
@@ -431,7 +443,7 @@ public class Dialog : MonoBehaviour
                     imgManager.SpeechImg.sprite = imgManager.topping3;
                     break;
             }
-            StartCoroutine(Wait1Sec(order));
+
             switch (order.topping3)
             {
                 case Order.topping.none:
@@ -458,7 +470,16 @@ public class Dialog : MonoBehaviour
                     imgManager.SpeechImg.sprite = imgManager.topping3;
                     break;
             }
+            if (imgCount < 3)
+                StartCoroutine(Wait1Sec(order));
+            else
+            {
+                EndDialog();
+                Debug.Log("Ending dialog");
+                imgCount = 1;
+            }
         }
+        
 
     }
 
