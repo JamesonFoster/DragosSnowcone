@@ -24,9 +24,14 @@ public class Order : ScriptableObject
     public enum syrup
     {
         none,
-        test1,
-        test2,
-        test3
+        s1,
+        s2,
+        s3,
+        s4,
+        s5,
+        s6,
+        s7,
+        s8
     }
 
     public enum topping

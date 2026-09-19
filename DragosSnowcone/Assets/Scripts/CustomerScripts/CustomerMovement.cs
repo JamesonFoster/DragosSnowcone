@@ -52,9 +52,12 @@ public class CustomerMovement : MonoBehaviour
         if (mode == 1)
         {
             takeOrderButton.SetActive(true);
+            //whatever is handling the customers ordering will tell this to go to mode 2
         }
         if (mode == 2)
         {
+            takeOrderButton.SetActive(false);
+            //fliped
             HandleWalkSpr();
             transform.position = Vector2.MoveTowards(transform.position, secndTarget, walkSpeed * Time.deltaTime);
             Vector2 position2D = new Vector2(transform.position.x, transform.position.y);
@@ -62,6 +65,10 @@ public class CustomerMovement : MonoBehaviour
             {
                 mode = 3;
             }
+        }
+        if (mode == 3)
+        {
+            // waits for their order, or changes to mode 2 when a new open spot in the waiting line opens up
         }
     }
 

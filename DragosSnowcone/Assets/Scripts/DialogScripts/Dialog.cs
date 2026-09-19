@@ -51,19 +51,19 @@ public class Dialog : MonoBehaviour
                 imgManager.SpeechImg.sprite = imgManager.syrup7;
                 break;
 
-            case Order.syrup.test1:
+            case Order.syrup.s1:
                 imgManager.TicketImg2.enabled = true;
                 imgManager.TicketImg2.sprite = imgManager.syrup1;
                 imgManager.SpeechImg.sprite = imgManager.syrup1;
                 break;
 
-            case Order.syrup.test2:
+            case Order.syrup.s2:
                 imgManager.TicketImg2.enabled = true;
                 imgManager.TicketImg2.sprite = imgManager.syrup2;
                 imgManager.SpeechImg.sprite = imgManager.syrup2;
                 break;
 
-            case Order.syrup.test3:
+            case Order.syrup.s3:
                 imgManager.TicketImg2.enabled = true;
                 imgManager.TicketImg2.sprite = imgManager.syrup3;
                 imgManager.SpeechImg.sprite = imgManager.syrup3;
@@ -77,19 +77,19 @@ public class Dialog : MonoBehaviour
                 imgManager.SpeechImg.sprite = imgManager.syrup7;
                 break;
 
-            case Order.syrup.test1:
+            case Order.syrup.s1:
                 imgManager.TicketImg2.enabled = true;
                 imgManager.TicketImg2.sprite = imgManager.syrup1;
                 imgManager.SpeechImg.sprite = imgManager.syrup1;
                 break;
 
-            case Order.syrup.test2:
+            case Order.syrup.s2:
                 imgManager.TicketImg2.enabled = true;
                 imgManager.TicketImg2.sprite = imgManager.syrup2;
                 imgManager.SpeechImg.sprite = imgManager.syrup2;
                 break;
 
-            case Order.syrup.test3:
+            case Order.syrup.s3:
                 imgManager.TicketImg2.enabled = true;
                 imgManager.TicketImg2.sprite = imgManager.syrup3;
                 imgManager.SpeechImg.sprite = imgManager.syrup3;
@@ -103,19 +103,19 @@ public class Dialog : MonoBehaviour
                 imgManager.SpeechImg.sprite = imgManager.syrup7;
                 break;
 
-            case Order.syrup.test1:
+            case Order.syrup.s1:
                 imgManager.TicketImg2.enabled = true;
                 imgManager.TicketImg2.sprite = imgManager.syrup1;
                 imgManager.SpeechImg.sprite = imgManager.syrup1;
                 break;
 
-            case Order.syrup.test2:
+            case Order.syrup.s2:
                 imgManager.TicketImg2.enabled = true;
                 imgManager.TicketImg2.sprite = imgManager.syrup2;
                 imgManager.SpeechImg.sprite = imgManager.syrup2;
                 break;
 
-            case Order.syrup.test3:
+            case Order.syrup.s3:
                 imgManager.TicketImg2.enabled = true;
                 imgManager.TicketImg2.sprite = imgManager.syrup3;
                 imgManager.SpeechImg.sprite = imgManager.syrup3;

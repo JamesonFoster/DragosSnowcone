@@ -9,9 +9,11 @@ public class SnowConeColorBit : MonoBehaviour
     {
         sprrend = GetComponent<SpriteRenderer>();
     }
-    void colorSet(Color newColor, int bottleNumb)
+    public void colorSet(Color newColor, int bottleNumb)
     {
+        newColor.a = 1f;
         sprrend.color = newColor;
+
         sCC.IncreaseColorTally(bottleNumb);
     }
 }
