@@ -27,6 +27,8 @@ public class ImageManager : MonoBehaviour
     public SpriteRenderer TicketImg2;
     public SpriteRenderer TicketImg3;
     public Image SpeechImg;
+    public Transform TicketParnet;
+    public GameObject Ticket;
 
 
 }

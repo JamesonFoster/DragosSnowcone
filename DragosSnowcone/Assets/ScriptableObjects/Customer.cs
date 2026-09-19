@@ -9,8 +9,10 @@ public class Customer : ScriptableObject
     public string customerName;
     public float patience; // How long till the customer loses points from waiting
     public float maxTip; // What is the max the customer can tip
+    public float walkSpeed;
     public Sprite walkSpr1;
     public Sprite walkSpr2;
     public float walkSprChangeSpeed = 1f;
     public List<Order> orders;
+    public bool joyful;
 }

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7db0ddef03b944a8e6ab1cada565f1, type: 3}
+  m_Name: ShockingDragon
+  m_EditorClassIdentifier: Assembly-CSharp::Customer
+  customerName: Linkin Spark
+  patience: 15
+  maxTip: 8
+  walkSpeed: 8
+  walkSpr1: {fileID: 8671744548981376806, guid: b1d3a26561014a544b29d2b63e876cd2, type: 3}
+  walkSpr2: {fileID: -918469870158230175, guid: 319b8d68fc3a3df4e946b74c687233de, type: 3}
+  walkSprChangeSpeed: 0.1
+  orders: []
+  joyful: 0
