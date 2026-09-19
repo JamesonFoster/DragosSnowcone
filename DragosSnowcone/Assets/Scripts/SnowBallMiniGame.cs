@@ -86,6 +86,15 @@ public class SnowBallMiniGame : MonoBehaviour
         }
     }
 
+    public void TrashCurrentCone()
+    {
+        if (!isGrowing)
+        {
+            ResetRound();
+            Debug.Log("Current snow cone thrown in the trash! Station reset.");
+        }
+    }
+
     void EvaluateScore()
     {
         float difference = Mathf.Abs(currentScaleSize - targetScale);
@@ -133,6 +142,7 @@ public class SnowBallMiniGame : MonoBehaviour
         if (fillParticles != null) 
         {
             fillParticles.Stop();
+            
             fillParticles.Clear(); 
             var shape = fillParticles.shape;
             shape.radius = 0.1f;
