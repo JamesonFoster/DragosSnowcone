@@ -3,14 +3,25 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CustomersData", menuName = "CustomObj/Order")]
 public class Order : ScriptableObject
 {
-    public enum cupSize
+    public int orderLVL;
+
+    public CupSize cupSize;
+    public syrup syrup1;
+    public syrup syrup2;
+    public syrup syrup3;
+    public topping topping1;
+    public topping topping2;
+    public topping topping3;
+
+
+    public enum CupSize
     {
         small,
         medium,
         large
     }
 
-    public enum syrup1
+    public enum syrup
     {
         none,
         test1,
@@ -18,37 +29,7 @@ public class Order : ScriptableObject
         test3
     }
 
-    public enum syrup2
-    {
-        none,
-        test2,
-        test3
-    }
-
-    public enum syrup3
-    {
-        none,
-        test1,
-        test2
-    }
-
-    public enum topping1
-    {
-        none,
-        princesPuree,
-        gummyWiz,
-        nuts
-    }
-
-    public enum topping2
-    {
-        none,
-        princesPuree,
-        gummyWiz,
-        nuts
-    }
-
-    public enum topping3
+    public enum topping
     {
         none,
         princesPuree,
