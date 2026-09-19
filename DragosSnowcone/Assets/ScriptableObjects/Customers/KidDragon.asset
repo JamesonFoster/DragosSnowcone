@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b7db0ddef03b944a8e6ab1cada565f1, type: 3}
-  m_Name: KarenDragon
+  m_Name: KidDragon
   m_EditorClassIdentifier: Assembly-CSharp::Customer
-  customerName: Karen
-  patience: 20
-  maxTip: 3
-  walkSpeed: 4
-  walkSpr1: {fileID: -6701621311137658697, guid: c737e6f3f08e3e04e8b87ba3c9e4d810, type: 3}
-  walkSpr2: {fileID: -7673010867390951901, guid: 694bab27ab877034ca4d8f2a6a7a335a, type: 3}
-  walkSprChangeSpeed: 1
+  customerName: Bubbles
+  patience: 30
+  maxTip: 0
+  walkSpeed: 7
+  walkSpr1: {fileID: 3962876823413388152, guid: c6c2706350d9f3d4fa7b1059863d85ba, type: 3}
+  walkSpr2: {fileID: -4893591151626166477, guid: 1c06105ba3bcb3e49ba8400f0b63c8ed, type: 3}
+  walkSprChangeSpeed: 0.3
   orders:
   - {fileID: 11400000, guid: 75f64e11fd5c7194fa79e123fcec1b49, type: 2}
   - {fileID: 11400000, guid: 5754cf4c16b4f7548b8375f27ce61dcb, type: 2}
-  joyful: 0
+  joyful: 1
