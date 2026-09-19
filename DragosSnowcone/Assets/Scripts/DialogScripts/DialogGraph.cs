@@ -1,8 +1,8 @@
 using UnityEngine;
-using XNode;
+//using XNode;
 
 [CreateAssetMenu]
-public class DialogGraph : NodeGraph
+public class DialogGraph //: NodeGraph
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
