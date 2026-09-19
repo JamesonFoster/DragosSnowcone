@@ -1,16 +1,12 @@
 using UnityEngine;
 
-public class Customer : MonoBehaviour
+[CreateAssetMenu(fileName = "CustomersData", menuName = "CustomObj/Customers")]
+public class Customer : ScriptableObject
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Header("Customer Settings")]
+    public string customerName;
+    public float patience; // How long till the customer loses points from waiting
+    public float maxTip; // What is the max the customer can tip
+    public Sprite walkSpr1;
+    public Sprite walkSpr2;
 }
