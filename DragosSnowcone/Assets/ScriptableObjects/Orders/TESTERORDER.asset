@@ -9,11 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b7db0ddef03b944a8e6ab1cada565f1, type: 3}
-  m_Name: CustomersData
-  m_EditorClassIdentifier: Assembly-CSharp::Customer
-  customerName: 
-  patience: 0
-  maxTip: 0
-  walkSpr1: {fileID: 0}
-  walkSpr2: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: feca474a70ab3384e86876c61e298090, type: 3}
+  m_Name: TESTERORDER
+  m_EditorClassIdentifier: Assembly-CSharp::Order
