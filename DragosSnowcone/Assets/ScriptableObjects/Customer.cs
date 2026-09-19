@@ -11,5 +11,6 @@ public class Customer : ScriptableObject
     public float maxTip; // What is the max the customer can tip
     public Sprite walkSpr1;
     public Sprite walkSpr2;
+    public float walkSprChangeSpeed = 1f;
     public List<Order> orders;
 }

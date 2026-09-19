@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: feca474a70ab3384e86876c61e298090, type: 3}
-  m_Name: TESTERORDER
+  m_Name: TESTERORDER 1
   m_EditorClassIdentifier: Assembly-CSharp::Order
-  orderLVL: 1
+  orderLVL: 0
   cupSize: 0
   syrup1: 0
   syrup2: 0

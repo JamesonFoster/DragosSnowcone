@@ -9,11 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b7db0ddef03b944a8e6ab1cada565f1, type: 3}
-  m_Name: CustomTest
-  m_EditorClassIdentifier: Assembly-CSharp::Customer
-  customerName: 
-  patience: 0
-  maxTip: 0
-  walkSpr1: {fileID: 0}
-  walkSpr2: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: feca474a70ab3384e86876c61e298090, type: 3}
+  m_Name: TESTERORDER 4
+  m_EditorClassIdentifier: Assembly-CSharp::Order
+  orderLVL: 2
+  cupSize: 0
+  syrup1: 0
+  syrup2: 0
+  syrup3: 0
+  topping1: 0
+  topping2: 0
+  topping3: 0
