@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem; 
 
 public class SnowBallMiniGame : MonoBehaviour
 {
@@ -20,7 +21,6 @@ public class SnowBallMiniGame : MonoBehaviour
 
     void Start()
     {
-        
         targetCircle.localScale = new Vector3(targetScale, targetScale, 1f);
         ResetRound();
     }
@@ -28,17 +28,18 @@ public class SnowBallMiniGame : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKey(KeyCode.Space) && !roundOver)
+        if (Keyboard.current == null) return;
+
+        
+        if (Keyboard.current.spaceKey.isPressed && !roundOver)
         {
             isGrowing = true;
             currentScaleSize += growthSpeed * Time.deltaTime;
-            
-            
             coneFill.localScale = new Vector3(currentScaleSize, currentScaleSize, 1f);
         }
 
         
-        if (Input.GetKeyUp(KeyCode.Space) && isGrowing && !roundOver)
+        if (Keyboard.current.spaceKey.wasReleasedThisFrame && isGrowing && !roundOver)
         {
             isGrowing = false;
             roundOver = true;
@@ -46,7 +47,7 @@ public class SnowBallMiniGame : MonoBehaviour
         }
 
         
-        if (roundOver && Input.GetKeyDown(KeyCode.Return))
+        if (roundOver && Keyboard.current.enterKey.wasPressedThisFrame)
         {
             ResetRound();
         }
@@ -54,7 +55,6 @@ public class SnowBallMiniGame : MonoBehaviour
 
     void EvaluateScore()
     {
-        
         float difference = Mathf.Abs(currentScaleSize - targetScale);
 
         if (difference <= perfectTolerance)
