@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: a18afefa546290441b3e1861218d1a85
+guid: 0233cb80eaa4c8d4cad5fb6e03c1ac1d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2502775248143967732
-    second: syrupbackgroundstands_0
-  - first:
-      213: 98095382647088054
-    second: syrupbackgroundstands_1
+      213: 2259459401572064608
+    second: sc_Cone_Outside_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: syrupbackgroundstands_0
+      name: sc_Cone_Outside_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 242
-        width: 719
-        height: 616
+        y: 0
+        width: 974
+        height: 1176
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4f5e242f3d4abb220800000000000000
-      internalID: 2502775248143967732
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: syrupbackgroundstands_1
-      rect:
-        serializedVersion: 2
-        x: 1226
-        y: 260
-        width: 653
-        height: 413
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6b329c41b318c5100800000000000000
-      internalID: 98095382647088054
+      spriteID: 06d9e17ca563b5f10800000000000000
+      internalID: 2259459401572064608
       vertices: []
       indices: 
       edges: []
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      syrupbackgroundstands_0: 2502775248143967732
-      syrupbackgroundstands_1: 98095382647088054
+      sc_Cone_Outside_0: 2259459401572064608
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
