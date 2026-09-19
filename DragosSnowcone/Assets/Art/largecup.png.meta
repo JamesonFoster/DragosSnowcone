@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 87500dc75992c3c4e9b3057dba27a0b8
+guid: 90eb3c9a4376a6d498670bf910fe117c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2259459401572064608
-    second: sc_Cone_Outside_0
+      213: -76038915397143131
+    second: largecup_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sc_Cone_Outside_0
+      name: largecup_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 974
-        height: 1176
+        x: 1144
+        y: 268
+        width: 326
+        height: 581
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 06d9e17ca563b5f10800000000000000
-      internalID: 2259459401572064608
+      spriteID: 5a5b5a2620bd1fef0800000000000000
+      internalID: -76038915397143131
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sc_Cone_Outside_0: 2259459401572064608
+      largecup_0: -76038915397143131
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

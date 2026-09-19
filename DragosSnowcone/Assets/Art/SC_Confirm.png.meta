@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 87500dc75992c3c4e9b3057dba27a0b8
+guid: b1b3adf2e818aeb42a6ec8ba1d1058ed
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2259459401572064608
-    second: sc_Cone_Outside_0
+      213: 6316271449179311676
+    second: SC_Confirm_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sc_Cone_Outside_0
+      name: SC_Confirm_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 974
-        height: 1176
+        width: 1104
+        height: 1104
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 06d9e17ca563b5f10800000000000000
-      internalID: 2259459401572064608
+      spriteID: c3e46410b67e7a750800000000000000
+      internalID: 6316271449179311676
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sc_Cone_Outside_0: 2259459401572064608
+      SC_Confirm_0: 6316271449179311676
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
