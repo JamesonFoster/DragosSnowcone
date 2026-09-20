@@ -361,6 +361,115 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1290862606}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &71178289
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4365214246874615566}
+    m_Modifications:
+    - target: {fileID: 2794311289780185669, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_Name
+      value: PauseMenuManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2794311289780185669, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091472216441778086, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -13.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167380328973772953, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: gameUI
+      value: 
+      objectReference: {fileID: 1450635696532963209}
+    - target: {fileID: 3194604050448365574, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 459.553
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194604050448365574, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1151499
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194604050448365574, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0628381
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194604050448365574, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.0628381
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194604050448365574, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 407
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194604050448365574, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 187
+      objectReference: {fileID: 0}
+    - target: {fileID: 3515765563692541232, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405813073079965859, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 397
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405813073079965859, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 202
+      objectReference: {fileID: 0}
+    - target: {fileID: 7056396952756547459, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227634389747819461, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -398.84412
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227634389747819461, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -205.11906
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227634389747819461, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227634389747819461, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227634389747819461, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227634389747819461, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227634389747819461, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227634389747819461, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227634389747819461, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227634389747819461, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
 --- !u!1001 &89909891
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4170,6 +4279,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df7923642d6d3b43a7a23738e6c9c51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnowConeController
+--- !u!4 &1379646257 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8227634389747819461, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+  m_PrefabInstance: {fileID: 71178289}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1399728429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7006,7 +7120,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -8759,6 +8873,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1379646257}
   - {fileID: 5999151715067493215}
   - {fileID: 5897665570540439057}
   - {fileID: 1514043658078486382}
