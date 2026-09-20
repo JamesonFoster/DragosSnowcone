@@ -122,10 +122,10 @@ public class CustomerMovement : MonoBehaviour
         }
         if (mode == 2) // waiting in starspot
         {
+            takeOrderButton.SetActive(true);
             sprrend.sortingOrder = 40 + posBius;
             if (customer.joyful == true)
                 HandleWalkSpr();
-            //takeOrderButton.SetActive(true);
             //whatever is handling the customers ordering will tell this to go to mode 2
         }
         if (mode == 3) // move back
