@@ -15,6 +15,7 @@ public class Dialog : MonoBehaviour
     {
         DialogPanel.SetActive(false);
         imgManager.Ticket.SetActive(false);
+        imgManager.custFrontImg.enabled = false;
     }
 
     // Update is called once per frame
@@ -28,6 +29,8 @@ public class Dialog : MonoBehaviour
         imgManager.orderNumber.text = "" + GlobalPlayerVars.orderNmbr;
         imgManager.nameTxt.text = customer.customer.customerName;
         DialogPanel.SetActive(true);
+        imgManager.custFrontImg.enabled = true;
+        imgManager.custFrontImg.sprite = customer.customer.frontSpr;
         imgManager.Ticket.SetActive(true);
 
         NextImg(customer.order);
@@ -37,10 +40,11 @@ public class Dialog : MonoBehaviour
     {
         DialogPanel.SetActive(false);
         imgManager.Ticket.SetActive(false);
+        imgManager.custFrontImg.enabled = false;
         GameObject dupliTicket = Instantiate(imgManager.Ticket, imgManager.TicketParnet);
         dupliTicket.SetActive(true);
         dupliTicket.transform.position = imgManager.TicketParnet.position;
-        dupliTicket.transform.localScale = new Vector3(0.5f, 0.5f, 1f);
+        dupliTicket.transform.localScale = new Vector3(25f, 25f, 1f);
         
         customer.mode = 3;
     }
@@ -95,6 +99,31 @@ public class Dialog : MonoBehaviour
                         imgManager.syrupImg1.enabled = true;
                         imgManager.syrupImg1.sprite = imgManager.syrup3;
                         imgManager.SpeechImg.sprite = imgManager.syrup3;
+                        break;
+                    case Order.syrup.s4:
+                        imgManager.syrupImg1.enabled = true;
+                        imgManager.syrupImg1.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s5:
+                        imgManager.syrupImg1.enabled = true;
+                        imgManager.syrupImg1.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s6:
+                        imgManager.syrupImg1.enabled = true;
+                        imgManager.syrupImg1.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s7:
+                        imgManager.syrupImg1.enabled = true;
+                        imgManager.syrupImg1.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s8:
+                        imgManager.syrupImg1.enabled = true;
+                        imgManager.syrupImg1.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
                         break;
                 }
             }
@@ -189,11 +218,36 @@ public class Dialog : MonoBehaviour
                         imgManager.syrupImg1.sprite = imgManager.syrup3;
                         imgManager.SpeechImg.sprite = imgManager.syrup3;
                         break;
+                    case Order.syrup.s4:
+                        imgManager.syrupImg1.enabled = true;
+                        imgManager.syrupImg1.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s5:
+                        imgManager.syrupImg1.enabled = true;
+                        imgManager.syrupImg1.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s6:
+                        imgManager.syrupImg1.enabled = true;
+                        imgManager.syrupImg1.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s7:
+                        imgManager.syrupImg1.enabled = true;
+                        imgManager.syrupImg1.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s8:
+                        imgManager.syrupImg1.enabled = true;
+                        imgManager.syrupImg1.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
                 }
             }
             
 
-            if (waitForImg == false && imgCount == 3)
+            if (waitForImg == false && imgCount == 2)
             {
                 switch (order.syrup2)
                 {
@@ -216,6 +270,31 @@ public class Dialog : MonoBehaviour
                         imgManager.syrupImg2.enabled = true;
                         imgManager.syrupImg2.sprite = imgManager.syrup3;
                         imgManager.SpeechImg.sprite = imgManager.syrup3;
+                        break;
+                    case Order.syrup.s4:
+                        imgManager.syrupImg2.enabled = true;
+                        imgManager.syrupImg2.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s5:
+                        imgManager.syrupImg2.enabled = true;
+                        imgManager.syrupImg2.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s6:
+                        imgManager.syrupImg2.enabled = true;
+                        imgManager.syrupImg2.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s7:
+                        imgManager.syrupImg2.enabled = true;
+                        imgManager.syrupImg2.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s8:
+                        imgManager.syrupImg2.enabled = true;
+                        imgManager.syrupImg2.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
                         break;
                 }
             }
@@ -342,6 +421,31 @@ public class Dialog : MonoBehaviour
                         imgManager.syrupImg1.sprite = imgManager.syrup3;
                         imgManager.SpeechImg.sprite = imgManager.syrup3;
                         break;
+                    case Order.syrup.s4:
+                        imgManager.syrupImg1.enabled = true;
+                        imgManager.syrupImg1.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s5:
+                        imgManager.syrupImg1.enabled = true;
+                        imgManager.syrupImg1.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s6:
+                        imgManager.syrupImg1.enabled = true;
+                        imgManager.syrupImg1.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s7:
+                        imgManager.syrupImg1.enabled = true;
+                        imgManager.syrupImg1.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s8:
+                        imgManager.syrupImg1.enabled = true;
+                        imgManager.syrupImg1.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
                 }
             }
 
@@ -369,6 +473,31 @@ public class Dialog : MonoBehaviour
                         imgManager.syrupImg2.sprite = imgManager.syrup3;
                         imgManager.SpeechImg.sprite = imgManager.syrup3;
                         break;
+                    case Order.syrup.s4:
+                        imgManager.syrupImg2.enabled = true;
+                        imgManager.syrupImg2.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s5:
+                        imgManager.syrupImg2.enabled = true;
+                        imgManager.syrupImg2.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s6:
+                        imgManager.syrupImg2.enabled = true;
+                        imgManager.syrupImg2.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s7:
+                        imgManager.syrupImg2.enabled = true;
+                        imgManager.syrupImg2.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s8:
+                        imgManager.syrupImg2.enabled = true;
+                        imgManager.syrupImg2.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
                 }
             }
 
@@ -395,6 +524,31 @@ public class Dialog : MonoBehaviour
                         imgManager.syrupImg3.enabled = true;
                         imgManager.syrupImg3.sprite = imgManager.syrup3;
                         imgManager.SpeechImg.sprite = imgManager.syrup3;
+                        break;
+                    case Order.syrup.s4:
+                        imgManager.syrupImg3.enabled = true;
+                        imgManager.syrupImg3.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s5:
+                        imgManager.syrupImg3.enabled = true;
+                        imgManager.syrupImg3.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s6:
+                        imgManager.syrupImg3.enabled = true;
+                        imgManager.syrupImg3.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s7:
+                        imgManager.syrupImg3.enabled = true;
+                        imgManager.syrupImg3.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
+                        break;
+                    case Order.syrup.s8:
+                        imgManager.syrupImg3.enabled = true;
+                        imgManager.syrupImg3.sprite = imgManager.syrup4;
+                        imgManager.SpeechImg.sprite = imgManager.syrup4;
                         break;
                 }
             }

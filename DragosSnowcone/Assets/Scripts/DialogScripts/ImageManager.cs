@@ -31,6 +31,7 @@ public class ImageManager : MonoBehaviour
     public Image toppingImg2;
     public Image toppingImg3;
     public Image cupImg;
+    public Image custFrontImg;
     public TMP_Text nameTxt;
     public TMP_Text orderNumber;
     public TMP_Text toppingTxt1;
