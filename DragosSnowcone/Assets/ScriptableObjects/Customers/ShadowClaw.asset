@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b7db0ddef03b944a8e6ab1cada565f1, type: 3}
   m_Name: ShadowClaw
   m_EditorClassIdentifier: Assembly-CSharp::Customer
-  customerName: 
-  custLvl: 0
-  patience: 0
-  maxTip: 0
-  walkSpeed: 0
-  walkSpr1: {fileID: 0}
-  walkSpr2: {fileID: 0}
-  frontSpr: {fileID: 0}
+  customerName: Shadow Claw
+  custLvl: 2
+  patience: 25
+  maxTip: 10
+  walkSpeed: 4
+  walkSpr1: {fileID: 3723181947916051695, guid: 241ddab6e6fbc144eb5366389ce47de2, type: 3}
+  walkSpr2: {fileID: 3723181947916051695, guid: 241ddab6e6fbc144eb5366389ce47de2, type: 3}
+  frontSpr: {fileID: -5115728843086250096, guid: f8c61671824990340b26e5fb810d6a68, type: 3}
   walkSprChangeSpeed: 1
   orders: []
   joyful: 0

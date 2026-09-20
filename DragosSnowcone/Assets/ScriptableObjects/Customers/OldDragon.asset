@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: OldDragon
   m_EditorClassIdentifier: Assembly-CSharp::Customer
   customerName: Buck
+  custLvl: 0
   patience: 120
   maxTip: 12
   walkSpeed: 1.5
   walkSpr1: {fileID: -5955596128051353901, guid: 29a00ba8f44146c4cad1108cc5e6836a, type: 3}
   walkSpr2: {fileID: -1879322255169881684, guid: bf3c0d32d1c67594b9fb269ce8cdaa3d, type: 3}
+  frontSpr: {fileID: 1864422298495872554, guid: 32ebc196fe13d444593c4a408fb812bf, type: 3}
   walkSprChangeSpeed: 2
   orders: []
   joyful: 0

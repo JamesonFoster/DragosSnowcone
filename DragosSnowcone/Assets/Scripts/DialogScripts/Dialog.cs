@@ -45,6 +45,8 @@ public class Dialog : MonoBehaviour
         dupliTicket.SetActive(true);
         dupliTicket.transform.position = imgManager.TicketParnet.position;
         dupliTicket.transform.localScale = new Vector3(25f, 25f, 1f);
+        dupliTicket.GetComponent<TicketData>().customer = customer.customer;
+        dupliTicket.GetComponent<TicketData>().order = customer.order;
         
         customer.mode = 3;
     }
