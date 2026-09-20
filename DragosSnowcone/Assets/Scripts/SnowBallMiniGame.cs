@@ -523,12 +523,14 @@ public class SnowBallMiniGame : MonoBehaviour
 
     void SendStatsToController()
     {
-        if (snowConeController != null)
+        if (currentController != null)
         {
-            snowConeController.SendMessage(
-                "ReceiveSnowConeData",
-                this,
-                SendMessageOptions.DontRequireReceiver
+            currentController.ReceiveSnowConeData(this);
+        }
+        else
+        {
+            Debug.LogWarning(
+                "No current SnowConeController found when sending snow cone stats."
             );
         }
     }
