@@ -288,6 +288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustWaitSpot
   isOn: 0
+  star: {fileID: 0}
 --- !u!212 &20538141
 SpriteRenderer:
   serializedVersion: 2
@@ -1138,6 +1139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustWaitSpot
   isOn: 0
+  star: {fileID: 0}
 --- !u!212 &203028712
 SpriteRenderer:
   serializedVersion: 2
@@ -1510,7 +1512,7 @@ MonoBehaviour:
   scoreText3: {fileID: 500247473}
   scoreText4: {fileID: 1002753777}
   scoreText5: {fileID: 155859871}
-  targetY: -102.8
+  targetY: 83.3
 --- !u!4 &231791910
 Transform:
   m_ObjectHideFlags: 0
@@ -1632,6 +1634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustWaitSpot
   isOn: 0
+  star: {fileID: 0}
 --- !u!212 &257806483
 SpriteRenderer:
   serializedVersion: 2
@@ -2237,6 +2240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustWaitSpot
   isOn: 0
+  star: {fileID: 0}
 --- !u!212 &429372510
 SpriteRenderer:
   serializedVersion: 2
@@ -3202,6 +3206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustWaitSpot
   isOn: 0
+  star: {fileID: 0}
 --- !u!212 &676971267
 SpriteRenderer:
   serializedVersion: 2
@@ -3443,6 +3448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustWaitSpot
   isOn: 0
+  star: {fileID: 0}
 --- !u!212 &759825142
 SpriteRenderer:
   serializedVersion: 2
@@ -4149,6 +4155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustWaitSpot
   isOn: 0
+  star: {fileID: 0}
 --- !u!212 &929290379
 SpriteRenderer:
   serializedVersion: 2
@@ -4731,6 +4738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustWaitSpot
   isOn: 0
+  star: {fileID: 0}
 --- !u!212 &1066296716
 SpriteRenderer:
   serializedVersion: 2
@@ -6092,9 +6100,17 @@ PrefabInstance:
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6468444433468374743, guid: d25ac7f8342f9ca48843835401a60e19, type: 3}
+      propertyPath: JC
+      value: 
+      objectReference: {fileID: 231791909}
+    - target: {fileID: 6468444433468374743, guid: d25ac7f8342f9ca48843835401a60e19, type: 3}
       propertyPath: SS
       value: 
       objectReference: {fileID: 2402711951933019538}
+    - target: {fileID: 6468444433468374743, guid: d25ac7f8342f9ca48843835401a60e19, type: 3}
+      propertyPath: final
+      value: 
+      objectReference: {fileID: 929290378}
     - target: {fileID: 6468444433468374743, guid: d25ac7f8342f9ca48843835401a60e19, type: 3}
       propertyPath: singleTarget1.y
       value: 0.465
@@ -6405,6 +6421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustWaitSpot
   isOn: 0
+  star: {fileID: 0}
 --- !u!212 &1442392414
 SpriteRenderer:
   serializedVersion: 2
@@ -6510,6 +6527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustWaitSpot
   isOn: 0
+  star: {fileID: 0}
 --- !u!212 &1484236635
 SpriteRenderer:
   serializedVersion: 2
@@ -6859,6 +6877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustWaitSpot
   isOn: 0
+  star: {fileID: 0}
 --- !u!212 &1655854585
 SpriteRenderer:
   serializedVersion: 2
@@ -7131,6 +7150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustWaitSpot
   isOn: 0
+  star: {fileID: 0}
 --- !u!212 &1729840055
 SpriteRenderer:
   serializedVersion: 2
@@ -7236,6 +7256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustWaitSpot
   isOn: 0
+  star: {fileID: 0}
 --- !u!212 &1769625462
 SpriteRenderer:
   serializedVersion: 2
@@ -7341,6 +7362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustWaitSpot
   isOn: 0
+  star: {fileID: 0}
 --- !u!212 &1795857206
 SpriteRenderer:
   serializedVersion: 2

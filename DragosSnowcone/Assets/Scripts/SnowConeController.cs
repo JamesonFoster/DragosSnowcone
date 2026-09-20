@@ -114,6 +114,8 @@ public class SnowConeController : MonoBehaviour
             if (position2D == stage5Target)
             {
                 SS.GoToPosition(5);
+                if (final.star != null)
+                    order = final.star.order;
                 GlobalPlayerVars.endTalk = true;
                 transform.position = stage6Target;
                 CalcSyrupScore();
@@ -124,6 +126,18 @@ public class SnowConeController : MonoBehaviour
                 JC.SetCust(final.star);
                 stage = 6;
             }
+        }
+        if (stage == 6)
+        {
+            if (final.star == null)
+            {
+                stage = 7;
+            }
+        }
+        if (stage == 7)
+        {
+            SS.GoToPosition(0);
+            Destroy(gameObject);
         }
     }
 

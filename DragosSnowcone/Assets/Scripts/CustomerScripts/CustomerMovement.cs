@@ -248,7 +248,7 @@ public class CustomerMovement : MonoBehaviour
     }
     public void StopStar()
     {
-        CWSStar2.starSet(false, this);
+        CWSStar2.starSet(false, null);
     }
 
     private void HandleWalkSpr()
