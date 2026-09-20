@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: ShockingDragon
   m_EditorClassIdentifier: Assembly-CSharp::Customer
   customerName: Linkin Spark
+  custLvl: 0
   patience: 15
   maxTip: 8
   walkSpeed: 8
   walkSpr1: {fileID: 8671744548981376806, guid: b1d3a26561014a544b29d2b63e876cd2, type: 3}
   walkSpr2: {fileID: -918469870158230175, guid: 319b8d68fc3a3df4e946b74c687233de, type: 3}
+  frontSpr: {fileID: -6501481439241678618, guid: e93727e8996242441ae75e1b29f2e848, type: 3}
   walkSprChangeSpeed: 0.1
   orders: []
   joyful: 0

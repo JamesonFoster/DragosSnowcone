@@ -20,6 +20,6 @@ MonoBehaviour:
   walkSpr1: {fileID: -5979439257774005546, guid: da6f85196f45e36409399e40d79ff8fd, type: 3}
   walkSpr2: {fileID: 308103164928451897, guid: 8925068476931df4db4e368bbc5df985, type: 3}
   frontSpr: {fileID: 0}
-  walkSprChangeSpeed: 999
+  walkSprChangeSpeed: 1
   orders: []
   joyful: 0
