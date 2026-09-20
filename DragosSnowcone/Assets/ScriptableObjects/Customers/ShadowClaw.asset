@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7db0ddef03b944a8e6ab1cada565f1, type: 3}
+  m_Name: ShadowClaw
+  m_EditorClassIdentifier: Assembly-CSharp::Customer
+  customerName: 
+  custLvl: 0
+  patience: 0
+  maxTip: 0
+  walkSpeed: 0
+  walkSpr1: {fileID: 0}
+  walkSpr2: {fileID: 0}
+  frontSpr: {fileID: 0}
+  walkSprChangeSpeed: 1
+  orders: []
+  joyful: 0
