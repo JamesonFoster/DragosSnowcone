@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f93254d7f7fede14890ac65166069867
+guid: bfe836d54f34d1844972fb18e486a9f0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6177060554234133322
-    second: goldbottle_0
+      213: 3927734772099509149
+    second: SC_toppings_FallenStar_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: goldbottle_0
+      name: SC_toppings_FallenStar_0
       rect:
         serializedVersion: 2
-        x: 728
-        y: 40
-        width: 638
-        height: 1751
+        x: 185
+        y: 178
+        width: 630
+        height: 594
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6b40cc4472ca64aa0800000000000000
-      internalID: -6177060554234133322
+      spriteID: d9be0f617fd128630800000000000000
+      internalID: 3927734772099509149
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      goldbottle_0: -6177060554234133322
+      SC_toppings_FallenStar_0: 3927734772099509149
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
