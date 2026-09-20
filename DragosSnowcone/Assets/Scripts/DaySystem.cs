@@ -11,6 +11,8 @@ public class DaySystem : MonoBehaviour
     {
         if (endDayPanel != null)
             endDayPanel.SetActive(false);
+
+        SetCustomersForLevel();
     }
 
     void Update()
@@ -21,6 +23,36 @@ public class DaySystem : MonoBehaviour
         if (GlobalPlayerVars.custToday <= 0)
         {
             EndDay();
+        }
+    }
+
+    void SetCustomersForLevel()
+    {
+        switch (GlobalPlayerVars.lvl)
+        {
+            case 1:
+                GlobalPlayerVars.custToday = 5;
+                break;
+
+            case 2:
+                GlobalPlayerVars.custToday = 7;
+                break;
+
+            case 3:
+                GlobalPlayerVars.custToday = 10;
+                break;
+
+            case 4:
+                GlobalPlayerVars.custToday = 12;
+                break;
+
+            case 5:
+                GlobalPlayerVars.custToday = 15;
+                break;
+
+            default:
+                GlobalPlayerVars.custToday = 15;
+                break;
         }
     }
 
