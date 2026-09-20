@@ -9,4 +9,10 @@ public class GlobalPlayerVars : MonoBehaviour
     public static bool endTalk = false;
     public static int custToday = 0;
     public static int totalCustToday = 99;
+
+
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 }

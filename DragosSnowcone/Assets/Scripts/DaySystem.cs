@@ -14,8 +14,6 @@ public class DaySystem : MonoBehaviour
     {
         if (endDayPanel != null)
             endDayPanel.SetActive(false);
-
-        SetCustomersForLevel();
     }
 
     void Update()
@@ -27,43 +25,6 @@ public class DaySystem : MonoBehaviour
         {
             EndDay();
         }
-    }
-
-    void SetCustomersForLevel()
-    {
-        if (customerSpawner == null)
-        {
-            Debug.LogWarning("CustomerSpawner is not assigned to DaySystem.");
-            return;
-        }
-
-        int customerCount = 0;
-
-        foreach (Customer customer in customerSpawner.normCust)
-        {
-            if (customer != null && customer.custLvl <= GlobalPlayerVars.lvl)
-            {
-                customerCount++;
-            }
-        }
-
-        foreach (Customer customer in customerSpawner.hardCust)
-        {
-            if (customer != null && customer.custLvl <= GlobalPlayerVars.lvl)
-            {
-                customerCount++;
-            }
-        }
-
-        GlobalPlayerVars.custToday = customerCount;
-
-        Debug.Log(
-            "Level " +
-            GlobalPlayerVars.lvl +
-            " has " +
-            GlobalPlayerVars.custToday +
-            " customers today."
-        );
     }
 
     void EndDay()
