@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DragonFieri
   m_EditorClassIdentifier: Assembly-CSharp::Customer
   customerName: Dragon Fieri
-  custLvl: 5
+  custLvl: 8
   patience: 40
   maxTip: 25
   walkSpeed: 999
@@ -23,3 +23,4 @@ MonoBehaviour:
   walkSprChangeSpeed: 1
   orders: []
   joyful: 0
+  talkSpeed: 0.75

@@ -295,8 +295,10 @@ public class Dialog : MonoBehaviour
 
                 case Order.topping.t1:
                     imgManager.toppingImg1.sprite = imgManager.topping;
+                    imgManager.toppingImg1.color = new Color32(0, 196, 255, 255);
                     imgManager.toppingImg1.enabled = true;
                     imgManager.SpeechImg.sprite = imgManager.topping;
+                    imgManager.SpeechImg.color = new Color32(0, 196, 255, 255);
                     imgManager.toppingTxt1.text = "" + order.topping1Count;
                     break;
 
@@ -363,8 +365,10 @@ public class Dialog : MonoBehaviour
                 case Order.topping.t1:
                     
                     imgManager.toppingImg2.sprite = imgManager.topping;
+                    imgManager.toppingImg2.color = new Color32(0, 196, 255, 255);
                     imgManager.toppingImg2.enabled = true;
                     imgManager.SpeechImg.sprite = imgManager.topping;
+                    imgManager.SpeechImg.color = new Color32(0, 196, 255, 255);
                     imgManager.toppingTxt2.text = "" + order.topping2Count;
                     break;
 
@@ -438,8 +442,10 @@ public class Dialog : MonoBehaviour
                 case Order.topping.t1:
                     
                     imgManager.toppingImg3.sprite = imgManager.topping;
+                    imgManager.toppingImg3.color = new Color32(0, 196, 255, 255);
                     imgManager.toppingImg3.enabled = true;
                     imgManager.SpeechImg.sprite = imgManager.topping;
+                    imgManager.SpeechImg.color = new Color32(0, 196, 255, 255);
                     imgManager.toppingTxt3.text = "" + order.topping3Count;
                     break;
 
@@ -523,6 +529,7 @@ public class Dialog : MonoBehaviour
         yield return new WaitForSeconds(customer.customer.talkSpeed);
 
         waitForImg = false;
+        imgManager.SpeechImg.color = new Color32(255, 255, 255, 255);
         imgCount++;
         NextImg(order);
     }

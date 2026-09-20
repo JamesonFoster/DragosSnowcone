@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feca474a70ab3384e86876c61e298090, type: 3}
   m_Name: ThingsThatDontKillYouMakeYouStronger
   m_EditorClassIdentifier: Assembly-CSharp::Order
-  orderLVL: 0
-  cupSize: 0
+  orderLVL: 8
+  cupSize: 2
   syrup1: 7
   syrup2: 4
   syrup3: 6
@@ -21,5 +21,5 @@ MonoBehaviour:
   topping2: 5
   topping3: 7
   topping1Count: 3
-  topping2Count: 2
+  topping2Count: 3
   topping3Count: 3

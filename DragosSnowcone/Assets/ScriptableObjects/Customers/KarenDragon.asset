@@ -23,5 +23,8 @@ MonoBehaviour:
   walkSprChangeSpeed: 1
   orders:
   - {fileID: 11400000, guid: 113a4350657ca934398574230574a5b3, type: 2}
-  - {fileID: 11400000, guid: 113a4350657ca934398574230574a5b3, type: 2}
+  - {fileID: 11400000, guid: 189e8992ba792a3419e0253e26056b14, type: 2}
+  - {fileID: 11400000, guid: 4e9a48ebfd96fed4fa9dbe1dcef65f2e, type: 2}
+  - {fileID: 11400000, guid: ee812ee784a51584c88507fcca065ecc, type: 2}
   joyful: 0
+  talkSpeed: 0.75

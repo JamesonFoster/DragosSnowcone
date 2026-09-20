@@ -11,6 +11,7 @@ public class Heat : MonoBehaviour
 
     private AudioSource audioSource;
     public AudioClip heatMusic;
+    public AudioClip themeMusic;
 
     private bool hasLost = false;
 
@@ -43,6 +44,7 @@ public class Heat : MonoBehaviour
                 Lose();
                 return;
             }
+
         }
 
         if (hasLost)
@@ -56,9 +58,21 @@ public class Heat : MonoBehaviour
 
         if (GlobalPlayerVars.howHot >= 88)
         {
-            if (!audioSource.isPlaying && heatMusic != null)
+            if ( heatMusic != null)
             {
+                audioSource.Stop();
+                audioSource.loop = false;
                 audioSource.PlayOneShot(heatMusic, 1.0f);
+            }
+        }
+        else
+        {
+            if (themeMusic != null)
+            {
+
+                audioSource.clip = themeMusic;
+                audioSource.loop = true;
+                audioSource.Play();
             }
         }
     }
