@@ -60,4 +60,9 @@ public class PauseMenu : MonoBehaviour
         creditsPanel.SetActive(false);
         pausePanel.SetActive(true);
     }
+    public void Quit()
+    {
+        Application.Quit();
+        Debug.Log("Game is exiting");
+    }
 }

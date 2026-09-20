@@ -1,16 +1,19 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Heat : MonoBehaviour
 {
     public GameObject losePanel;
-    
+    private AudioSource audioSource;
+    public AudioClip heatMusic;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Debug.Log(GlobalPlayerVars.howHot);
         GlobalPlayerVars.howHot = 0;
+        audioSource = GetComponent<AudioSource>();
         InvokeRepeating("IncreaseHeat", 1f, 1f);
     }
 
@@ -24,10 +27,15 @@ public class Heat : MonoBehaviour
             losePanel.SetActive(true);
             GlobalPlayerVars.howHot = 0;
         }
-        
-        
+
+        if (GlobalPlayerVars.howHot >= 88)
+        {
+            audioSource.PlayOneShot(heatMusic, 1.0f);
+        }
+
+
     }
-    
+
 
     void IncreaseHeat()
     {
