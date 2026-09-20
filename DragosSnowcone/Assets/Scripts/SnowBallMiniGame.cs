@@ -5,6 +5,9 @@ public class SnowBallMiniGame : MonoBehaviour
 {
     [Header("Snow Cone")]
     public Transform coneFill;
+
+    public GameObject SnowConeOrbPrefab;
+
     public ParticleSystem fillParticles;
 
     [Header("Cone Ring Prefabs")]
@@ -24,6 +27,7 @@ public class SnowBallMiniGame : MonoBehaviour
     public int currentScore = 0;
 
     private GameObject currentSnowCone;
+    private GameObject currentSnowConeOrb;
 
     private float targetScale = 3f;
     private float currentScaleSize = 0f;
@@ -35,34 +39,34 @@ public class SnowBallMiniGame : MonoBehaviour
 
     private string currentCupSize = "None";
 
-    private Transform originalOrbParent;
-    private Vector3 originalOrbPosition;
-    private Quaternion originalOrbRotation;
-    private Vector3 originalOrbScale;
+    private SnowConeController currentController;
 
     void Start()
     {
-        if (coneFill != null)
-        {
-            originalOrbParent = coneFill.parent;
-            originalOrbPosition = coneFill.localPosition;
-            originalOrbRotation = coneFill.localRotation;
-            originalOrbScale = coneFill.localScale;
-        }
+        coneFill = null;
 
         ResetRound();
+
+        if (saveButton != null)
+            saveButton.SetActive(false);
     }
 
     void Update()
     {
-        if (GlobalPlayerVars.lookingAt != 1 && GlobalPlayerVars.lookingAt != 2 && GlobalPlayerVars.lookingAt != 3)
+        if (saveButton != null)
         {
-            saveButton.SetActive(false);
+            if (GlobalPlayerVars.lookingAt != 1 &&
+                GlobalPlayerVars.lookingAt != 2 &&
+                GlobalPlayerVars.lookingAt != 3)
+            {
+                saveButton.SetActive(false);
+            }
+            else
+            {
+                saveButton.SetActive(true);
+            }
         }
-        else
-        {
-            saveButton.SetActive(true);
-        }
+
         if (!sizeSelected)
             return;
 
@@ -71,13 +75,24 @@ public class SnowBallMiniGame : MonoBehaviour
 
         if (Keyboard.current.spaceKey.wasPressedThisFrame && !roundOver)
         {
+            if (coneFill == null)
+            {
+                Debug.LogWarning(
+                    "There is no active snowball at Station 1."
+                );
+
+                return;
+            }
+
             isGrowing = true;
 
             if (fillParticles != null)
                 fillParticles.Play();
         }
 
-        if (Keyboard.current.spaceKey.isPressed && isGrowing && !roundOver)
+        if (Keyboard.current.spaceKey.isPressed &&
+            isGrowing &&
+            !roundOver)
         {
             currentScaleSize += growthSpeed * Time.deltaTime;
 
@@ -97,7 +112,9 @@ public class SnowBallMiniGame : MonoBehaviour
             }
         }
 
-        if (Keyboard.current.spaceKey.wasReleasedThisFrame && isGrowing && !roundOver)
+        if (Keyboard.current.spaceKey.wasReleasedThisFrame &&
+            isGrowing &&
+            !roundOver)
         {
             isGrowing = false;
             roundOver = true;
@@ -108,9 +125,10 @@ public class SnowBallMiniGame : MonoBehaviour
             EvaluateScore();
         }
 
-        if (roundOver && Keyboard.current.enterKey.wasPressedThisFrame)
+        if (roundOver &&
+            Keyboard.current.enterKey.wasPressedThisFrame)
         {
-            SendStatsToController();
+            SaveSnowCone();
         }
     }
 
@@ -142,7 +160,10 @@ public class SnowBallMiniGame : MonoBehaviour
 
         if (selectedPrefab == null)
         {
-            Debug.LogWarning("The selected cone ring prefab is missing.");
+            Debug.LogWarning(
+                "The selected cone ring prefab is missing."
+            );
+
             return;
         }
 
@@ -152,17 +173,7 @@ public class SnowBallMiniGame : MonoBehaviour
             currentSnowCone = null;
         }
 
-        if (coneFill != null)
-        {
-            if (coneFill.parent != originalOrbParent)
-            {
-                coneFill.SetParent(originalOrbParent, true);
-            }
-
-            coneFill.localPosition = originalOrbPosition;
-            coneFill.localRotation = originalOrbRotation;
-            coneFill.localScale = new Vector3(0f, 0f, 1f);
-        }
+        CreateFreshSnowConeOrb();
 
         Vector3 spawnPosition = Vector3.zero;
         Quaternion spawnRotation = Quaternion.identity;
@@ -179,7 +190,8 @@ public class SnowBallMiniGame : MonoBehaviour
             spawnRotation
         );
 
-        Transform targetCircle = currentSnowCone.transform.Find("TargetCircle");
+        Transform targetCircle =
+            currentSnowCone.transform.Find("TargetCircle");
 
         if (targetCircle != null)
         {
@@ -187,7 +199,8 @@ public class SnowBallMiniGame : MonoBehaviour
         }
         else
         {
-            targetScale = currentSnowCone.transform.localScale.x;
+            targetScale =
+                currentSnowCone.transform.localScale.x;
         }
 
         currentScaleSize = 0f;
@@ -208,17 +221,79 @@ public class SnowBallMiniGame : MonoBehaviour
         }
 
         Debug.Log(
-            "Selected " +
+            "NEW SNOW CONE CREATED: " +
             currentCupSize +
             ". Target Scale: " +
             targetScale +
-            ". Hold Space to grow the SnowConeOrb."
+            ". Press Space to grow it."
+        );
+    }
+
+    void CreateFreshSnowConeOrb()
+    {
+        if (SnowConeOrbPrefab == null)
+        {
+            Debug.LogError(
+                "SnowConeOrbPrefab has NOT been assigned in the Inspector!"
+            );
+
+            return;
+        }
+
+        if (coneFill != null)
+        {
+            Destroy(coneFill.gameObject);
+            coneFill = null;
+        }
+
+        GameObject newOrb =
+            Instantiate(SnowConeOrbPrefab);
+
+        if (newOrb == null)
+        {
+            Debug.LogError(
+                "SnowConeOrbPrefab failed to instantiate."
+            );
+
+            return;
+        }
+
+        newOrb.SetActive(true);
+
+        currentSnowConeOrb = newOrb;
+        coneFill = newOrb.transform;
+
+        currentController =
+            newOrb.GetComponent<SnowConeController>();
+
+        if (currentController == null)
+        {
+            Debug.LogError(
+                "The new SnowConeOrb(Clone) does not have a SnowConeController!"
+            );
+        }
+
+        if (targetSpawnPoint != null)
+        {
+            coneFill.position = targetSpawnPoint.position;
+            coneFill.rotation = targetSpawnPoint.rotation;
+        }
+
+        coneFill.localScale = new Vector3(
+            0f,
+            0f,
+            1f
+        );
+
+        Debug.Log(
+            "Fresh SnowConeOrb instantiated."
         );
     }
 
     void EvaluateScore()
     {
-        float difference = Mathf.Abs(currentScaleSize - targetScale);
+        float difference =
+            Mathf.Abs(currentScaleSize - targetScale);
 
         if (difference <= perfectTolerance)
         {
@@ -226,7 +301,9 @@ public class SnowBallMiniGame : MonoBehaviour
         }
         else
         {
-            float rawPenalty = (difference / targetScale) * 100f;
+            float rawPenalty =
+                (difference / targetScale) * 100f;
+
             currentScore = Mathf.Max(
                 0,
                 100 - Mathf.RoundToInt(rawPenalty)
@@ -236,7 +313,7 @@ public class SnowBallMiniGame : MonoBehaviour
         Debug.Log(
             "Snow Cone Finished. Score: " +
             currentScore +
-            ". Press Save to place the cone onto the snowball."
+            ". Press Enter to save."
         );
     }
 
@@ -244,57 +321,133 @@ public class SnowBallMiniGame : MonoBehaviour
     {
         if (GlobalPlayerVars.lookingAt == 1)
         {
-        if (!sizeSelected)
-        {
-            Debug.LogWarning("Select a cone size before saving.");
-            return;
+            if (!sizeSelected)
+            {
+                Debug.LogWarning(
+                    "Select a cone size before saving."
+                );
+
+                return;
+            }
+
+            if (!roundOver)
+            {
+                Debug.LogWarning(
+                    "Finish growing the snowball before saving."
+                );
+
+                return;
+            }
+
+            if (currentSnowCone == null)
+            {
+                Debug.LogWarning(
+                    "There is no cone ring to save."
+                );
+
+                return;
+            }
+
+            if (coneFill == null)
+            {
+                Debug.LogWarning(
+                    "There is no active SnowConeOrb."
+                );
+
+                return;
+            }
+
+            if (snowConeSaved)
+            {
+                Debug.LogWarning(
+                    "This snow cone has already been saved."
+                );
+
+                return;
+            }
+
+            currentSnowCone.transform.SetParent(
+                coneFill,
+                true
+            );
+
+            snowConeSaved = true;
+
+            SendStatsToController();
+
+            if (currentController != null)
+            {
+                currentController.stageChange();
+            }
+
+            Debug.Log(
+                currentCupSize +
+                " snow cone saved. Score: " +
+                currentScore
+            );
+
+            coneFill = null;
+            currentSnowCone = null;
+
+            currentScaleSize = 0f;
+            targetScale = 3f;
+            currentScore = 0;
+
+            isGrowing = false;
+            roundOver = false;
+            sizeSelected = false;
+            snowConeSaved = false;
+
+            currentCupSize = "None";
+
+            if (fillParticles != null)
+            {
+                fillParticles.Stop();
+                fillParticles.Clear();
+
+                var shape = fillParticles.shape;
+                shape.radius = 0.1f;
+            }
+
+            Debug.Log(
+                "Station 1 is ready for a NEW snow cone."
+            );
         }
 
-        if (!roundOver)
-        {
-            Debug.LogWarning("Finish growing the snowball before saving.");
-            return;
-        }
-
-        if (currentSnowCone == null)
-        {
-            Debug.LogWarning("There is no cone ring to save.");
-            return;
-        }
-
-        if (coneFill == null)
-        {
-            Debug.LogWarning("SnowConeOrb has not been assigned.");
-            return;
-        }
-
-        if (snowConeSaved)
-        {
-            Debug.LogWarning("This snow cone has already been saved.");
-            return;
-        }
-
-        currentSnowCone.transform.SetParent(coneFill, true);
-
-        snowConeSaved = true;
-
-        snowConeController.stageChange();
-
-        SendStatsToController();
-
-        Debug.Log(
-            currentCupSize +
-            " snow cone saved. Score: " +
-            currentScore
-        );
-        }
         if (GlobalPlayerVars.lookingAt == 2)
         {
-            snowConeController.stageChange();
+            if (currentController != null)
+            {
+                currentController.stageChange();
+
+                Debug.Log(
+                    "Snow cone sent from Station 2 to Station 3."
+                );
+            }
+            else
+            {
+                Debug.LogWarning(
+                    "No current SnowConeController found at Station 2."
+                );
+            }
         }
+
         if (GlobalPlayerVars.lookingAt == 3)
         {
-            snowConeController.stageChange();
+            if (currentController != null)
+            {
+                currentController.stageChange();
+
+                Debug.Log(
+                    "Snow cone sent from Station 3."
+                );
+            }
+            else
+            {
+                Debug.LogWarning(
+                    "No current SnowConeController found at Station 3."
+                );
+            }
         }
     }
 
@@ -309,36 +462,63 @@ public class SnowBallMiniGame : MonoBehaviour
             shape.radius = 0.1f;
         }
 
-        if (currentSnowCone != null)
+        if (GlobalPlayerVars.lookingAt == 1)
         {
-            Destroy(currentSnowCone);
-            currentSnowCone = null;
-        }
-
-        if (coneFill != null)
-        {
-            if (coneFill.parent != originalOrbParent)
+            if (currentSnowCone != null)
             {
-                coneFill.SetParent(originalOrbParent, true);
+                Destroy(currentSnowCone);
+                currentSnowCone = null;
             }
 
-            coneFill.localPosition = originalOrbPosition;
-            coneFill.localRotation = originalOrbRotation;
-            coneFill.localScale = new Vector3(0f, 0f, 1f);
+            if (currentSnowConeOrb != null)
+            {
+                Destroy(currentSnowConeOrb);
+                currentSnowConeOrb = null;
+            }
+            else if (coneFill != null)
+            {
+                Destroy(coneFill.gameObject);
+            }
+
+            coneFill = null;
+            currentController = null;
+
+            currentScaleSize = 0f;
+            targetScale = 3f;
+            currentScore = 0;
+
+            isGrowing = false;
+            roundOver = false;
+            sizeSelected = false;
+            snowConeSaved = false;
+
+            currentCupSize = "None";
+
+            Debug.Log(
+                "Snow cone discarded. Station 1 is ready for a new one."
+            );
+
+            return;
         }
 
-        currentScaleSize = 0f;
-        targetScale = 3f;
-        currentScore = 0;
+        if (GlobalPlayerVars.lookingAt == 2 ||
+            GlobalPlayerVars.lookingAt == 3)
+        {
+            if (currentSnowConeOrb != null)
+            {
+                Destroy(currentSnowConeOrb);
+                currentSnowConeOrb = null;
+            }
 
-        isGrowing = false;
-        roundOver = false;
-        sizeSelected = false;
-        snowConeSaved = false;
+            coneFill = null;
+            currentController = null;
 
-        currentCupSize = "None";
-
-        Debug.Log("Snow cone deleted. Ready to start over.");
+            Debug.Log(
+                "Snow cone discarded from Station " +
+                GlobalPlayerVars.lookingAt +
+                "."
+            );
+        }
     }
 
     void SendStatsToController()
@@ -390,17 +570,8 @@ public class SnowBallMiniGame : MonoBehaviour
             currentSnowCone = null;
         }
 
-        if (coneFill != null)
-        {
-            if (coneFill.parent != originalOrbParent)
-            {
-                coneFill.SetParent(originalOrbParent, true);
-            }
-
-            coneFill.localPosition = originalOrbPosition;
-            coneFill.localRotation = originalOrbRotation;
-            coneFill.localScale = new Vector3(0f, 0f, 1f);
-        }
+        currentSnowConeOrb = null;
+        currentController = null;
 
         currentScaleSize = 0f;
         targetScale = 3f;
