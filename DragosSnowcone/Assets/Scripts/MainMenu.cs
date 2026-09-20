@@ -5,7 +5,7 @@ public class MainMenu : MonoBehaviour
 {
     public void Play()
     {
-        SceneManager.LoadScene("SamTest");
+        SceneManager.LoadScene("MasterScene");
     }
 
     public void Quit()
@@ -17,5 +17,9 @@ public class MainMenu : MonoBehaviour
     public void Credits()
     {
         SceneManager.LoadScene("Credits");
+    }
+    public void mainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
