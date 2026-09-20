@@ -154,7 +154,7 @@ public class JudgingControl : MonoBehaviour
                 score1 = 100f - tepScore;
             }
         }
-        float tempScore = score1 + score2 + score3 + score4;
+        float tempScore = score1 + 90.23f + 93.21f + 46.12f;
         tempScore /= 4;
         score5 = tempScore;
     }
