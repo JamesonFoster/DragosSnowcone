@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ImageManager : MonoBehaviour
 {
@@ -23,9 +24,19 @@ public class ImageManager : MonoBehaviour
     public Sprite topping6;
     public Sprite topping7;
     public Sprite topping8;
-    public SpriteRenderer TicketImg1;
-    public SpriteRenderer TicketImg2;
-    public SpriteRenderer TicketImg3;
+    public Image syrupImg1;
+    public Image syrupImg2;
+    public Image syrupImg3;
+    public Image toppingImg1;
+    public Image toppingImg2;
+    public Image toppingImg3;
+    public Image cupImg;
+    public Image custFrontImg;
+    public TMP_Text nameTxt;
+    public TMP_Text orderNumber;
+    public TMP_Text toppingTxt1;
+    public TMP_Text toppingTxt2;
+    public TMP_Text toppingTxt3;
     public Image SpeechImg;
     public Transform TicketParnet;
     public GameObject Ticket;

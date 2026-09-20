@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: KidDragon
   m_EditorClassIdentifier: Assembly-CSharp::Customer
   customerName: Bubbles
+  custLvl: 0
   patience: 30
   maxTip: 0
   walkSpeed: 7
   walkSpr1: {fileID: 3962876823413388152, guid: c6c2706350d9f3d4fa7b1059863d85ba, type: 3}
   walkSpr2: {fileID: -4893591151626166477, guid: 1c06105ba3bcb3e49ba8400f0b63c8ed, type: 3}
+  frontSpr: {fileID: 335892915381906079, guid: 5fc0c593a570e5940baa4385fd766778, type: 3}
   walkSprChangeSpeed: 0.3
   orders:
   - {fileID: 11400000, guid: 75f64e11fd5c7194fa79e123fcec1b49, type: 2}
