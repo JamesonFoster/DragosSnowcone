@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class DaySystem : MonoBehaviour
 {
     public GameObject endDayPanel;
+
+    public CustomerSpawner customerSpawner;
 
     private bool dayEnded = false;
 
@@ -28,32 +31,39 @@ public class DaySystem : MonoBehaviour
 
     void SetCustomersForLevel()
     {
-        switch (GlobalPlayerVars.lvl)
+        if (customerSpawner == null)
         {
-            case 1:
-                GlobalPlayerVars.custToday = 5;
-                break;
-
-            case 2:
-                GlobalPlayerVars.custToday = 7;
-                break;
-
-            case 3:
-                GlobalPlayerVars.custToday = 10;
-                break;
-
-            case 4:
-                GlobalPlayerVars.custToday = 12;
-                break;
-
-            case 5:
-                GlobalPlayerVars.custToday = 15;
-                break;
-
-            default:
-                GlobalPlayerVars.custToday = 15;
-                break;
+            Debug.LogWarning("CustomerSpawner is not assigned to DaySystem.");
+            return;
         }
+
+        int customerCount = 0;
+
+        foreach (Customer customer in customerSpawner.normCust)
+        {
+            if (customer != null && customer.custLvl <= GlobalPlayerVars.lvl)
+            {
+                customerCount++;
+            }
+        }
+
+        foreach (Customer customer in customerSpawner.hardCust)
+        {
+            if (customer != null && customer.custLvl <= GlobalPlayerVars.lvl)
+            {
+                customerCount++;
+            }
+        }
+
+        GlobalPlayerVars.custToday = customerCount;
+
+        Debug.Log(
+            "Level " +
+            GlobalPlayerVars.lvl +
+            " has " +
+            GlobalPlayerVars.custToday +
+            " customers today."
+        );
     }
 
     void EndDay()
