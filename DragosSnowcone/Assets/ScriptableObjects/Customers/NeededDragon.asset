@@ -19,7 +19,10 @@ MonoBehaviour:
   walkSpeed: 0
   walkSpr1: {fileID: 0}
   walkSpr2: {fileID: 0}
+  frontSpr: {fileID: 0}
   walkSprChangeSpeed: 1
   orders:
   - {fileID: 11400000, guid: caa46b5fae3c7c8488331bcbca38da3f, type: 2}
+  - {fileID: 11400000, guid: caa46b5fae3c7c8488331bcbca38da3f, type: 2}
   joyful: 0
+  talkSpeed: 0.75

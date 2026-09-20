@@ -21,6 +21,9 @@ MonoBehaviour:
   walkSpr2: {fileID: -1879322255169881684, guid: bf3c0d32d1c67594b9fb269ce8cdaa3d, type: 3}
   frontSpr: {fileID: 1864422298495872554, guid: 32ebc196fe13d444593c4a408fb812bf, type: 3}
   walkSprChangeSpeed: 2
-  orders: []
+  orders:
+  - {fileID: 11400000, guid: 189e8992ba792a3419e0253e26056b14, type: 2}
+  - {fileID: 11400000, guid: 4e9a48ebfd96fed4fa9dbe1dcef65f2e, type: 2}
+  - {fileID: 11400000, guid: 893774c31750e6c42917bddd6d6feb2f, type: 2}
   joyful: 0
   talkSpeed: 2.75

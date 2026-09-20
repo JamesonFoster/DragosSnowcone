@@ -58,6 +58,9 @@ public class JudgingControl : MonoBehaviour
     public void StartJudgin()
     {
         isRunning = true;
+        score2 = 90.23f;
+        score3 = 93.21f;
+        score4 = 46.12f;
         scoreText1.text = score1.ToString("F2");
         scoreText2.text = score2.ToString("F2");
         scoreText3.text = score3.ToString("F2");
