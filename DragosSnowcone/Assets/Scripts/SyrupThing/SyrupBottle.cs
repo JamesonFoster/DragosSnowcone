@@ -4,11 +4,13 @@ using UnityEngine.InputSystem;
 public class SyrupBottle : MonoBehaviour
 {
     private Camera mainCamera;
+    private SpriteRenderer sprrend;
     private int mode;
     private Vector2 startPos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        sprrend = gameObject.GetComponent<SpriteRenderer>();
         mode = 0;
         startPos = new Vector2(transform.position.x, transform.position.y);
         mainCamera = Camera.main;
@@ -29,6 +31,7 @@ public class SyrupBottle : MonoBehaviour
     {
         if (mode == 0)
         {
+            sprrend.sortingOrder = 3;
             transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             transform.position = startPos;
             if (Mouse.current.leftButton.wasPressedThisFrame)
@@ -50,6 +53,7 @@ public class SyrupBottle : MonoBehaviour
         }
         if (mode == 1)
         {
+            sprrend.sortingOrder = 30;
             if (Mouse.current.leftButton.isPressed)
             {
                 MoveToMouse();

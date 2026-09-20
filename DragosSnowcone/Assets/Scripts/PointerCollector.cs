@@ -105,7 +105,7 @@ public class PointerCollector : MonoBehaviour
         GlobalPlayerVars.howHot -= 7;
         Debug.Log(GlobalPlayerVars.howHot);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
 
 
         icecube.GetComponent<SpriteRenderer>().sprite = fishin;
@@ -119,7 +119,7 @@ public class PointerCollector : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
 
-        moveSpeed += 5f;
+        moveSpeed += 3f;
         canFishAgain = true;
 
     }
