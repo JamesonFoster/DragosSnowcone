@@ -22,7 +22,7 @@ public class Dialog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void StartDialog()
     {
@@ -52,6 +52,7 @@ public class Dialog : MonoBehaviour
         
         sS.GoToPosition(0);
         customer.mode = 3;
+        customer.CWSStar1.setIsON(false);
     }
     public void NextImg(Order order)
     {
@@ -453,7 +454,7 @@ public class Dialog : MonoBehaviour
     {
         waitForImg = true;
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(customer.customer.talkSpeed);
 
         waitForImg = false;
         imgCount++;

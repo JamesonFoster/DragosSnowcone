@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feca474a70ab3384e86876c61e298090, type: 3}
   m_Name: SugeryNice
   m_EditorClassIdentifier: Assembly-CSharp::Order
-  orderLVL: 1
+  orderLVL: 0
   cupSize: 0
   syrup1: 1
   syrup2: 0

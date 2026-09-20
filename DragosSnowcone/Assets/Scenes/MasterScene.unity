@@ -8548,7 +8548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CustomerMovement
   mode: 0
   customer: {fileID: 11400000, guid: 80efdb553b48e114baa45b8bd0bf9b8a, type: 2}
-  order: {fileID: 0}
+  order: {fileID: 11400000, guid: 113a4350657ca934398574230574a5b3, type: 2}
   targetMain1: {fileID: 759825140}
   orderLine:
   - {fileID: 20538139}
@@ -8569,6 +8569,8 @@ MonoBehaviour:
   bob: 0
   takeOrderButton: {fileID: 7902557998527698460}
   spawnWhen: 0
+  backupOrder: {fileID: 11400000, guid: 113a4350657ca934398574230574a5b3, type: 2}
+  CWSStar1: {fileID: 0}
 --- !u!222 &2920855558647840934
 CanvasRenderer:
   m_ObjectHideFlags: 0
