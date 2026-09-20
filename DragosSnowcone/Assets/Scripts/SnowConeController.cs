@@ -14,15 +14,17 @@ public class SnowConeController : MonoBehaviour
     public int colCount6;
     public int colCount7;
     public int colCount8;
+
+    [Header("Ball Size Vars")]
     public float finalScale;
     public string cupSize;
     public int score;
 
-    private void Start()
+    void Start()
     {
     }
 
-    private void Update()
+    void Update()
     {
     }
 
