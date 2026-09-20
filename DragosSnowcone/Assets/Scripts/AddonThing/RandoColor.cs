@@ -2,10 +2,17 @@ using UnityEngine;
 
 public class RandoColor : MonoBehaviour
 {
-    private SpriteRenderer sprrend;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        sprrend = GetComponent<SpriteRenderer>();
+        SpriteRenderer renderer = gameObject.GetComponent<SpriteRenderer>();
+        renderer.material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }
