@@ -254,6 +254,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5502796410579728801}
   - {fileID: 320379943}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10547,8 +10548,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Heat
   losePanel: {fileID: 462652871}
   gameUI: {fileID: 1450635696532963209}
-  heatMusic: {fileID: 0}
-  themeMusic: {fileID: 0}
+  heatMusic: {fileID: 8300000, guid: 147f1dc4a8a8ba7479c9f476d5a55870, type: 3}
+  themeMusic: {fileID: 8300000, guid: 1c04557e0fe68b64a834351c44d37c82, type: 3}
+  inHeatMusic: 0
 --- !u!114 &2402711951933019538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16673,11 +16675,11 @@ Transform:
   m_GameObject: {fileID: 8203124111587927727}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.89205, y: -21.166906, z: 0}
+  m_LocalPosition: {x: 0.07543564, y: -177.54506, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8221485539122058566}
+  m_Father: {fileID: 18460454}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5619118584791546699
 MonoBehaviour:
@@ -18453,7 +18455,6 @@ Transform:
   - {fileID: 1475943509129265257}
   - {fileID: 1253894422942375196}
   - {fileID: 3082065167134001752}
-  - {fileID: 5502796410579728801}
   - {fileID: 224201818}
   - {fileID: 800997141}
   - {fileID: 1049485316}

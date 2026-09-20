@@ -12,6 +12,7 @@ public class Heat : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip heatMusic;
     public AudioClip themeMusic;
+    public bool inHeatMusic = false;
 
     private bool hasLost = false;
 
@@ -24,6 +25,10 @@ public class Heat : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         InvokeRepeating("IncreaseHeat", 1f, 1f);
+
+        audioSource.clip = themeMusic;
+        audioSource.loop = true;
+        audioSource.Play();
     }
 
     void Update()
@@ -58,22 +63,20 @@ public class Heat : MonoBehaviour
 
         if (GlobalPlayerVars.howHot >= 88)
         {
-            if ( heatMusic != null)
+            if (heatMusic != null && inHeatMusic == false)
             {
                 audioSource.Stop();
                 audioSource.loop = false;
-                audioSource.PlayOneShot(heatMusic, 1.0f);
+                audioSource.PlayOneShot(heatMusic, 0.5f);
+                
+
+                StartCoroutine(Wait13sec());
+                
             }
         }
         else
         {
-            if (themeMusic != null)
-            {
-
-                audioSource.clip = themeMusic;
-                audioSource.loop = true;
-                audioSource.Play();
-            }
+            
         }
     }
 
@@ -116,5 +119,12 @@ public class Heat : MonoBehaviour
     {
         Time.timeScale = 1f;
         Application.Quit();
+    }
+    IEnumerator Wait13sec()
+    {
+        inHeatMusic = true;
+        yield return new WaitForSeconds(12f);
+        inHeatMusic = false;
+        audioSource.Play();
     }
 }
