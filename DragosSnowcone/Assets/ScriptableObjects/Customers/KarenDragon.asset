@@ -19,7 +19,7 @@ MonoBehaviour:
   walkSpeed: 4
   walkSpr1: {fileID: -6701621311137658697, guid: c737e6f3f08e3e04e8b87ba3c9e4d810, type: 3}
   walkSpr2: {fileID: -7673010867390951901, guid: 694bab27ab877034ca4d8f2a6a7a335a, type: 3}
-  frontSpr: {fileID: 0}
+  frontSpr: {fileID: 8749323891093614769, guid: a6828b4ec5ea26945b3914d7b772f76a, type: 3}
   walkSprChangeSpeed: 1
   orders:
   - {fileID: 11400000, guid: 113a4350657ca934398574230574a5b3, type: 2}
