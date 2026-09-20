@@ -5,6 +5,7 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pausePanel;
     public GameObject creditsPanel;
+    public GameObject gameUI;
 
     private bool isPaused = false;
 
@@ -14,7 +15,6 @@ public class PauseMenu : MonoBehaviour
         {
             if (isPaused)
             {
-                return;
             }
             else
             {
@@ -30,6 +30,9 @@ public class PauseMenu : MonoBehaviour
         pausePanel.SetActive(true);
         creditsPanel.SetActive(false);
 
+        if (gameUI != null)
+            gameUI.SetActive(false);
+
         Time.timeScale = 0f;
     }
 
@@ -39,6 +42,9 @@ public class PauseMenu : MonoBehaviour
 
         pausePanel.SetActive(false);
         creditsPanel.SetActive(false);
+
+        if (gameUI != null)
+            gameUI.SetActive(true);
 
         Time.timeScale = 1f;
     }
