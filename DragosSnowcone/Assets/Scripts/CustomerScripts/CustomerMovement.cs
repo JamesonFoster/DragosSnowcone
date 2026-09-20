@@ -10,7 +10,7 @@ public class CustomerMovement : MonoBehaviour
     public GameObject targetMain1;
     public List<GameObject> orderLine; // line where they wait for the order
     public List<GameObject> waitLine; // line where they wait for the snowcone
-    private List<Order> orderRand = new List<Order>();
+    public List<Order> orderRand = new List<Order>();
     private GameObject currentTarg;
     public GameObject targetMain2;
     public float bob;
@@ -122,10 +122,10 @@ public class CustomerMovement : MonoBehaviour
         }
         if (mode == 2) // waiting in starspot
         {
+            takeOrderButton.SetActive(true);
             sprrend.sortingOrder = 40 + posBius;
             if (customer.joyful == true)
                 HandleWalkSpr();
-            //takeOrderButton.SetActive(true);
             //whatever is handling the customers ordering will tell this to go to mode 2
         }
         if (mode == 3) // move back

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Dialog : MonoBehaviour
 {
     public GameObject DialogPanel;
+    public StationSwitch sS;
     public ImageManager imgManager;
     public bool waitForImg = false;
     public int imgCount = 1;
@@ -21,7 +22,7 @@ public class Dialog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
     public void StartDialog()
     {
@@ -33,6 +34,7 @@ public class Dialog : MonoBehaviour
         imgManager.custFrontImg.sprite = customer.customer.frontSpr;
         imgManager.Ticket.SetActive(true);
 
+        sS.GoToPosition(5);
         NextImg(customer.order);
     }
 
@@ -48,6 +50,7 @@ public class Dialog : MonoBehaviour
         dupliTicket.GetComponent<TicketData>().customer = customer.customer;
         dupliTicket.GetComponent<TicketData>().order = customer.order;
         
+        sS.GoToPosition(0);
         customer.mode = 3;
     }
     public void NextImg(Order order)
@@ -83,7 +86,6 @@ public class Dialog : MonoBehaviour
             {
                 case Order.syrup.none:
                     imgCount++;
-                    NextImg(order);
                     break;
 
                 case Order.syrup.s1:
@@ -137,7 +139,6 @@ public class Dialog : MonoBehaviour
             {
                 case Order.syrup.none:
                     imgCount++;
-                    NextImg(order);
                     break;
 
                 case Order.syrup.s1:
@@ -191,7 +192,6 @@ public class Dialog : MonoBehaviour
             {
                 case Order.syrup.none:
                     imgCount++;
-                    NextImg(order);
                     break;
 
                 case Order.syrup.s1:
@@ -245,7 +245,6 @@ public class Dialog : MonoBehaviour
             {
                 case Order.topping.none:
                     imgCount++;
-                    NextImg(order);
                     break;
 
                 case Order.topping.t1:
@@ -312,7 +311,6 @@ public class Dialog : MonoBehaviour
             {
                 case Order.topping.none:
                     imgCount++;
-                    NextImg(order);
                     break;
 
                 case Order.topping.t1:
@@ -379,7 +377,6 @@ public class Dialog : MonoBehaviour
             {
                 case Order.topping.none:
                     imgCount++;
-                    NextImg(order);
                     break;
 
                 case Order.topping.t1:

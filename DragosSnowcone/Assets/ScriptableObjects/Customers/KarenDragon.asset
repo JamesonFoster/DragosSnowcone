@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: KarenDragon
   m_EditorClassIdentifier: Assembly-CSharp::Customer
   customerName: Karen
+  custLvl: 0
   patience: 20
   maxTip: 3
   walkSpeed: 4
   walkSpr1: {fileID: -6701621311137658697, guid: c737e6f3f08e3e04e8b87ba3c9e4d810, type: 3}
   walkSpr2: {fileID: -7673010867390951901, guid: 694bab27ab877034ca4d8f2a6a7a335a, type: 3}
+  frontSpr: {fileID: 0}
   walkSprChangeSpeed: 1
   orders:
-  - {fileID: 11400000, guid: 75f64e11fd5c7194fa79e123fcec1b49, type: 2}
-  - {fileID: 11400000, guid: 5754cf4c16b4f7548b8375f27ce61dcb, type: 2}
+  - {fileID: 11400000, guid: 113a4350657ca934398574230574a5b3, type: 2}
+  - {fileID: 11400000, guid: 113a4350657ca934398574230574a5b3, type: 2}
   joyful: 0
