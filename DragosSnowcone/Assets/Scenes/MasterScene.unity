@@ -6200,6 +6200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnowBallMiniGame
   coneFill: {fileID: 1356362252}
+  SnowConeOrbPrefab: {fileID: 8296379918543043132, guid: d25ac7f8342f9ca48843835401a60e19, type: 3}
   fillParticles: {fileID: 4934158937165320177}
   ConeRingS: {fileID: 1590813585381073623, guid: b54314f21f6582241bbb110ca8f5f31e, type: 3}
   ConeRingM: {fileID: 6048627357956344459, guid: ce1ca313a53ddcd499dbecbca96530a0, type: 3}
@@ -13023,7 +13024,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 91.9259, y: -0.18925476}
+  m_AnchoredPosition: {x: 91.9259, y: -0.18927002}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &5927826685289330737
@@ -13068,7 +13069,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -1.3096008, y: -0.18925476}
+  m_AnchoredPosition: {x: -1.3095703, y: -0.18927002}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 0}
 --- !u!4 &6065283167529313140
