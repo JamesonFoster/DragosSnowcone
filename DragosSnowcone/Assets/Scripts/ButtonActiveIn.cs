@@ -17,7 +17,8 @@ public class ButtonActiveIn : MonoBehaviour
     void Start()
     {
         GlobalPlayerVars.lookingAt = 0;
-        move1.position = target.transform.position;
+        if (isMove)
+            move1.position = target.transform.position;
     }
 
     // Update is called once per frame
