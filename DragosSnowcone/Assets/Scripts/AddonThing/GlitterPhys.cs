@@ -6,7 +6,8 @@ public class GlitterPhys : MonoBehaviour
     private int mode;
     private SnowConeController sCC;
 
-    public GameObject targetParent;
+    private Transform targetParent;
+    public Vector2 startingPos;
 
     private float randomRotate;
     private float randomHSpeed;
@@ -18,9 +19,6 @@ public class GlitterPhys : MonoBehaviour
 
     void Start()
     {
-        sCC = targetParent.GetComponent<SnowConeController>();
-        
-
         mode = 0;
         rb = GetComponent<Rigidbody2D>();
 
@@ -36,10 +34,9 @@ public class GlitterPhys : MonoBehaviour
 
         if (isOriginal)
         {
-            Vector2 finalPosition = transform.position;
-            sCC.GlitterCall(key, finalPosition);
             for (int i = 0; i < glitterCount; i++)
             {
+                startingPos = new Vector2(transform.position.x, transform.position.y);
                 GameObject created = Instantiate(
                     gameObject,
                     transform.position,
@@ -50,6 +47,7 @@ public class GlitterPhys : MonoBehaviour
                 Rigidbody2D rigi = created.GetComponent<Rigidbody2D>();
 
                 glitt.isOriginal = false;
+                glitt.startingPos = new Vector2(transform.position.x, transform.position.y);
 
                 rigi.linearVelocity = Vector2.zero;
             }
@@ -72,6 +70,10 @@ public class GlitterPhys : MonoBehaviour
     {
         if (other.gameObject.CompareTag("AddonLine"))
         {
+            targetParent = other.gameObject.transform.parent;
+            sCC = targetParent.GetComponent<SnowConeController>();
+            if (!sCC.glitterInfoStore.Contains(startingPos))
+                sCC.GlitterStore(key, startingPos);
 
             rb.simulated = false;
             rb.linearVelocity = Vector2.zero;

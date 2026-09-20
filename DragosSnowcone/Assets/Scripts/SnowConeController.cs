@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class SnowConeController : MonoBehaviour
 {
@@ -51,6 +53,10 @@ public class SnowConeController : MonoBehaviour
     private bool singleTarget3Used;
 
     private int totalRequestedToppings;
+    public List<int> glitterKeys = new List<int>();
+    public List<Vector2> glitterInfoStore = new List<Vector2>();
+    private List<int> singleKeys = new List<int>();
+    private List<Vector2> singleInfoStore = new List<Vector2>();
 
     void Start()
     {
@@ -144,6 +150,17 @@ public class SnowConeController : MonoBehaviour
 
         if (order.topping3 != Order.topping.none)
             totalRequestedToppings += order.topping3Count;
+    }
+
+    public void GlitterStore(int keyNum, Vector2 vect)
+    {
+        glitterKeys.Add(keyNum);
+        glitterInfoStore.Add(vect);
+    }
+    public void SingleStore(int keyNum, Vector2 vect)
+    {
+        singleKeys.Add(keyNum);
+        singleInfoStore.Add(vect);
     }
 
     public void GlitterCall(int keyNum, Vector2 vect)
@@ -452,6 +469,18 @@ public class SnowConeController : MonoBehaviour
 
     public void CalculateFinalScore()
     {
+        for (int i = 0; i < singleKeys.Count; i++)
+        {
+            int curKey = singleKeys[i];
+            Vector2 place = singleInfoStore[i];
+            SingleCall(curKey,place);
+        }
+        for (int i = 0; i < glitterKeys.Count; i++)
+        {
+            int curKey = glitterKeys[i];
+            Vector2 place = glitterInfoStore[i];
+            GlitterCall(curKey,place);
+        }
         UpdateFinalToppingScore();
 
         score = Mathf.RoundToInt(

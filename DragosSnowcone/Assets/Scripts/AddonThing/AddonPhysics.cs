@@ -9,7 +9,7 @@ public class AddonPhysics : MonoBehaviour
 
     private SnowConeController sCC;
 
-    public GameObject targetParent;
+    private Transform targetParent;
     public int key;
 
     void Start()
@@ -18,8 +18,6 @@ public class AddonPhysics : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         mainCamera = Camera.main;
-
-        sCC = targetParent.GetComponent<SnowConeController>();
 
         float randomZ = Random.Range(0f, 360f);
 
@@ -73,7 +71,9 @@ public class AddonPhysics : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
             rb.angularVelocity = 0f;
 
-            sCC.SingleCall(key, finalPosition);
+            targetParent = other.gameObject.transform.parent;
+            sCC = targetParent.GetComponent<SnowConeController>();
+            sCC.SingleStore(key, finalPosition);
 
             transform.SetParent(targetParent.transform);
 

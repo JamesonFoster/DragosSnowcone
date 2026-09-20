@@ -5218,6 +5218,18 @@ PrefabInstance:
       propertyPath: targetParent
       value: 
       objectReference: {fileID: 671172112}
+    - target: {fileID: 323235076789587138, guid: c0e819f2554ee6648b7964397c22c3d4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282511287671870919, guid: c0e819f2554ee6648b7964397c22c3d4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282511287671870919, guid: c0e819f2554ee6648b7964397c22c3d4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.86
+      objectReference: {fileID: 0}
     - target: {fileID: 1310714104704077888, guid: c0e819f2554ee6648b7964397c22c3d4, type: 3}
       propertyPath: targetParent
       value: 
@@ -5230,6 +5242,10 @@ PrefabInstance:
       propertyPath: targetParent
       value: 
       objectReference: {fileID: 671172112}
+    - target: {fileID: 2080734738936515147, guid: c0e819f2554ee6648b7964397c22c3d4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14.46
+      objectReference: {fileID: 0}
     - target: {fileID: 4309012612394029660, guid: c0e819f2554ee6648b7964397c22c3d4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.49451065
@@ -5294,6 +5310,10 @@ PrefabInstance:
       propertyPath: targetParent
       value: 
       objectReference: {fileID: 671172112}
+    - target: {fileID: 8456202627502953190, guid: c0e819f2554ee6648b7964397c22c3d4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.62
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8871979425221815751, guid: c0e819f2554ee6648b7964397c22c3d4, type: 3}
@@ -6200,6 +6220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnowBallMiniGame
   coneFill: {fileID: 1356362252}
+  SnowConeOrbPrefab: {fileID: 0}
   fillParticles: {fileID: 4934158937165320177}
   ConeRingS: {fileID: 1590813585381073623, guid: b54314f21f6582241bbb110ca8f5f31e, type: 3}
   ConeRingM: {fileID: 6048627357956344459, guid: ce1ca313a53ddcd499dbecbca96530a0, type: 3}
@@ -6510,7 +6531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1475943509129265257
 RectTransform:
   m_ObjectHideFlags: 0

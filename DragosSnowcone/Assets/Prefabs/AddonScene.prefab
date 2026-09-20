@@ -461,7 +461,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 33
   m_MaskInteraction: 0
   m_Sprite: {fileID: 4844411057539764002, guid: 5432afd40ba09c54f9dabee434015d00, type: 3}
   m_Color: {r: 0, g: 0.72122526, b: 1, a: 1}
@@ -548,7 +548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c572decddd7374c44bdb16402ae5784e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GlitterPhys
-  targetParent: {fileID: 8871979425221815751}
+  startingPos: {x: 0, y: 0}
   glitterCount: 20
   isOriginal: 1
   key: 1
@@ -2086,7 +2086,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 33
   m_MaskInteraction: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 1}
@@ -2173,7 +2173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c572decddd7374c44bdb16402ae5784e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GlitterPhys
-  targetParent: {fileID: 8871979425221815751}
+  startingPos: {x: 0, y: 0}
   glitterCount: 20
   isOriginal: 1
   key: 7
@@ -2260,7 +2260,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 33
   m_MaskInteraction: 0
   m_Sprite: {fileID: 3927734772099509149, guid: bfe836d54f34d1844972fb18e486a9f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2347,7 +2347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c572decddd7374c44bdb16402ae5784e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GlitterPhys
-  targetParent: {fileID: 8871979425221815751}
+  startingPos: {x: 0, y: 0}
   glitterCount: 20
   isOriginal: 1
   key: 8
@@ -2733,7 +2733,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 33
   m_MaskInteraction: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2820,7 +2820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c572decddd7374c44bdb16402ae5784e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GlitterPhys
-  targetParent: {fileID: 8871979425221815751}
+  startingPos: {x: 0, y: 0}
   glitterCount: 20
   isOriginal: 1
   key: 4
@@ -5514,7 +5514,7 @@ PrefabInstance:
     - target: {fileID: 4296375384886934995, guid: 504e878dfeb80144bab0ba8ec0bd8ec7, type: 3}
       propertyPath: targetParent
       value: 
-      objectReference: {fileID: 8871979425221815751}
+      objectReference: {fileID: 2817053676681958933}
     - target: {fileID: 4339303155358981202, guid: 504e878dfeb80144bab0ba8ec0bd8ec7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.16574521
