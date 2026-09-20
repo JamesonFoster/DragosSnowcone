@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feca474a70ab3384e86876c61e298090, type: 3}
   m_Name: Crunchy
   m_EditorClassIdentifier: Assembly-CSharp::Order
-  orderLVL: 8
-  cupSize: 1
-  syrup1: 8
-  syrup2: 2
-  syrup3: 1
-  topping1: 8
-  topping2: 6
-  topping3: 4
+  orderLVL: 3
+  cupSize: 0
+  syrup1: 5
+  syrup2: 7
+  syrup3: 0
+  topping1: 4
+  topping2: 0
+  topping3: 0
   topping1Count: 3
-  topping2Count: 3
-  topping3Count: 3
+  topping2Count: 0
+  topping3Count: 0

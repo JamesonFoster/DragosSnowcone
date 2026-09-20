@@ -23,7 +23,7 @@ public class DaySystem : MonoBehaviour
         if (dayEnded)
             return;
 
-        if (GlobalPlayerVars.custToday <= 0)
+        if (GlobalPlayerVars.custToday == GlobalPlayerVars.totalCustToday)
         {
             EndDay();
         }

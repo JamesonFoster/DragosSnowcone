@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feca474a70ab3384e86876c61e298090, type: 3}
   m_Name: SugeryNice
   m_EditorClassIdentifier: Assembly-CSharp::Order
-  orderLVL: 0
+  orderLVL: 1
   cupSize: 0
   syrup1: 1
   syrup2: 0
@@ -20,6 +20,6 @@ MonoBehaviour:
   topping1: 1
   topping2: 0
   topping3: 0
-  topping1Count: 2
+  topping1Count: 1
   topping2Count: 0
   topping3Count: 0

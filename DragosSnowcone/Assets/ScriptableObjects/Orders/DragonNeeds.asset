@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feca474a70ab3384e86876c61e298090, type: 3}
   m_Name: DragonNeeds
   m_EditorClassIdentifier: Assembly-CSharp::Order
-  orderLVL: 0
+  orderLVL: 2
   cupSize: 0
-  syrup1: 2
-  syrup2: 8
-  syrup3: 4
-  topping1: 7
-  topping2: 2
-  topping3: 3
+  syrup1: 8
+  syrup2: 0
+  syrup3: 0
+  topping1: 3
+  topping2: 0
+  topping3: 0
   topping1Count: 2
-  topping2Count: 1
-  topping3Count: 2
+  topping2Count: 0
+  topping3Count: 0
