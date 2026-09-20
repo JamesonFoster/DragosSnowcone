@@ -264,6 +264,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2365735822143271012, guid: 0a0dc4240e8fefa4ea87112afa73f849, type: 3}
+      propertyPath: heatMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 147f1dc4a8a8ba7479c9f476d5a55870, type: 3}
     - target: {fileID: 5776243090113115912, guid: 0a0dc4240e8fefa4ea87112afa73f849, type: 3}
       propertyPath: m_Name
       value: FishinGame
