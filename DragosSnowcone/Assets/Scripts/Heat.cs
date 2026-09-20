@@ -1,10 +1,14 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(AudioSource))]
 public class Heat : MonoBehaviour
 {
     public GameObject losePanel;
+    public GameObject gameUI;
+
     private AudioSource audioSource;
     public AudioClip heatMusic;
 
@@ -23,6 +27,24 @@ public class Heat : MonoBehaviour
 
     void Update()
     {
+        if (Keyboard.current != null &&
+            Keyboard.current.fKey.wasPressedThisFrame &&
+            !hasLost)
+        {
+            GlobalPlayerVars.howHot += 500;
+
+            Debug.Log(
+                "F pressed. Heat is now: " +
+                GlobalPlayerVars.howHot
+            );
+
+            if (GlobalPlayerVars.howHot >= 100)
+            {
+                Lose();
+                return;
+            }
+        }
+
         if (hasLost)
             return;
 
@@ -53,15 +75,32 @@ public class Heat : MonoBehaviour
 
     void Lose()
     {
+        if (hasLost)
+            return;
+
         hasLost = true;
 
         CancelInvoke("IncreaseHeat");
 
+        if (gameUI != null)
+            gameUI.SetActive(false);
+
         if (losePanel != null)
-        {
             losePanel.SetActive(true);
-        }
 
         Debug.Log("PLAYER LOST - HEAT REACHED 100");
+    }
+
+    public void RestartMasterScene()
+    {
+        Time.timeScale = 1f;
+        GlobalPlayerVars.orderNmbr = 0;
+        SceneManager.LoadScene("MasterScene");
+    }
+
+    public void QuitGame()
+    {
+        Time.timeScale = 1f;
+        Application.Quit();
     }
 }
