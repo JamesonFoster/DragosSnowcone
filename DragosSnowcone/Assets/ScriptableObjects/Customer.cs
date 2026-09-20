@@ -17,4 +17,5 @@ public class Customer : ScriptableObject
     public float walkSprChangeSpeed = 1f;
     public List<Order> orders;
     public bool joyful;
+    public float talkSpeed = 0.75f;
 }

@@ -25,6 +25,8 @@ public class DioButton : MonoBehaviour
             {
                 if (hit.collider.gameObject == gameObject)
                 {
+                    GlobalPlayerVars.lookingAt = 5;
+                    GlobalPlayerVars.endTalk = false;
                     gameObject.SetActive(false);
                     dio.customer = custMove;
                     dio.StartDialog();

@@ -10,44 +10,53 @@ public class CustomerMovement : MonoBehaviour
     public GameObject targetMain1;
     public List<GameObject> orderLine; // line where they wait for the order
     public List<GameObject> waitLine; // line where they wait for the snowcone
-    public List<Order> orderRand = new List<Order>();
+    public List<Order> orderRand;// = new List<Order>();
     private GameObject currentTarg;
     public GameObject targetMain2;
     public float bob;
     public GameObject takeOrderButton;
     public int spawnWhen;
-
+    public Order backupOrder;
 
 
 
 
     private float itmer1;
     private SpriteRenderer sprrend;
-    private CustWaitSpot CWSStar1;
+    public CustWaitSpot CWSStar1;
     private CustWaitSpot CWSStar2;
     private CustWaitSpot CWS;
     private CustWaitSpot currCWS;
     private int currentWaitPos;
     private Vector2 startingPos;
     private int posBius;
+    private bool isCounting = false;
+    private float counting;
 
     void Awake()
     {
-        sprrend = GetComponent<SpriteRenderer>();
-        ShuffleList( customer.orders, orderRand);
+        
     }
 
     void Start()
     {
+        sprrend = GetComponent<SpriteRenderer>();
+        orderRand = new List<Order>(customer.orders);
+        //orderRand.Shuffle();
         CWSStar1 = targetMain1.GetComponent<CustWaitSpot>();
         CWSStar2 = targetMain2.GetComponent<CustWaitSpot>();
         startingPos = new Vector2(transform.position.x, transform.position.y);
         sprrend.sprite = customer.walkSpr1;
+        ShuffleList(orderRand);
         ChooseOrder();
     }
 
     void Update()
     {
+        if (isCounting)
+        {
+            counting += Time.deltaTime;
+        }
         if (mode == 0) // moving towards line spot
         {
             sprrend.sortingOrder = 50 + posBius + spawnWhen;
@@ -130,6 +139,7 @@ public class CustomerMovement : MonoBehaviour
         }
         if (mode == 3) // move back
         {
+            isCounting = true;
             sprrend.sortingOrder = 30 + posBius + spawnWhen;
             takeOrderButton.SetActive(false);
             sprrend.flipX = true;
@@ -257,20 +267,25 @@ public class CustomerMovement : MonoBehaviour
 
     public void ChooseOrder()
     {
-        for (int i = 0; i < orderRand.Count; i++)
+        List<Order> tempYes = orderRand;
+        for (int i = 0; i < tempYes.Count; i++)
         {
-        Order orderss = orderRand[i];
+        Order orderss = tempYes[i];
         if (orderss.orderLVL > GlobalPlayerVars.lvl)
         {
-            orderRand.RemoveAt(i);
+            tempYes.RemoveAt(i);
             order = null;
         }
         else
         {
             order = orderss;
-            orderRand.RemoveAt(i);
+            tempYes.RemoveAt(i);
             break;
         }
+        }
+        if (order == null)
+        {
+            order = backupOrder;
         }
     }
 
@@ -278,17 +293,18 @@ public class CustomerMovement : MonoBehaviour
     {
         mode = modeNum;
     }
-
-    public void ShuffleList(List<Order> list, List<Order> listTarg)
+    public void ShuffleList(List<Order> list)
     {
         List<Order> temp = new List<Order>();
+        List<Order> temp2 = new List<Order>();
         temp.AddRange(list);
 
         for (int i = 0; i < list.Count; i++)
         {
             int index = Random.Range(0, temp.Count - 1);
-            listTarg.Add(temp[index]);
+            temp2.Add(temp[index]);
             temp.RemoveAt(index);
         }
+        list = temp2;
     }
 }
