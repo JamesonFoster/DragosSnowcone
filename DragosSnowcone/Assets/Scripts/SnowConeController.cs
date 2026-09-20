@@ -43,6 +43,7 @@ public class SnowConeController : MonoBehaviour
     public float glitterScore;
     public float singleScore;
     public float syrupScore;
+    public JudgingControl JC;
 
     private int topping1Times;
     private int topping2Times;
@@ -114,6 +115,11 @@ public class SnowConeController : MonoBehaviour
                 SS.GoToPosition(5);
                 GlobalPlayerVars.endTalk = true;
                 transform.position = stage6Target;
+                CalcSyrupScore();
+                CalculateFinalScore();
+                JC.GiveScore(2,score);
+                JC.GiveScore(3,syrupScore);
+                JC.GiveScore(4,toppingScore);
                 stage = 6;
             }
         }
