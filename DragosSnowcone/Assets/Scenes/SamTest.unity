@@ -467,6 +467,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8227634389747819461, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
   m_PrefabInstance: {fileID: 386064105782324780}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1946738030 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3167380328973772953, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+  m_PrefabInstance: {fileID: 386064105782324780}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 428330502b684a841a76f0e6f7bce889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
 --- !u!4 &2074430884 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 843870047892436032, guid: b67695e180bea094a8ae4fa8c31ad6c5, type: 3}
@@ -523,6 +534,22 @@ PrefabInstance:
     - target: {fileID: 8227634389747819461, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8956532411518319655, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1946738030}
+    - target: {fileID: 8956532411518319655, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8956532411518319655, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8956532411518319655, guid: 8c88fdd29a36c0f4983219189cfd9308, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
