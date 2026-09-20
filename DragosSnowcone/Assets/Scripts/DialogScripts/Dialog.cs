@@ -50,607 +50,297 @@ public class Dialog : MonoBehaviour
     }
     public void NextImg(Order order)
     {
-        if (order.orderLVL == 1)
+        
+        if (waitForImg == false && imgCount == 1)
         {
-            if (waitForImg == false && imgCount == 1)
+            switch (order.cupSize)
             {
-                switch (order.cupSize)
-                {
-                    case Order.CupSize.small:
-                        imgManager.cupImg.enabled = true;
-                        imgManager.cupImg.sprite = imgManager.smallCup;
-                        imgManager.SpeechImg.sprite = imgManager.smallCup;
-                        break;
+                case Order.CupSize.small:
+                    imgManager.cupImg.enabled = true;
+                    imgManager.cupImg.sprite = imgManager.smallCup;
+                    imgManager.SpeechImg.sprite = imgManager.smallCup;
+                    break;
 
-                    case Order.CupSize.medium:
-                        imgManager.cupImg.enabled = true;
-                        imgManager.cupImg.sprite = imgManager.mediumCup;
-                        imgManager.SpeechImg.sprite = imgManager.mediumCup;
-                        break;
+                case Order.CupSize.medium:
+                    imgManager.cupImg.enabled = true;
+                    imgManager.cupImg.sprite = imgManager.mediumCup;
+                    imgManager.SpeechImg.sprite = imgManager.mediumCup;
+                    break;
 
-                    case Order.CupSize.large:
-                        imgManager.cupImg.enabled = true;
-                        imgManager.cupImg.sprite = imgManager.largeCup;
-                        imgManager.SpeechImg.sprite = imgManager.largeCup;
-                        break;
-                }
-            }
-
-            if (waitForImg == false && imgCount == 2)
-            {
-                switch (order.syrup1)
-                {
-                    case Order.syrup.none:
-                        break;
-
-                    case Order.syrup.s1:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup1;
-                        imgManager.SpeechImg.sprite = imgManager.syrup1;
-                        break;
-
-                    case Order.syrup.s2:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup2;
-                        imgManager.SpeechImg.sprite = imgManager.syrup2;
-                        break;
-
-                    case Order.syrup.s3:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup3;
-                        imgManager.SpeechImg.sprite = imgManager.syrup3;
-                        break;
-                    case Order.syrup.s4:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s5:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s6:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s7:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s8:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                }
-            }
-
-            if (waitForImg == false && imgCount == 3)
-            {
-                switch (order.topping1)
-                {
-                    case Order.topping.none:
-                        break;
-
-                    case Order.topping.princesPuree:
-                        imgManager.toppingImg1.enabled = true;
-                        imgManager.toppingImg1.sprite = imgManager.topping;
-                        imgManager.SpeechImg.sprite = imgManager.topping;
-                        imgManager.toppingTxt1.text = "" + order.topping1Count;
-                        break;
-
-                    case Order.topping.gummyWiz:
-                        imgManager.toppingImg1.enabled = true;
-                        imgManager.toppingImg1.sprite = imgManager.topping2;
-                        imgManager.SpeechImg.sprite = imgManager.topping2;
-                        imgManager.toppingTxt1.text = "" + order.topping1Count;
-                        break;
-
-                    case Order.topping.nuts:
-                        imgManager.toppingImg1.enabled = true;
-                        imgManager.toppingImg1.sprite = imgManager.topping3;
-                        imgManager.SpeechImg.sprite = imgManager.topping3;
-                        imgManager.toppingTxt1.text = "" + order.topping1Count;
-                        break;
-                }
-            }
-            if (imgCount < 4)
-                StartCoroutine(Wait1Sec(order));
-            else
-            {
-                EndDialog();
-                Debug.Log("Ending dialog");
-                imgCount = 1;
+                case Order.CupSize.large:
+                    imgManager.cupImg.enabled = true;
+                    imgManager.cupImg.sprite = imgManager.largeCup;
+                    imgManager.SpeechImg.sprite = imgManager.largeCup;
+                    break;
             }
         }
 
-        if (order.orderLVL == 2)
+        if (waitForImg == false && imgCount == 2)
         {
-           if (waitForImg == false && imgCount == 1)
+            switch (order.syrup1)
             {
-                switch (order.cupSize)
-                {
-                    case Order.CupSize.small:
-                        imgManager.cupImg.enabled = true;
-                        imgManager.cupImg.sprite = imgManager.smallCup;
-                        imgManager.SpeechImg.sprite = imgManager.smallCup;
-                        break;
+                case Order.syrup.none:
+                    imgCount++;
+                    NextImg(order);
+                    break;
 
-                    case Order.CupSize.medium:
-                        imgManager.cupImg.enabled = true;
-                        imgManager.cupImg.sprite = imgManager.mediumCup;
-                        imgManager.SpeechImg.sprite = imgManager.mediumCup;
-                        break;
+                case Order.syrup.s1:
+                    imgManager.syrupImg1.enabled = true;
+                    imgManager.syrupImg1.sprite = imgManager.syrup1;
+                    imgManager.SpeechImg.sprite = imgManager.syrup1;
+                    break;
 
-                    case Order.CupSize.large:
-                        imgManager.cupImg.enabled = true;
-                        imgManager.cupImg.sprite = imgManager.largeCup;
-                        imgManager.SpeechImg.sprite = imgManager.largeCup;
-                        break;
-                }
+                case Order.syrup.s2:
+                    imgManager.syrupImg1.enabled = true;
+                    imgManager.syrupImg1.sprite = imgManager.syrup2;
+                    imgManager.SpeechImg.sprite = imgManager.syrup2;
+                    break;
+
+                case Order.syrup.s3:
+                    imgManager.syrupImg1.enabled = true;
+                    imgManager.syrupImg1.sprite = imgManager.syrup3;
+                    imgManager.SpeechImg.sprite = imgManager.syrup3;
+                    break;
+                case Order.syrup.s4:
+                    imgManager.syrupImg1.enabled = true;
+                    imgManager.syrupImg1.sprite = imgManager.syrup4;
+                    imgManager.SpeechImg.sprite = imgManager.syrup4;
+                    break;
+                case Order.syrup.s5:
+                    imgManager.syrupImg1.enabled = true;
+                    imgManager.syrupImg1.sprite = imgManager.syrup4;
+                    imgManager.SpeechImg.sprite = imgManager.syrup4;
+                    break;
+                case Order.syrup.s6:
+                    imgManager.syrupImg1.enabled = true;
+                    imgManager.syrupImg1.sprite = imgManager.syrup4;
+                    imgManager.SpeechImg.sprite = imgManager.syrup4;
+                    break;
+                case Order.syrup.s7:
+                    imgManager.syrupImg1.enabled = true;
+                    imgManager.syrupImg1.sprite = imgManager.syrup4;
+                    imgManager.SpeechImg.sprite = imgManager.syrup4;
+                    break;
+                case Order.syrup.s8:
+                    imgManager.syrupImg1.enabled = true;
+                    imgManager.syrupImg1.sprite = imgManager.syrup4;
+                    imgManager.SpeechImg.sprite = imgManager.syrup4;
+                    break;
             }
-            
-
-            if (waitForImg == false && imgCount == 2)
-            {
-                switch (order.syrup1)
-                {
-                    case Order.syrup.none:
-                        break;
-
-                    case Order.syrup.s1:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup1;
-                        imgManager.SpeechImg.sprite = imgManager.syrup1;
-                        break;
-
-                    case Order.syrup.s2:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup2;
-                        imgManager.SpeechImg.sprite = imgManager.syrup2;
-                        break;
-
-                    case Order.syrup.s3:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup3;
-                        imgManager.SpeechImg.sprite = imgManager.syrup3;
-                        break;
-                    case Order.syrup.s4:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s5:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s6:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s7:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s8:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                }
-            }
-            
-
-            if (waitForImg == false && imgCount == 2)
-            {
-                switch (order.syrup2)
-                {
-                    case Order.syrup.none:
-                        break;
-
-                    case Order.syrup.s1:
-                        imgManager.syrupImg2.enabled = true;
-                        imgManager.syrupImg2.sprite = imgManager.syrup1;
-                        imgManager.SpeechImg.sprite = imgManager.syrup1;
-                        break;
-
-                    case Order.syrup.s2:
-                        imgManager.syrupImg2.enabled = true;
-                        imgManager.syrupImg2.sprite = imgManager.syrup2;
-                        imgManager.SpeechImg.sprite = imgManager.syrup2;
-                        break;
-
-                    case Order.syrup.s3:
-                        imgManager.syrupImg2.enabled = true;
-                        imgManager.syrupImg2.sprite = imgManager.syrup3;
-                        imgManager.SpeechImg.sprite = imgManager.syrup3;
-                        break;
-                    case Order.syrup.s4:
-                        imgManager.syrupImg2.enabled = true;
-                        imgManager.syrupImg2.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s5:
-                        imgManager.syrupImg2.enabled = true;
-                        imgManager.syrupImg2.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s6:
-                        imgManager.syrupImg2.enabled = true;
-                        imgManager.syrupImg2.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s7:
-                        imgManager.syrupImg2.enabled = true;
-                        imgManager.syrupImg2.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s8:
-                        imgManager.syrupImg2.enabled = true;
-                        imgManager.syrupImg2.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                }
-            }
-
-
-            if (waitForImg == false && imgCount == 4)
-            {
-                switch (order.topping1)
-                {
-                    case Order.topping.none:
-                        break;
-
-                    case Order.topping.princesPuree:
-                        imgManager.toppingImg1.enabled = true;
-                        imgManager.toppingImg1.sprite = imgManager.topping;
-                        imgManager.SpeechImg.sprite = imgManager.topping;
-                        imgManager.toppingTxt1.text = "" + order.topping1Count;
-                        break;
-
-                    case Order.topping.gummyWiz:
-                        imgManager.toppingImg1.enabled = true;
-                        imgManager.toppingImg1.sprite = imgManager.topping2;
-                        imgManager.SpeechImg.sprite = imgManager.topping2;
-                        imgManager.toppingTxt1.text = "" + order.topping1Count;
-                        break;
-
-                    case Order.topping.nuts:
-                        imgManager.toppingImg1.enabled = true;
-                        imgManager.toppingImg1.sprite = imgManager.topping3;
-                        imgManager.SpeechImg.sprite = imgManager.topping3;
-                        imgManager.toppingTxt1.text = "" + order.topping1Count;
-                        break;
-                }
-            }
-
-
-            if (waitForImg == false && imgCount == 5)
-            {
-                switch (order.topping2)
-                {
-                    case Order.topping.none:
-                        break;
-
-                    case Order.topping.princesPuree:
-                        imgManager.toppingImg2.enabled = true;
-                        imgManager.toppingImg2.sprite = imgManager.topping;
-                        imgManager.SpeechImg.sprite = imgManager.topping;
-                        imgManager.toppingTxt2.text = "" + order.topping2Count;
-                        break;
-
-                    case Order.topping.gummyWiz:
-                        imgManager.toppingImg2.enabled = true;
-                        imgManager.toppingImg2.sprite = imgManager.topping2;
-                        imgManager.SpeechImg.sprite = imgManager.topping2;
-                        imgManager.toppingTxt2.text = "" + order.topping2Count;
-                        break;
-
-                    case Order.topping.nuts:
-                        imgManager.toppingImg2.enabled = true;
-                        imgManager.toppingImg2.sprite = imgManager.topping3;
-                        imgManager.SpeechImg.sprite = imgManager.topping3;
-                        imgManager.toppingTxt2.text = "" + order.topping2Count;
-                        break;
-                }
-            }
-            if (imgCount < 6)
-                StartCoroutine(Wait1Sec(order));
-            else
-            {
-                EndDialog();
-                Debug.Log("Ending dialog");
-                imgCount = 1;
-            }
-
         }
 
-        if (order.orderLVL == 3 )
+        if (waitForImg == false && imgCount == 3)
         {
-            if (waitForImg == false && imgCount == 1)
+            switch (order.syrup2)
             {
-                switch (order.cupSize)
-                {
-                    case Order.CupSize.small:
-                        imgManager.cupImg.enabled = true;
-                        imgManager.cupImg.sprite = imgManager.smallCup;
-                        imgManager.SpeechImg.sprite = imgManager.smallCup;
-                        break;
+                case Order.syrup.none:
+                    imgCount++;
+                    NextImg(order);
+                    break;
 
-                    case Order.CupSize.medium:
-                        imgManager.cupImg.enabled = true;
-                        imgManager.cupImg.sprite = imgManager.mediumCup;
-                        imgManager.SpeechImg.sprite = imgManager.mediumCup;
-                        break;
+                case Order.syrup.s1:
+                    imgManager.syrupImg2.enabled = true;
+                    imgManager.syrupImg2.sprite = imgManager.syrup1;
+                    imgManager.SpeechImg.sprite = imgManager.syrup1;
+                    break;
 
-                    case Order.CupSize.large:
-                        imgManager.cupImg.enabled = true;
-                        imgManager.cupImg.sprite = imgManager.largeCup;
-                        imgManager.SpeechImg.sprite = imgManager.largeCup;
-                        break;
-                }
-            }
+                case Order.syrup.s2:
+                    imgManager.syrupImg2.enabled = true;
+                    imgManager.syrupImg2.sprite = imgManager.syrup2;
+                    imgManager.SpeechImg.sprite = imgManager.syrup2;
+                    break;
 
-            if (waitForImg == false && imgCount == 2)
-            {
-                switch (order.syrup1)
-                {
-                    case Order.syrup.none:
-                        break;
-
-                    case Order.syrup.s1:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup1;
-                        imgManager.SpeechImg.sprite = imgManager.syrup1;
-                        break;
-
-                    case Order.syrup.s2:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup2;
-                        imgManager.SpeechImg.sprite = imgManager.syrup2;
-                        break;
-
-                    case Order.syrup.s3:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup3;
-                        imgManager.SpeechImg.sprite = imgManager.syrup3;
-                        break;
-                    case Order.syrup.s4:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s5:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s6:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s7:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s8:
-                        imgManager.syrupImg1.enabled = true;
-                        imgManager.syrupImg1.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                }
-            }
-
-            if (waitForImg == false && imgCount == 3)
-            {
-                switch (order.syrup2)
-                {
-                    case Order.syrup.none:
-                        break;
-
-                    case Order.syrup.s1:
-                        imgManager.syrupImg2.enabled = true;
-                        imgManager.syrupImg2.sprite = imgManager.syrup1;
-                        imgManager.SpeechImg.sprite = imgManager.syrup1;
-                        break;
-
-                    case Order.syrup.s2:
-                        imgManager.syrupImg2.enabled = true;
-                        imgManager.syrupImg2.sprite = imgManager.syrup2;
-                        imgManager.SpeechImg.sprite = imgManager.syrup2;
-                        break;
-
-                    case Order.syrup.s3:
-                        imgManager.syrupImg2.enabled = true;
-                        imgManager.syrupImg2.sprite = imgManager.syrup3;
-                        imgManager.SpeechImg.sprite = imgManager.syrup3;
-                        break;
-                    case Order.syrup.s4:
-                        imgManager.syrupImg2.enabled = true;
-                        imgManager.syrupImg2.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s5:
-                        imgManager.syrupImg2.enabled = true;
-                        imgManager.syrupImg2.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s6:
-                        imgManager.syrupImg2.enabled = true;
-                        imgManager.syrupImg2.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s7:
-                        imgManager.syrupImg2.enabled = true;
-                        imgManager.syrupImg2.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s8:
-                        imgManager.syrupImg2.enabled = true;
-                        imgManager.syrupImg2.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                }
-            }
-
-            if (waitForImg == false && imgCount == 4)
-            {
-                switch (order.syrup3)
-                {
-                    case Order.syrup.none:
-                        break;
-
-                    case Order.syrup.s1:
-                        imgManager.syrupImg3.enabled = true;
-                        imgManager.syrupImg3.sprite = imgManager.syrup1;
-                        imgManager.SpeechImg.sprite = imgManager.syrup1;
-                        break;
-
-                    case Order.syrup.s2:
-                        imgManager.syrupImg3.enabled = true;
-                        imgManager.syrupImg3.sprite = imgManager.syrup2;
-                        imgManager.SpeechImg.sprite = imgManager.syrup2;
-                        break;
-
-                    case Order.syrup.s3:
-                        imgManager.syrupImg3.enabled = true;
-                        imgManager.syrupImg3.sprite = imgManager.syrup3;
-                        imgManager.SpeechImg.sprite = imgManager.syrup3;
-                        break;
-                    case Order.syrup.s4:
-                        imgManager.syrupImg3.enabled = true;
-                        imgManager.syrupImg3.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s5:
-                        imgManager.syrupImg3.enabled = true;
-                        imgManager.syrupImg3.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s6:
-                        imgManager.syrupImg3.enabled = true;
-                        imgManager.syrupImg3.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s7:
-                        imgManager.syrupImg3.enabled = true;
-                        imgManager.syrupImg3.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                    case Order.syrup.s8:
-                        imgManager.syrupImg3.enabled = true;
-                        imgManager.syrupImg3.sprite = imgManager.syrup4;
-                        imgManager.SpeechImg.sprite = imgManager.syrup4;
-                        break;
-                }
-            }
-
-            if (waitForImg == false && imgCount == 5)
-            {
-                switch (order.topping1)
-                {
-                    case Order.topping.none:
-                        break;
-
-                    case Order.topping.princesPuree:
-                        imgManager.toppingImg1.enabled = true;
-                        imgManager.toppingImg1.sprite = imgManager.topping;
-                        imgManager.SpeechImg.sprite = imgManager.topping;
-                        imgManager.toppingTxt1.text = "" + order.topping1Count;
-                        break;
-
-                    case Order.topping.gummyWiz:
-                        imgManager.toppingImg1.enabled = true;
-                        imgManager.toppingImg1.sprite = imgManager.topping2;
-                        imgManager.SpeechImg.sprite = imgManager.topping2;
-                        imgManager.toppingTxt1.text = "" + order.topping1Count;
-                        break;
-
-                    case Order.topping.nuts:
-                        imgManager.toppingImg1.enabled = true;
-                        imgManager.toppingImg1.sprite = imgManager.topping3;
-                        imgManager.SpeechImg.sprite = imgManager.topping3;
-                        imgManager.toppingTxt1.text = "" + order.topping1Count;
-                        break;
-                }
-            }
-
-            if (waitForImg == false && imgCount == 6)
-            {
-                switch (order.topping2)
-                {
-                    case Order.topping.none:
-                        break;
-
-                    case Order.topping.princesPuree:
-                        imgManager.toppingImg2.enabled = true;
-                        imgManager.toppingImg2.sprite = imgManager.topping;
-                        imgManager.SpeechImg.sprite = imgManager.topping;
-                        imgManager.toppingTxt2.text = "" + order.topping2Count;
-                        break;
-
-                    case Order.topping.gummyWiz:
-                        imgManager.toppingImg2.enabled = true;
-                        imgManager.toppingImg2.sprite = imgManager.topping2;
-                        imgManager.SpeechImg.sprite = imgManager.topping2;
-                        imgManager.toppingTxt2.text = "" + order.topping2Count;
-                        break;
-
-                    case Order.topping.nuts:
-                        imgManager.toppingImg2.enabled = true;
-                        imgManager.toppingImg2.sprite = imgManager.topping3;
-                        imgManager.SpeechImg.sprite = imgManager.topping3;
-                        imgManager.toppingTxt2.text = "" + order.topping2Count;
-                        break;
-                }
-            }
-
-            if (waitForImg == false && imgCount == 7)
-            {
-                switch (order.topping3)
-                {
-                    case Order.topping.none:
-                        break;
-
-                    case Order.topping.princesPuree:
-                        imgManager.toppingImg3.enabled = true;
-                        imgManager.toppingImg3.sprite = imgManager.topping;
-                        imgManager.SpeechImg.sprite = imgManager.topping;
-                        imgManager.toppingTxt3.text = "" + order.topping3Count;
-                        break;
-
-                    case Order.topping.gummyWiz:
-                        imgManager.toppingImg3.enabled = true;
-                        imgManager.toppingImg3.sprite = imgManager.topping2;
-                        imgManager.SpeechImg.sprite = imgManager.topping2;
-                        imgManager.toppingTxt3.text = "" + order.topping3Count;
-                        break;
-
-                    case Order.topping.nuts:
-                        imgManager.toppingImg3.enabled = true;
-                        imgManager.toppingImg3.sprite = imgManager.topping3;
-                        imgManager.SpeechImg.sprite = imgManager.topping3;
-                        imgManager.toppingTxt3.text = "" + order.topping3Count;
-                        break;
-                }
-            }
-            if (imgCount < 8)
-                StartCoroutine(Wait1Sec(order));
-            else
-            {
-                EndDialog();
-                Debug.Log("Ending dialog");
-                imgCount = 1;
+                case Order.syrup.s3:
+                    imgManager.syrupImg2.enabled = true;
+                    imgManager.syrupImg2.sprite = imgManager.syrup3;
+                    imgManager.SpeechImg.sprite = imgManager.syrup3;
+                    break;
+                case Order.syrup.s4:
+                    imgManager.syrupImg2.enabled = true;
+                    imgManager.syrupImg2.sprite = imgManager.syrup4;
+                    imgManager.SpeechImg.sprite = imgManager.syrup4;
+                    break;
+                case Order.syrup.s5:
+                    imgManager.syrupImg2.enabled = true;
+                    imgManager.syrupImg2.sprite = imgManager.syrup4;
+                    imgManager.SpeechImg.sprite = imgManager.syrup4;
+                    break;
+                case Order.syrup.s6:
+                    imgManager.syrupImg2.enabled = true;
+                    imgManager.syrupImg2.sprite = imgManager.syrup4;
+                    imgManager.SpeechImg.sprite = imgManager.syrup4;
+                    break;
+                case Order.syrup.s7:
+                    imgManager.syrupImg2.enabled = true;
+                    imgManager.syrupImg2.sprite = imgManager.syrup4;
+                    imgManager.SpeechImg.sprite = imgManager.syrup4;
+                    break;
+                case Order.syrup.s8:
+                    imgManager.syrupImg2.enabled = true;
+                    imgManager.syrupImg2.sprite = imgManager.syrup4;
+                    imgManager.SpeechImg.sprite = imgManager.syrup4;
+                    break;
             }
         }
+
+        if (waitForImg == false && imgCount == 4)
+        {
+            switch (order.syrup3)
+            {
+                case Order.syrup.none:
+                    imgCount++;
+                    NextImg(order);
+                    break;
+
+                case Order.syrup.s1:
+                    imgManager.syrupImg3.enabled = true;
+                    imgManager.syrupImg3.sprite = imgManager.syrup1;
+                    imgManager.SpeechImg.sprite = imgManager.syrup1;
+                    break;
+
+                case Order.syrup.s2:
+                    imgManager.syrupImg3.enabled = true;
+                    imgManager.syrupImg3.sprite = imgManager.syrup2;
+                    imgManager.SpeechImg.sprite = imgManager.syrup2;
+                    break;
+
+                case Order.syrup.s3:
+                    imgManager.syrupImg3.enabled = true;
+                    imgManager.syrupImg3.sprite = imgManager.syrup3;
+                    imgManager.SpeechImg.sprite = imgManager.syrup3;
+                    break;
+                case Order.syrup.s4:
+                    imgManager.syrupImg3.enabled = true;
+                    imgManager.syrupImg3.sprite = imgManager.syrup4;
+                    imgManager.SpeechImg.sprite = imgManager.syrup4;
+                    break;
+                case Order.syrup.s5:
+                    imgManager.syrupImg3.enabled = true;
+                    imgManager.syrupImg3.sprite = imgManager.syrup4;
+                    imgManager.SpeechImg.sprite = imgManager.syrup4;
+                    break;
+                case Order.syrup.s6:
+                    imgManager.syrupImg3.enabled = true;
+                    imgManager.syrupImg3.sprite = imgManager.syrup4;
+                    imgManager.SpeechImg.sprite = imgManager.syrup4;
+                    break;
+                case Order.syrup.s7:
+                    imgManager.syrupImg3.enabled = true;
+                    imgManager.syrupImg3.sprite = imgManager.syrup4;
+                    imgManager.SpeechImg.sprite = imgManager.syrup4;
+                    break;
+                case Order.syrup.s8:
+                    imgManager.syrupImg3.enabled = true;
+                    imgManager.syrupImg3.sprite = imgManager.syrup4;
+                    imgManager.SpeechImg.sprite = imgManager.syrup4;
+                    break;
+            }
+        }
+
+        if (waitForImg == false && imgCount == 5)
+        {
+            switch (order.topping1)
+            {
+                case Order.topping.none:
+                    imgCount++;
+                    NextImg(order);
+                    break;
+
+                case Order.topping.princesPuree:
+                    imgManager.toppingImg1.enabled = true;
+                    imgManager.toppingImg1.sprite = imgManager.topping;
+                    imgManager.SpeechImg.sprite = imgManager.topping;
+                    imgManager.toppingTxt1.text = "" + order.topping1Count;
+                    break;
+
+                case Order.topping.gummyWiz:
+                    imgManager.toppingImg1.enabled = true;
+                    imgManager.toppingImg1.sprite = imgManager.topping2;
+                    imgManager.SpeechImg.sprite = imgManager.topping2;
+                    imgManager.toppingTxt1.text = "" + order.topping1Count;
+                    break;
+
+                case Order.topping.nuts:
+                    imgManager.toppingImg1.enabled = true;
+                    imgManager.toppingImg1.sprite = imgManager.topping3;
+                    imgManager.SpeechImg.sprite = imgManager.topping3;
+                    imgManager.toppingTxt1.text = "" + order.topping1Count;
+                    break;
+            }
+        }
+
+        if (waitForImg == false && imgCount == 6)
+        {
+            switch (order.topping2)
+            {
+                case Order.topping.none:
+                    imgCount++;
+                    NextImg(order);
+                    break;
+
+                case Order.topping.princesPuree:
+                    imgManager.toppingImg2.enabled = true;
+                    imgManager.toppingImg2.sprite = imgManager.topping;
+                    imgManager.SpeechImg.sprite = imgManager.topping;
+                    imgManager.toppingTxt2.text = "" + order.topping2Count;
+                    break;
+
+                case Order.topping.gummyWiz:
+                    imgManager.toppingImg2.enabled = true;
+                    imgManager.toppingImg2.sprite = imgManager.topping2;
+                    imgManager.SpeechImg.sprite = imgManager.topping2;
+                    imgManager.toppingTxt2.text = "" + order.topping2Count;
+                    break;
+
+                case Order.topping.nuts:
+                    imgManager.toppingImg2.enabled = true;
+                    imgManager.toppingImg2.sprite = imgManager.topping3;
+                    imgManager.SpeechImg.sprite = imgManager.topping3;
+                    imgManager.toppingTxt2.text = "" + order.topping2Count;
+                    break;
+            }
+        }
+
+        if (waitForImg == false && imgCount == 7)
+        {
+            switch (order.topping3)
+            {
+                case Order.topping.none:
+                    imgCount++;
+                    NextImg(order);
+                    break;
+
+                case Order.topping.princesPuree:
+                    imgManager.toppingImg3.enabled = true;
+                    imgManager.toppingImg3.sprite = imgManager.topping;
+                    imgManager.SpeechImg.sprite = imgManager.topping;
+                    imgManager.toppingTxt3.text = "" + order.topping3Count;
+                    break;
+
+                case Order.topping.gummyWiz:
+                    imgManager.toppingImg3.enabled = true;
+                    imgManager.toppingImg3.sprite = imgManager.topping2;
+                    imgManager.SpeechImg.sprite = imgManager.topping2;
+                    imgManager.toppingTxt3.text = "" + order.topping3Count;
+                    break;
+
+                case Order.topping.nuts:
+                    imgManager.toppingImg3.enabled = true;
+                    imgManager.toppingImg3.sprite = imgManager.topping3;
+                    imgManager.SpeechImg.sprite = imgManager.topping3;
+                    imgManager.toppingTxt3.text = "" + order.topping3Count;
+                    break;
+            }
+        }
+        if (imgCount < 8)
+            StartCoroutine(Wait1Sec(order));
+        else
+        {
+            EndDialog();
+            Debug.Log("Ending dialog");
+            imgCount = 1;
+        }
+        
         
 
     }

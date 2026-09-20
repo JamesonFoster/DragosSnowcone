@@ -14,7 +14,7 @@ public class SnowBallMiniGame : MonoBehaviour
     public Transform targetSpawnPoint;
 
     [Header("Controller")]
-    public MonoBehaviour snowConeController;
+    public SnowConeController snowConeController;
 
     [Header("Growth")]
     public float growthSpeed = 2f;
@@ -262,6 +262,7 @@ public class SnowBallMiniGame : MonoBehaviour
         coneFill.SetParent(currentSnowCone.transform, true);
 
         snowConeSaved = true;
+        snowConeController.stageChange();
 
         SendStatsToController();
 

@@ -12826,7 +12826,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.02, y: -4.23, z: 0}
-  m_LocalScale: {x: 9.6797, y: 9.6797, z: 9.6797}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4850344828024039124}
@@ -12912,6 +12912,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnowConeController
   order: {fileID: 0}
+  stage: 0
+  moveingSpeed: 20
+  stage1Target: {x: 18.28, y: -68.18037}
+  stage2Target: {x: 0, y: -104.9}
+  stage3Target: {x: 18.28, y: -104.9}
+  stage4Target: {x: 0, y: -143.66}
+  stage5Target: {x: 18.28, y: -143.66}
+  stage6Target: {x: -5.65, y: -33.26}
   colCount1: 0
   colCount2: 0
   colCount3: 0
@@ -12920,6 +12928,9 @@ MonoBehaviour:
   colCount6: 0
   colCount7: 0
   colCount8: 0
+  finalScale: 0
+  cupSize: 
+  score: 0
 --- !u!1 &8328149743770588265
 GameObject:
   m_ObjectHideFlags: 0

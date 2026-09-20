@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: 5432afd40ba09c54f9dabee434015d00
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2593840846792713971
+    second: SC_toppings_GummyWizard_0
+  - first:
+      213: -4991830013898051703
+    second: SC_toppings_GummyWizard_1
+  - first:
+      213: 5084044210021835302
+    second: SC_toppings_GummyWizard_2
+  - first:
+      213: 3643409587911182864
+    second: SC_toppings_GummyWizard_3
+  - first:
+      213: 3371293594851519588
+    second: SC_toppings_GummyWizard_4
+  - first:
+      213: 1913227194987584402
+    second: SC_toppings_GummyWizard_5
+  - first:
+      213: 4844411057539764002
+    second: SC_toppings_GummyWizard_6
+  - first:
+      213: 1021911092241236154
+    second: SC_toppings_GummyWizard_7
+  - first:
+      213: 2912863778140182954
+    second: SC_toppings_GummyWizard_8
+  - first:
+      213: -7502414762563241015
+    second: SC_toppings_GummyWizard_9
+  - first:
+      213: -3778669809729815869
+    second: SC_toppings_GummyWizard_10
+  - first:
+      213: 3989402086506701228
+    second: SC_toppings_GummyWizard_11
+  - first:
+      213: 6181497533838763442
+    second: SC_toppings_GummyWizard_12
+  - first:
+      213: 1746628251193770362
+    second: SC_toppings_GummyWizard_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SC_toppings_GummyWizard_0
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 918
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f66af4e18c2ff320800000000000000
+      internalID: 2593840846792713971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SC_toppings_GummyWizard_1
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 924
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98f297adc0579bab0800000000000000
+      internalID: -4991830013898051703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SC_toppings_GummyWizard_2
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 916
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 622abb8c5472e8640800000000000000
+      internalID: 5084044210021835302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SC_toppings_GummyWizard_3
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 0
+        width: 810
+        height: 915
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01ac2b277bdff8230800000000000000
+      internalID: 3643409587911182864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SC_toppings_GummyWizard_4
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 913
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46caca2a9ad39ce20800000000000000
+      internalID: 3371293594851519588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SC_toppings_GummyWizard_5
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 910
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29b1ad34ff52d8a10800000000000000
+      internalID: 1913227194987584402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SC_toppings_GummyWizard_6
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 158
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22fc1a6a03eca3340800000000000000
+      internalID: 4844411057539764002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SC_toppings_GummyWizard_7
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 134
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab0021d59be8e2e00800000000000000
+      internalID: 1021911092241236154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SC_toppings_GummyWizard_8
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 114
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa9d5275c229c6820800000000000000
+      internalID: 2912863778140182954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SC_toppings_GummyWizard_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 100
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cb75cfd58112e790800000000000000
+      internalID: -7502414762563241015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SC_toppings_GummyWizard_10
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 100
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cabf8b04d77f8bc0800000000000000
+      internalID: -3778669809729815869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SC_toppings_GummyWizard_11
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 87
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca12f689f043d5730800000000000000
+      internalID: 3989402086506701228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SC_toppings_GummyWizard_12
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 59
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b5a96c814719c550800000000000000
+      internalID: 6181497533838763442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SC_toppings_GummyWizard_13
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 0
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a710113f3254d3810800000000000000
+      internalID: 1746628251193770362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SC_toppings_GummyWizard_0: 2593840846792713971
+      SC_toppings_GummyWizard_1: -4991830013898051703
+      SC_toppings_GummyWizard_10: -3778669809729815869
+      SC_toppings_GummyWizard_11: 3989402086506701228
+      SC_toppings_GummyWizard_12: 6181497533838763442
+      SC_toppings_GummyWizard_13: 1746628251193770362
+      SC_toppings_GummyWizard_2: 5084044210021835302
+      SC_toppings_GummyWizard_3: 3643409587911182864
+      SC_toppings_GummyWizard_4: 3371293594851519588
+      SC_toppings_GummyWizard_5: 1913227194987584402
+      SC_toppings_GummyWizard_6: 4844411057539764002
+      SC_toppings_GummyWizard_7: 1021911092241236154
+      SC_toppings_GummyWizard_8: 2912863778140182954
+      SC_toppings_GummyWizard_9: -7502414762563241015
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

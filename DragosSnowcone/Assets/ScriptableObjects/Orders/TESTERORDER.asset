@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feca474a70ab3384e86876c61e298090, type: 3}
   m_Name: TESTERORDER
   m_EditorClassIdentifier: Assembly-CSharp::Order
-  orderLVL: 3
+  orderLVL: 1
   cupSize: 2
   syrup1: 6
   syrup2: 2
