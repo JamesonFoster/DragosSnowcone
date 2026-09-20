@@ -13,6 +13,7 @@ public class SnowConeController : MonoBehaviour
     public Vector2 stage4Target = new Vector2();
     public Vector2 stage5Target = new Vector2();
     public Vector2 stage6Target = new Vector2();
+    public StationSwitch SS;
 
     [Header("Color Counters")]
     public int colCount1;
@@ -62,6 +63,9 @@ public class SnowConeController : MonoBehaviour
             Vector2 position2D = new Vector2(transform.position.x, transform.position.y);
             if (position2D == stage5Target)
             {
+                SS.GoToPosition(5);
+                GlobalPlayerVars.endTalk = true;
+                transform.position = stage6Target;
                 stage = 6;
             }
         }

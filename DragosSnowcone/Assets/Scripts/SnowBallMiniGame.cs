@@ -15,6 +15,7 @@ public class SnowBallMiniGame : MonoBehaviour
 
     [Header("Controller")]
     public SnowConeController snowConeController;
+    public GameObject saveButton;
 
     [Header("Growth")]
     public float growthSpeed = 2f;
@@ -54,6 +55,14 @@ public class SnowBallMiniGame : MonoBehaviour
 
     void Update()
     {
+        if (GlobalPlayerVars.lookingAt != 1 && GlobalPlayerVars.lookingAt != 2 && GlobalPlayerVars.lookingAt != 3)
+        {
+            saveButton.SetActive(false);
+        }
+        else
+        {
+            saveButton.SetActive(true);
+        }
         if (!sizeSelected)
             return;
 
@@ -233,6 +242,8 @@ public class SnowBallMiniGame : MonoBehaviour
 
     public void SaveSnowCone()
     {
+        if (GlobalPlayerVars.lookingAt == 1)
+        {
         if (!sizeSelected)
         {
             Debug.LogWarning("Select a cone size before saving.");
@@ -276,6 +287,15 @@ public class SnowBallMiniGame : MonoBehaviour
             " snow cone saved. Score: " +
             currentScore
         );
+        }
+        if (GlobalPlayerVars.lookingAt == 2)
+        {
+            snowConeController.stageChange();
+        }
+        if (GlobalPlayerVars.lookingAt == 3)
+        {
+            snowConeController.stageChange();
+        }
     }
 
     public void StartOver()
