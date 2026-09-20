@@ -35,6 +35,7 @@ public class StationSwitch : MonoBehaviour
             if (targetPositions[positionIndex] != null)
             {
                 currentTarget = targetPositions[positionIndex];
+                GlobalPlayerVars.lookingAt = positionIndex;
                 shouldmove = true; 
             }
         }

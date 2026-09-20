@@ -4,6 +4,15 @@ public class SnowConeController : MonoBehaviour
 {
     [Header("Order")]
     public Order order;
+    [Header("Stage")]
+    public int stage;
+    public float moveingSpeed;
+    public Vector2 stage1Target = new Vector2();
+    public Vector2 stage2Target = new Vector2();
+    public Vector2 stage3Target = new Vector2();
+    public Vector2 stage4Target = new Vector2();
+    public Vector2 stage5Target = new Vector2();
+    public Vector2 stage6Target = new Vector2();
 
     [Header("Color Counters")]
     public int colCount1;
@@ -22,10 +31,40 @@ public class SnowConeController : MonoBehaviour
 
     void Start()
     {
+        stage = 0;
     }
 
     void Update()
     {
+        if (stage == 1)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, stage1Target, moveingSpeed * Time.deltaTime);
+            Vector2 position2D = new Vector2(transform.position.x, transform.position.y);
+            if (position2D == stage1Target)
+            {
+                transform.position = stage2Target;
+                stage = 2;
+            }
+        }
+        if (stage == 3)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, stage3Target, moveingSpeed * Time.deltaTime);
+            Vector2 position2D = new Vector2(transform.position.x, transform.position.y);
+            if (position2D == stage3Target)
+            {
+                transform.position = stage4Target;
+                stage = 4;
+            }
+        }
+        if (stage == 5)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, stage5Target, moveingSpeed * Time.deltaTime);
+            Vector2 position2D = new Vector2(transform.position.x, transform.position.y);
+            if (position2D == stage5Target)
+            {
+                stage = 6;
+            }
+        }
     }
 
     public void ReceiveSnowConeData(SnowBallMiniGame miniGame)
@@ -33,9 +72,12 @@ public class SnowConeController : MonoBehaviour
         finalScale = miniGame.GetFinalScale();
         cupSize = miniGame.GetFinalCupSize();
         score = miniGame.GetFinalScore();
-
     }
 
+    public void stageChange()
+    {
+        stage += 1;
+    }
 
     // EVERYTHING PAST THIS POINT HERE IS FOR THE COLOR TALLY TEST!!!!
 
