@@ -19,6 +19,8 @@ public class PointerCollector : MonoBehaviour
     private Vector3 targetPosition;
     private Vector3 zoneTargetPosition;
     public GameObject icecube;
+    public Sprite caughtIce;
+    public Sprite fishin;
     public bool canFishAgain = true;
 
     void Start()
@@ -85,7 +87,7 @@ public class PointerCollector : MonoBehaviour
         if (RectTransformUtility.RectangleContainsScreenPoint(safeZone, pointerTransform.position, null))
         {
             Debug.Log("Success!");
-            icecube.SetActive(true);
+            icecube.GetComponent<SpriteRenderer>().sprite = caughtIce;
             StartCoroutine(Wait2sec());
         }
         else
@@ -103,8 +105,8 @@ public class PointerCollector : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
-        
-        icecube.SetActive(false);
+
+        icecube.GetComponent<SpriteRenderer>().sprite = fishin;
         moveSpeed = oriSpeed;
         canFishAgain = true;
     }
