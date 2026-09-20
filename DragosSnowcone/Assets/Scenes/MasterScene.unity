@@ -1590,7 +1590,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.25239563}
+  m_AnchoredPosition: {x: 0, y: -0.25238037}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &236062873
@@ -18671,22 +18671,22 @@ MonoBehaviour:
   smallCup: {fileID: 6847584305926956508, guid: 13948221b2272534e95a558c256e7b0d, type: 3}
   mediumCup: {fileID: -8305596772865584489, guid: 18d3ba8d5a8aeb2429a9c6380c9981cf, type: 3}
   largeCup: {fileID: -76038915397143131, guid: 90eb3c9a4376a6d498670bf910fe117c, type: 3}
-  syrup1: {fileID: -6701621311137658697, guid: c737e6f3f08e3e04e8b87ba3c9e4d810, type: 3}
-  syrup2: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  syrup3: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  syrup4: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
-  syrup5: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  syrup6: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  syrup7: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  syrup8: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  topping: {fileID: -918469870158230175, guid: 319b8d68fc3a3df4e946b74c687233de, type: 3}
-  topping2: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
-  topping3: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  topping4: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  topping5: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  topping6: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  topping7: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  topping8: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  syrup1: {fileID: 21300000, guid: 74576b5eb1bcacc40a2473a241cfedbe, type: 3}
+  syrup2: {fileID: 21300000, guid: 5a8f4679fde1ca5419588ca59cd187a1, type: 3}
+  syrup3: {fileID: 5835087485116253597, guid: 631a288dd69a4b546bd4cd8926183415, type: 3}
+  syrup4: {fileID: 21300000, guid: e7e4cfc1c83481446a6ab51ab372268e, type: 3}
+  syrup5: {fileID: 21300000, guid: dc7d9a7ea8698384caee4020b190721e, type: 3}
+  syrup6: {fileID: 21300000, guid: ae8d1d09b369d5541af034f7e1020a6b, type: 3}
+  syrup7: {fileID: 21300000, guid: 7f9039e328be0284cb3e02cd30b4d5db, type: 3}
+  syrup8: {fileID: -5042076447643459883, guid: d34806d6c1f5d2d44b31283267c01de4, type: 3}
+  topping: {fileID: -4321659184940504371, guid: 0c58f6bfb90b5f14aa68244ce496d302, type: 3}
+  topping2: {fileID: 2378220408127569725, guid: 81057c57df0d23048bd800dc2e9e7193, type: 3}
+  topping3: {fileID: -1087549760869368506, guid: 97cbdfbd50ea09b43ae4189237674fb3, type: 3}
+  topping4: {fileID: 2285221795650889727, guid: 7aea6cd558cb2cc4eb2eb57425943da4, type: 3}
+  topping5: {fileID: 3643409587911182864, guid: 5432afd40ba09c54f9dabee434015d00, type: 3}
+  topping6: {fileID: -4816698523414809956, guid: 76f33c8baaab78e49a56a9a453e727d0, type: 3}
+  topping7: {fileID: -4321659184940504371, guid: 0c58f6bfb90b5f14aa68244ce496d302, type: 3}
+  topping8: {fileID: 3927734772099509149, guid: bfe836d54f34d1844972fb18e486a9f0, type: 3}
   syrupImg1: {fileID: 8168932298136040166}
   syrupImg2: {fileID: 7244511792017722059}
   syrupImg3: {fileID: 4374935409051746670}
