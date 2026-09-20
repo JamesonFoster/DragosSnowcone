@@ -78,6 +78,25 @@ public class SnowConeController : MonoBehaviour
         score = miniGame.GetFinalScore();
     }
 
+    public void GradeToppings()
+    {
+        int toppingTally = 0;
+
+        if (order.topping1 != Order.topping.none)
+            toppingTally++;
+
+        if (order.topping2 != Order.topping.none)
+            toppingTally++;
+
+        if (order.topping3 != Order.topping.none)
+            toppingTally++;
+
+        if (toppingTally == 0)
+            return;
+
+        
+    }
+
     public void stageChange()
     {
         stage += 1;
