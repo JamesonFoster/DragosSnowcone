@@ -18,6 +18,7 @@ public class CustomerSpawner : MonoBehaviour
 
     void Awake()
     {
+        GlobalPlayerVars.totalCustToday = normSpawnNumb + hardSpawnNumb;
         ShuffleList(normCust, normCustRand);
         ShuffleList(hardCust, hardCustRand);
     }
