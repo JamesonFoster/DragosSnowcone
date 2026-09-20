@@ -98,7 +98,8 @@ public class PointerCollector : MonoBehaviour
     IEnumerator Wait2sec()
     {
         canFishAgain = false;
-        GlobalPlayerVars.howHot--;
+        GlobalPlayerVars.howHot-= 7;
+        Debug.Log(GlobalPlayerVars.howHot);
 
         yield return new WaitForSeconds(2f);
 
