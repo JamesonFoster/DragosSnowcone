@@ -16,6 +16,7 @@ public class JudgingControl : MonoBehaviour
     public TMP_Text scoreText4;
     public TMP_Text scoreText5;
     public float targetY;
+    public SpriteRenderer custImage;
 
 
     private float score1;
@@ -49,6 +50,7 @@ public class JudgingControl : MonoBehaviour
         custMove = cust;
         order = cust.order;
         custom = cust.customer;
+        custImage.sprite = custom.frontSpr;
 
         CalcFinalScore();
         StartJudgin();
