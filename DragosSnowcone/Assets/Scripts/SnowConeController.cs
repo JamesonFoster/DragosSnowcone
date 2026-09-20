@@ -17,6 +17,7 @@ public class SnowConeController : MonoBehaviour
     public Vector2 stage5Target = new Vector2();
     public Vector2 stage6Target = new Vector2();
     public StationSwitch SS;
+    public CustWaitSpot final;
 
     [Header("Color Counters")]
     public int colCount1;
@@ -120,6 +121,7 @@ public class SnowConeController : MonoBehaviour
                 JC.GiveScore(2,score);
                 JC.GiveScore(3,syrupScore);
                 JC.GiveScore(4,toppingScore);
+                JC.SetCust(final.star);
                 stage = 6;
             }
         }

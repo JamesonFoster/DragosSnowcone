@@ -191,7 +191,7 @@ public class CustomerMovement : MonoBehaviour
             }
             if (position2D == starPos2D)
             {
-                CWSStar2.setIsON(true);
+                CWSStar2.starSet(true,  this);
                 mode = 6;
             }
         }
@@ -245,6 +245,10 @@ public class CustomerMovement : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+    public void StopStar()
+    {
+        CWSStar2.starSet(false, this);
     }
 
     private void HandleWalkSpr()

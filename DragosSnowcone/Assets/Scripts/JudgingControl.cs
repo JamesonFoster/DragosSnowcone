@@ -44,12 +44,11 @@ public class JudgingControl : MonoBehaviour
         teller4Start = new Vector2(teller4.transform.position.x, teller4.transform.position.y);
         teller5Start = new Vector2(teller5.transform.position.x, teller5.transform.position.y);
     }
-    public void SetCust(GameObject cust)
+    public void SetCust(CustomerMovement cust)
     {
-        customer = cust;
-        custMove = customer.GetComponent<CustomerMovement>();
-        order = custMove.order;
-        custom = custMove.customer;
+        custMove = cust;
+        order = cust.order;
+        custom = cust.customer;
 
         CalcFinalScore();
         StartJudgin();
@@ -62,6 +61,11 @@ public class JudgingControl : MonoBehaviour
         scoreText3.text = score3.ToString("F2");
         scoreText4.text = score4.ToString("F2");
         scoreText5.text = score5.ToString("F2");
+    }
+    public void EndJudgin()
+    {
+        custMove.StopStar();
+        custMove.mode = 7;
     }
 
     // Update is called once per frame
@@ -103,6 +107,7 @@ public class JudgingControl : MonoBehaviour
             teller5.transform.position = teller5Start;
             custMove.mode = 7;
             masterLoader = 0f;
+            EndJudgin();
             isRunning = false;
         }
     }
