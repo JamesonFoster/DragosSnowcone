@@ -10,7 +10,7 @@ public class CustomerMovement : MonoBehaviour
     public GameObject targetMain1;
     public List<GameObject> orderLine; // line where they wait for the order
     public List<GameObject> waitLine; // line where they wait for the snowcone
-    private List<Order> orderRand = new List<Order>();
+    public List<Order> orderRand = new List<Order>();
     private GameObject currentTarg;
     public GameObject targetMain2;
     public float bob;

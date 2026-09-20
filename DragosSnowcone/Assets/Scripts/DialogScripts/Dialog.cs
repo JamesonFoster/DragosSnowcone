@@ -139,7 +139,6 @@ public class Dialog : MonoBehaviour
             {
                 case Order.syrup.none:
                     imgCount++;
-                    NextImg(order);
                     break;
 
                 case Order.syrup.s1:
@@ -193,7 +192,6 @@ public class Dialog : MonoBehaviour
             {
                 case Order.syrup.none:
                     imgCount++;
-                    NextImg(order);
                     break;
 
                 case Order.syrup.s1:
@@ -247,7 +245,6 @@ public class Dialog : MonoBehaviour
             {
                 case Order.topping.none:
                     imgCount++;
-                    NextImg(order);
                     break;
 
                 case Order.topping.t1:
@@ -314,7 +311,6 @@ public class Dialog : MonoBehaviour
             {
                 case Order.topping.none:
                     imgCount++;
-                    NextImg(order);
                     break;
 
                 case Order.topping.t1:
@@ -381,7 +377,6 @@ public class Dialog : MonoBehaviour
             {
                 case Order.topping.none:
                     imgCount++;
-                    NextImg(order);
                     break;
 
                 case Order.topping.t1:
@@ -462,6 +457,7 @@ public class Dialog : MonoBehaviour
 
         waitForImg = false;
         imgCount++;
+        NextImg(order);
     }
 
 }

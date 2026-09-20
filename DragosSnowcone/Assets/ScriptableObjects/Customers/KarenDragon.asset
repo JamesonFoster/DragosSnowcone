@@ -23,4 +23,5 @@ MonoBehaviour:
   walkSprChangeSpeed: 1
   orders:
   - {fileID: 11400000, guid: 113a4350657ca934398574230574a5b3, type: 2}
+  - {fileID: 11400000, guid: 113a4350657ca934398574230574a5b3, type: 2}
   joyful: 0
