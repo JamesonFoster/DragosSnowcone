@@ -12,6 +12,9 @@ public class Order : ScriptableObject
     public topping topping1;
     public topping topping2;
     public topping topping3;
+    public int topping1Count;
+    public int topping2Count;
+    public int topping3Count;
 
 
     public enum CupSize

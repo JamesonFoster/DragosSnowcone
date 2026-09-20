@@ -7,12 +7,17 @@ public class PointerCollector : MonoBehaviour
     public Transform oriPointerPos;
     public Transform pointA; // Reference to the starting point
     public Transform pointB; // Reference to the ending point
+    public Transform zonePointA; // Reference to the starting point
+    public Transform zonePointB;
     public RectTransform safeZone; // Reference to the safe zone RectTransform
     public float moveSpeed = 100f; // Speed of the pointer movement
+    public float zoneSpeed = 20f;
+    public float oriSpeed = 0f;
 
     private float direction = 1f; // 1 for moving towards B, -1 for moving towards A
     private RectTransform pointerTransform;
     private Vector3 targetPosition;
+    private Vector3 zoneTargetPosition;
     public GameObject icecube;
     public bool canFishAgain = true;
 
@@ -20,10 +25,13 @@ public class PointerCollector : MonoBehaviour
     {
         pointerTransform = GetComponent<RectTransform>();
         targetPosition = pointB.position;
+        zoneTargetPosition = zonePointA.position;
+        oriSpeed = moveSpeed;
     }
 
     void Update()
     {
+        zoneMovement();
         // Move the pointer towards the target position
         if (canFishAgain)
         {
@@ -54,6 +62,23 @@ public class PointerCollector : MonoBehaviour
         }
     }
 
+    void zoneMovement() {
+        // Move the pointer towards the target position
+        safeZone.position = Vector3.MoveTowards(safeZone.position, zoneTargetPosition, zoneSpeed * Time.deltaTime);
+
+        // Change direction if the pointer reaches one of the points
+        if (Vector3.Distance(safeZone.position, zonePointA.position) < 0.1f)
+        {
+            zoneTargetPosition = zonePointB.position;
+            direction = 1f;
+        }
+        else if (Vector3.Distance(safeZone.position, zonePointB.position) < 0.1f)
+        {
+            zoneTargetPosition = zonePointA.position;
+            direction = -1f;
+        }
+    }
+
     void CheckSuccess()
     {
         // Check if the pointer is within the safe zone
@@ -73,11 +98,13 @@ public class PointerCollector : MonoBehaviour
     IEnumerator Wait2sec()
     {
         canFishAgain = false;
+        GlobalPlayerVars.howHot--;
 
         yield return new WaitForSeconds(2f);
 
-        pointerTransform.position = oriPointerPos.position;
+        
         icecube.SetActive(false);
+        moveSpeed = oriSpeed;
         canFishAgain = true;
     }
 }

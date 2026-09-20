@@ -13,6 +13,7 @@ public class Customer : ScriptableObject
     public float walkSpeed;
     public Sprite walkSpr1;
     public Sprite walkSpr2;
+    public Sprite frontSpr;
     public float walkSprChangeSpeed = 1f;
     public List<Order> orders;
     public bool joyful;
