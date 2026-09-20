@@ -612,9 +612,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 63894283126093474, guid: 803bbeb8e5419264abd3d81a1fd2f7a4, type: 3}
+      propertyPath: thisBotNumber
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 424480012487165532, guid: 803bbeb8e5419264abd3d81a1fd2f7a4, type: 3}
       propertyPath: m_Name
       value: SyrupStation
+      objectReference: {fileID: 0}
+    - target: {fileID: 513683267746124336, guid: 803bbeb8e5419264abd3d81a1fd2f7a4, type: 3}
+      propertyPath: thisBotNumber
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887652791999403014, guid: 803bbeb8e5419264abd3d81a1fd2f7a4, type: 3}
+      propertyPath: thisBotNumber
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451701814424438855, guid: 803bbeb8e5419264abd3d81a1fd2f7a4, type: 3}
+      propertyPath: thisBotNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044339407381388248, guid: 803bbeb8e5419264abd3d81a1fd2f7a4, type: 3}
+      propertyPath: thisBotNumber
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3698023058749909723, guid: 803bbeb8e5419264abd3d81a1fd2f7a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -655,6 +675,14 @@ PrefabInstance:
     - target: {fileID: 3698023058749909723, guid: 803bbeb8e5419264abd3d81a1fd2f7a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245525972844917353, guid: 803bbeb8e5419264abd3d81a1fd2f7a4, type: 3}
+      propertyPath: thisBotNumber
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936564895699443245, guid: 803bbeb8e5419264abd3d81a1fd2f7a4, type: 3}
+      propertyPath: thisBotNumber
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -3311,6 +3339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DaySystem
   endDayPanel: {fileID: 1002685721}
+  customerSpawner: {fileID: 0}
 --- !u!4 &718040155
 Transform:
   m_ObjectHideFlags: 0
@@ -10381,6 +10410,7 @@ MonoBehaviour:
   losePanel: {fileID: 462652871}
   gameUI: {fileID: 1450635696532963209}
   heatMusic: {fileID: 0}
+  themeMusic: {fileID: 0}
 --- !u!114 &2402711951933019538
 MonoBehaviour:
   m_ObjectHideFlags: 0
