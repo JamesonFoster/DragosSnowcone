@@ -145,7 +145,11 @@ public class SnowBallMiniGame : MonoBehaviour
 
         if (coneFill != null)
         {
-            coneFill.SetParent(originalOrbParent, true);
+            if (coneFill.parent != originalOrbParent)
+            {
+                coneFill.SetParent(originalOrbParent, true);
+            }
+
             coneFill.localPosition = originalOrbPosition;
             coneFill.localRotation = originalOrbRotation;
             coneFill.localScale = new Vector3(0f, 0f, 1f);
@@ -223,7 +227,7 @@ public class SnowBallMiniGame : MonoBehaviour
         Debug.Log(
             "Snow Cone Finished. Score: " +
             currentScore +
-            ". Press Save to place the snowball into the cone."
+            ". Press Save to place the cone onto the snowball."
         );
     }
 
@@ -259,9 +263,10 @@ public class SnowBallMiniGame : MonoBehaviour
             return;
         }
 
-        coneFill.SetParent(currentSnowCone.transform, true);
+        currentSnowCone.transform.SetParent(coneFill, true);
 
         snowConeSaved = true;
+
         snowConeController.stageChange();
 
         SendStatsToController();
@@ -284,19 +289,22 @@ public class SnowBallMiniGame : MonoBehaviour
             shape.radius = 0.1f;
         }
 
-        if (coneFill != null)
-        {
-            coneFill.SetParent(originalOrbParent, true);
-
-            coneFill.localPosition = originalOrbPosition;
-            coneFill.localRotation = originalOrbRotation;
-            coneFill.localScale = new Vector3(0f, 0f, 1f);
-        }
-
         if (currentSnowCone != null)
         {
             Destroy(currentSnowCone);
             currentSnowCone = null;
+        }
+
+        if (coneFill != null)
+        {
+            if (coneFill.parent != originalOrbParent)
+            {
+                coneFill.SetParent(originalOrbParent, true);
+            }
+
+            coneFill.localPosition = originalOrbPosition;
+            coneFill.localRotation = originalOrbRotation;
+            coneFill.localScale = new Vector3(0f, 0f, 1f);
         }
 
         currentScaleSize = 0f;
@@ -356,19 +364,22 @@ public class SnowBallMiniGame : MonoBehaviour
             shape.radius = 0.1f;
         }
 
-        if (coneFill != null)
-        {
-            coneFill.SetParent(originalOrbParent, true);
-
-            coneFill.localPosition = originalOrbPosition;
-            coneFill.localRotation = originalOrbRotation;
-            coneFill.localScale = new Vector3(0f, 0f, 1f);
-        }
-
         if (currentSnowCone != null)
         {
             Destroy(currentSnowCone);
             currentSnowCone = null;
+        }
+
+        if (coneFill != null)
+        {
+            if (coneFill.parent != originalOrbParent)
+            {
+                coneFill.SetParent(originalOrbParent, true);
+            }
+
+            coneFill.localPosition = originalOrbPosition;
+            coneFill.localRotation = originalOrbRotation;
+            coneFill.localScale = new Vector3(0f, 0f, 1f);
         }
 
         currentScaleSize = 0f;
