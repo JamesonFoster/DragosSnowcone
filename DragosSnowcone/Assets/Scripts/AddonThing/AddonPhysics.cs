@@ -6,16 +6,28 @@ public class AddonPhysics : MonoBehaviour
     private Rigidbody2D rb;
     private Camera mainCamera;
     private int mode;
+
+    private SnowConeController sCC;
+
     public GameObject targetParent;
     public int key;
 
     void Start()
     {
         mode = 0;
+
         rb = GetComponent<Rigidbody2D>();
         mainCamera = Camera.main;
+
+        sCC = targetParent.GetComponent<SnowConeController>();
+
         float randomZ = Random.Range(0f, 360f);
-        transform.rotation = Quaternion.Euler(0f, 0f, randomZ);
+
+        transform.rotation = Quaternion.Euler(
+            0f,
+            0f,
+            randomZ
+        );
 
         rb.simulated = false;
 
@@ -27,8 +39,10 @@ public class AddonPhysics : MonoBehaviour
         if (Mouse.current.leftButton.isPressed && mode == 0)
         {
             rb.simulated = false;
+
             rb.linearVelocity = Vector2.zero;
             rb.angularVelocity = 0f;
+
             MoveToMouse();
         }
         else
@@ -45,6 +59,7 @@ public class AddonPhysics : MonoBehaviour
         );
 
         mousePosition.z = 0f;
+
         transform.position = mousePosition;
     }
 
@@ -52,12 +67,16 @@ public class AddonPhysics : MonoBehaviour
     {
         if (other.gameObject.CompareTag("AddonLine"))
         {
-            rb.simulated = false;
+            Vector2 finalPosition = transform.position;
 
+            rb.simulated = false;
             rb.linearVelocity = Vector2.zero;
             rb.angularVelocity = 0f;
 
+            sCC.SingleCall(key, finalPosition);
+
             transform.SetParent(targetParent.transform);
+
             Destroy(this);
         }
     }

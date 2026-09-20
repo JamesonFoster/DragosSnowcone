@@ -4,6 +4,7 @@ public class SnowConeController : MonoBehaviour
 {
     [Header("Order")]
     public Order order;
+
     [Header("Stage")]
     public int stage;
     public float moveingSpeed;
@@ -30,6 +31,27 @@ public class SnowConeController : MonoBehaviour
     public string cupSize;
     public int score;
 
+    [Header("Single Topping Targets")]
+    public Vector2 singleTarget1;
+    public Vector2 singleTarget2;
+    public Vector2 singleTarget3;
+
+    [Header("Scoring")]
+    public float toppingScore;
+    public float glitterScore;
+    public float singleScore;
+    public float syrupScore;
+
+    private int topping1Times;
+    private int topping2Times;
+    private int topping3Times;
+
+    private bool singleTarget1Used;
+    private bool singleTarget2Used;
+    private bool singleTarget3Used;
+
+    private int totalRequestedToppings;
+
     void Start()
     {
         stage = 0;
@@ -39,28 +61,48 @@ public class SnowConeController : MonoBehaviour
     {
         if (stage == 1)
         {
-            transform.position = Vector2.MoveTowards(transform.position, stage1Target, moveingSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(
+                transform.position,
+                stage1Target,
+                moveingSpeed * Time.deltaTime
+            );
+
             Vector2 position2D = new Vector2(transform.position.x, transform.position.y);
+
             if (position2D == stage1Target)
             {
                 transform.position = stage2Target;
                 stage = 2;
             }
         }
+
         if (stage == 3)
         {
-            transform.position = Vector2.MoveTowards(transform.position, stage3Target, moveingSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(
+                transform.position,
+                stage3Target,
+                moveingSpeed * Time.deltaTime
+            );
+
             Vector2 position2D = new Vector2(transform.position.x, transform.position.y);
+
             if (position2D == stage3Target)
             {
                 transform.position = stage4Target;
                 stage = 4;
             }
         }
+
         if (stage == 5)
         {
-            transform.position = Vector2.MoveTowards(transform.position, stage5Target, moveingSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(
+                transform.position,
+                stage5Target,
+                moveingSpeed * Time.deltaTime
+            );
+
             Vector2 position2D = new Vector2(transform.position.x, transform.position.y);
+
             if (position2D == stage5Target)
             {
                 SS.GoToPosition(5);
@@ -80,29 +122,348 @@ public class SnowConeController : MonoBehaviour
 
     public void GradeToppings()
     {
-        int toppingTally = 0;
+        topping1Times = 0;
+        topping2Times = 0;
+        topping3Times = 0;
+
+        singleTarget1Used = false;
+        singleTarget2Used = false;
+        singleTarget3Used = false;
+
+        glitterScore = 0f;
+        singleScore = 0f;
+        toppingScore = 0f;
+
+        totalRequestedToppings = 0;
 
         if (order.topping1 != Order.topping.none)
-            toppingTally++;
+            totalRequestedToppings += order.topping1Count;
 
         if (order.topping2 != Order.topping.none)
-            toppingTally++;
+            totalRequestedToppings += order.topping2Count;
 
         if (order.topping3 != Order.topping.none)
-            toppingTally++;
+            totalRequestedToppings += order.topping3Count;
+    }
 
-        if (toppingTally == 0)
+    public void GlitterCall(int keyNum, Vector2 vect)
+    {
+        bool correctTopping = false;
+        int requestedCount = 0;
+        int currentCount = 0;
+
+        if (keyNum == 1)
+        {
+            if (order.topping1 == Order.topping.t1)
+            {
+                correctTopping = true;
+                requestedCount = order.topping1Count;
+                currentCount = topping1Times;
+                topping1Times++;
+            }
+            else if (order.topping2 == Order.topping.t1)
+            {
+                correctTopping = true;
+                requestedCount = order.topping2Count;
+                currentCount = topping2Times;
+                topping2Times++;
+            }
+            else if (order.topping3 == Order.topping.t1)
+            {
+                correctTopping = true;
+                requestedCount = order.topping3Count;
+                currentCount = topping3Times;
+                topping3Times++;
+            }
+        }
+        else if (keyNum == 4)
+        {
+            if (order.topping1 == Order.topping.t4)
+            {
+                correctTopping = true;
+                requestedCount = order.topping1Count;
+                currentCount = topping1Times;
+                topping1Times++;
+            }
+            else if (order.topping2 == Order.topping.t4)
+            {
+                correctTopping = true;
+                requestedCount = order.topping2Count;
+                currentCount = topping2Times;
+                topping2Times++;
+            }
+            else if (order.topping3 == Order.topping.t4)
+            {
+                correctTopping = true;
+                requestedCount = order.topping3Count;
+                currentCount = topping3Times;
+                topping3Times++;
+            }
+        }
+        else if (keyNum == 7)
+        {
+            if (order.topping1 == Order.topping.t7)
+            {
+                correctTopping = true;
+                requestedCount = order.topping1Count;
+                currentCount = topping1Times;
+                topping1Times++;
+            }
+            else if (order.topping2 == Order.topping.t7)
+            {
+                correctTopping = true;
+                requestedCount = order.topping2Count;
+                currentCount = topping2Times;
+                topping2Times++;
+            }
+            else if (order.topping3 == Order.topping.t7)
+            {
+                correctTopping = true;
+                requestedCount = order.topping3Count;
+                currentCount = topping3Times;
+                topping3Times++;
+            }
+        }
+        else if (keyNum == 8)
+        {
+            if (order.topping1 == Order.topping.t8)
+            {
+                correctTopping = true;
+                requestedCount = order.topping1Count;
+                currentCount = topping1Times;
+                topping1Times++;
+            }
+            else if (order.topping2 == Order.topping.t8)
+            {
+                correctTopping = true;
+                requestedCount = order.topping2Count;
+                currentCount = topping2Times;
+                topping2Times++;
+            }
+            else if (order.topping3 == Order.topping.t8)
+            {
+                correctTopping = true;
+                requestedCount = order.topping3Count;
+                currentCount = topping3Times;
+                topping3Times++;
+            }
+        }
+
+        float maxScore = GetMaxScoreForToppingCount(totalRequestedToppings);
+
+        if (!correctTopping || currentCount >= requestedCount)
+        {
+            glitterScore -= maxScore;
             return;
+        }
 
-        
+        float distance = Mathf.Abs(vect.x);
+
+        float accuracy = Mathf.Clamp01(1f - distance);
+
+        float potentialScore = maxScore * accuracy;
+
+        glitterScore += potentialScore;
+
+        UpdateFinalToppingScore();
+    }
+
+    public void SingleCall(int keyNum, Vector2 vect)
+    {
+        bool correctTopping = false;
+        int requestedCount = 0;
+        int currentCount = 0;
+
+        if (keyNum == 2)
+        {
+            if (order.topping1 == Order.topping.t2)
+            {
+                correctTopping = true;
+                requestedCount = order.topping1Count;
+                currentCount = topping1Times;
+                topping1Times++;
+            }
+            else if (order.topping2 == Order.topping.t2)
+            {
+                correctTopping = true;
+                requestedCount = order.topping2Count;
+                currentCount = topping2Times;
+                topping2Times++;
+            }
+            else if (order.topping3 == Order.topping.t2)
+            {
+                correctTopping = true;
+                requestedCount = order.topping3Count;
+                currentCount = topping3Times;
+                topping3Times++;
+            }
+        }
+        else if (keyNum == 3)
+        {
+            if (order.topping1 == Order.topping.t3)
+            {
+                correctTopping = true;
+                requestedCount = order.topping1Count;
+                currentCount = topping1Times;
+                topping1Times++;
+            }
+            else if (order.topping2 == Order.topping.t3)
+            {
+                correctTopping = true;
+                requestedCount = order.topping2Count;
+                currentCount = topping2Times;
+                topping2Times++;
+            }
+            else if (order.topping3 == Order.topping.t3)
+            {
+                correctTopping = true;
+                requestedCount = order.topping3Count;
+                currentCount = topping3Times;
+                topping3Times++;
+            }
+        }
+        else if (keyNum == 5)
+        {
+            if (order.topping1 == Order.topping.t5)
+            {
+                correctTopping = true;
+                requestedCount = order.topping1Count;
+                currentCount = topping1Times;
+                topping1Times++;
+            }
+            else if (order.topping2 == Order.topping.t5)
+            {
+                correctTopping = true;
+                requestedCount = order.topping2Count;
+                currentCount = topping2Times;
+                topping2Times++;
+            }
+            else if (order.topping3 == Order.topping.t5)
+            {
+                correctTopping = true;
+                requestedCount = order.topping3Count;
+                currentCount = topping3Times;
+                topping3Times++;
+            }
+        }
+        else if (keyNum == 6)
+        {
+            if (order.topping1 == Order.topping.t6)
+            {
+                correctTopping = true;
+                requestedCount = order.topping1Count;
+                currentCount = topping1Times;
+                topping1Times++;
+            }
+            else if (order.topping2 == Order.topping.t6)
+            {
+                correctTopping = true;
+                requestedCount = order.topping2Count;
+                currentCount = topping2Times;
+                topping2Times++;
+            }
+            else if (order.topping3 == Order.topping.t6)
+            {
+                correctTopping = true;
+                requestedCount = order.topping3Count;
+                currentCount = topping3Times;
+                topping3Times++;
+            }
+        }
+
+        if (!correctTopping || currentCount >= requestedCount)
+        {
+            singleScore -= GetMaxScoreForToppingCount(totalRequestedToppings);
+            UpdateFinalToppingScore();
+            return;
+        }
+
+        Vector2 target;
+        bool targetFound = false;
+
+        float distance1 = float.MaxValue;
+        float distance2 = float.MaxValue;
+        float distance3 = float.MaxValue;
+
+        if (!singleTarget1Used)
+            distance1 = Vector2.Distance(vect, singleTarget1);
+
+        if (!singleTarget2Used)
+            distance2 = Vector2.Distance(vect, singleTarget2);
+
+        if (!singleTarget3Used)
+            distance3 = Vector2.Distance(vect, singleTarget3);
+
+        if (distance1 <= distance2 && distance1 <= distance3)
+        {
+            target = singleTarget1;
+            singleTarget1Used = true;
+            targetFound = true;
+        }
+        else if (distance2 <= distance1 && distance2 <= distance3)
+        {
+            target = singleTarget2;
+            singleTarget2Used = true;
+            targetFound = true;
+        }
+        else if (distance3 < distance1 && distance3 < distance2)
+        {
+            target = singleTarget3;
+            singleTarget3Used = true;
+            targetFound = true;
+        }
+        else
+        {
+            target = Vector2.zero;
+        }
+
+        if (!targetFound)
+        {
+            singleScore -= GetMaxScoreForToppingCount(totalRequestedToppings);
+            UpdateFinalToppingScore();
+            return;
+        }
+
+        float distance = Vector2.Distance(vect, target);
+
+        float accuracy = Mathf.Clamp01(1f - distance);
+
+        float maxScore = GetMaxScoreForToppingCount(totalRequestedToppings);
+
+        float potentialScore = maxScore * accuracy;
+
+        singleScore += potentialScore;
+
+        UpdateFinalToppingScore();
+    }
+
+    private float GetMaxScoreForToppingCount(int count)
+    {
+        if (count <= 0)
+            return 0f;
+
+        return 100f / count;
+    }
+
+    private void UpdateFinalToppingScore()
+    {
+        toppingScore = glitterScore + singleScore;
+    }
+
+    public void CalculateFinalScore()
+    {
+        UpdateFinalToppingScore();
+
+        score = Mathf.RoundToInt(
+            toppingScore +
+            syrupScore
+        );
     }
 
     public void stageChange()
     {
         stage += 1;
     }
-
-    // EVERYTHING PAST THIS POINT HERE IS FOR THE COLOR TALLY TEST!!!!
 
     public void IncreaseColorTally(int numb)
     {
@@ -111,24 +472,31 @@ public class SnowConeController : MonoBehaviour
             case 1:
                 colCount1++;
                 break;
+
             case 2:
                 colCount2++;
                 break;
+
             case 3:
                 colCount3++;
                 break;
+
             case 4:
                 colCount4++;
                 break;
+
             case 5:
                 colCount5++;
                 break;
+
             case 6:
                 colCount6++;
                 break;
+
             case 7:
                 colCount7++;
                 break;
+
             case 8:
                 colCount8++;
                 break;
@@ -149,7 +517,11 @@ public class SnowConeController : MonoBehaviour
             syrupTally++;
 
         if (syrupTally == 0)
+        {
+            syrupScore = 0f;
+            CalculateFinalScore();
             return;
+        }
 
         float targetSyrupAmount = 87f / syrupTally;
         float totalScore = 0f;
@@ -173,6 +545,10 @@ public class SnowConeController : MonoBehaviour
         }
 
         float finalScore = totalScore / syrupTally;
+
+        syrupScore = finalScore * 100f;
+
+        CalculateFinalScore();
     }
 
     private float GetSyrupCloseness(int actualAmount, float targetAmount)
@@ -191,20 +567,28 @@ public class SnowConeController : MonoBehaviour
         {
             case Order.syrup.s1:
                 return colCount1;
+
             case Order.syrup.s2:
                 return colCount2;
+
             case Order.syrup.s3:
                 return colCount3;
+
             case Order.syrup.s4:
                 return colCount4;
+
             case Order.syrup.s5:
                 return colCount5;
+
             case Order.syrup.s6:
                 return colCount6;
+
             case Order.syrup.s7:
                 return colCount7;
+
             case Order.syrup.s8:
                 return colCount8;
+
             default:
                 return 0;
         }

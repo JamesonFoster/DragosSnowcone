@@ -246,21 +246,56 @@ public class Dialog : MonoBehaviour
                     NextImg(order);
                     break;
 
-                case Order.topping.princesPuree:
+                case Order.topping.t1:
                     imgManager.toppingImg1.enabled = true;
                     imgManager.toppingImg1.sprite = imgManager.topping;
                     imgManager.SpeechImg.sprite = imgManager.topping;
                     imgManager.toppingTxt1.text = "" + order.topping1Count;
                     break;
 
-                case Order.topping.gummyWiz:
+                case Order.topping.t2:
                     imgManager.toppingImg1.enabled = true;
                     imgManager.toppingImg1.sprite = imgManager.topping2;
                     imgManager.SpeechImg.sprite = imgManager.topping2;
                     imgManager.toppingTxt1.text = "" + order.topping1Count;
                     break;
 
-                case Order.topping.nuts:
+                case Order.topping.t3:
+                    imgManager.toppingImg1.enabled = true;
+                    imgManager.toppingImg1.sprite = imgManager.topping3;
+                    imgManager.SpeechImg.sprite = imgManager.topping3;
+                    imgManager.toppingTxt1.text = "" + order.topping1Count;
+                    break;
+
+                case Order.topping.t4:
+                    imgManager.toppingImg1.enabled = true;
+                    imgManager.toppingImg1.sprite = imgManager.topping;
+                    imgManager.SpeechImg.sprite = imgManager.topping;
+                    imgManager.toppingTxt1.text = "" + order.topping1Count;
+                    break;
+
+                case Order.topping.t5:
+                    imgManager.toppingImg1.enabled = true;
+                    imgManager.toppingImg1.sprite = imgManager.topping2;
+                    imgManager.SpeechImg.sprite = imgManager.topping2;
+                    imgManager.toppingTxt1.text = "" + order.topping1Count;
+                    break;
+
+                case Order.topping.t6:
+                    imgManager.toppingImg1.enabled = true;
+                    imgManager.toppingImg1.sprite = imgManager.topping3;
+                    imgManager.SpeechImg.sprite = imgManager.topping3;
+                    imgManager.toppingTxt1.text = "" + order.topping1Count;
+                    break;
+
+                case Order.topping.t7:
+                    imgManager.toppingImg1.enabled = true;
+                    imgManager.toppingImg1.sprite = imgManager.topping2;
+                    imgManager.SpeechImg.sprite = imgManager.topping2;
+                    imgManager.toppingTxt1.text = "" + order.topping1Count;
+                    break;
+
+                case Order.topping.t8:
                     imgManager.toppingImg1.enabled = true;
                     imgManager.toppingImg1.sprite = imgManager.topping3;
                     imgManager.SpeechImg.sprite = imgManager.topping3;
@@ -278,21 +313,56 @@ public class Dialog : MonoBehaviour
                     NextImg(order);
                     break;
 
-                case Order.topping.princesPuree:
+                case Order.topping.t1:
                     imgManager.toppingImg2.enabled = true;
                     imgManager.toppingImg2.sprite = imgManager.topping;
                     imgManager.SpeechImg.sprite = imgManager.topping;
                     imgManager.toppingTxt2.text = "" + order.topping2Count;
                     break;
 
-                case Order.topping.gummyWiz:
+                case Order.topping.t2:
                     imgManager.toppingImg2.enabled = true;
                     imgManager.toppingImg2.sprite = imgManager.topping2;
                     imgManager.SpeechImg.sprite = imgManager.topping2;
                     imgManager.toppingTxt2.text = "" + order.topping2Count;
                     break;
 
-                case Order.topping.nuts:
+                case Order.topping.t3:
+                    imgManager.toppingImg2.enabled = true;
+                    imgManager.toppingImg2.sprite = imgManager.topping3;
+                    imgManager.SpeechImg.sprite = imgManager.topping3;
+                    imgManager.toppingTxt2.text = "" + order.topping2Count;
+                    break;
+
+                case Order.topping.t4:
+                    imgManager.toppingImg2.enabled = true;
+                    imgManager.toppingImg2.sprite = imgManager.topping3;
+                    imgManager.SpeechImg.sprite = imgManager.topping3;
+                    imgManager.toppingTxt2.text = "" + order.topping2Count;
+                    break;
+
+                case Order.topping.t5:
+                    imgManager.toppingImg2.enabled = true;
+                    imgManager.toppingImg2.sprite = imgManager.topping3;
+                    imgManager.SpeechImg.sprite = imgManager.topping3;
+                    imgManager.toppingTxt2.text = "" + order.topping2Count;
+                    break;
+
+                case Order.topping.t6:
+                    imgManager.toppingImg2.enabled = true;
+                    imgManager.toppingImg2.sprite = imgManager.topping3;
+                    imgManager.SpeechImg.sprite = imgManager.topping3;
+                    imgManager.toppingTxt2.text = "" + order.topping2Count;
+                    break;
+
+                case Order.topping.t7:
+                    imgManager.toppingImg2.enabled = true;
+                    imgManager.toppingImg2.sprite = imgManager.topping3;
+                    imgManager.SpeechImg.sprite = imgManager.topping3;
+                    imgManager.toppingTxt2.text = "" + order.topping2Count;
+                    break;
+
+                case Order.topping.t8:
                     imgManager.toppingImg2.enabled = true;
                     imgManager.toppingImg2.sprite = imgManager.topping3;
                     imgManager.SpeechImg.sprite = imgManager.topping3;
@@ -310,21 +380,56 @@ public class Dialog : MonoBehaviour
                     NextImg(order);
                     break;
 
-                case Order.topping.princesPuree:
+                case Order.topping.t1:
                     imgManager.toppingImg3.enabled = true;
                     imgManager.toppingImg3.sprite = imgManager.topping;
                     imgManager.SpeechImg.sprite = imgManager.topping;
                     imgManager.toppingTxt3.text = "" + order.topping3Count;
                     break;
 
-                case Order.topping.gummyWiz:
+                case Order.topping.t2:
                     imgManager.toppingImg3.enabled = true;
                     imgManager.toppingImg3.sprite = imgManager.topping2;
                     imgManager.SpeechImg.sprite = imgManager.topping2;
                     imgManager.toppingTxt3.text = "" + order.topping3Count;
                     break;
 
-                case Order.topping.nuts:
+                case Order.topping.t3:
+                    imgManager.toppingImg3.enabled = true;
+                    imgManager.toppingImg3.sprite = imgManager.topping3;
+                    imgManager.SpeechImg.sprite = imgManager.topping3;
+                    imgManager.toppingTxt3.text = "" + order.topping3Count;
+                    break;
+
+                case Order.topping.t4:
+                    imgManager.toppingImg3.enabled = true;
+                    imgManager.toppingImg3.sprite = imgManager.topping3;
+                    imgManager.SpeechImg.sprite = imgManager.topping3;
+                    imgManager.toppingTxt3.text = "" + order.topping3Count;
+                    break;
+
+                case Order.topping.t5:
+                    imgManager.toppingImg3.enabled = true;
+                    imgManager.toppingImg3.sprite = imgManager.topping3;
+                    imgManager.SpeechImg.sprite = imgManager.topping3;
+                    imgManager.toppingTxt3.text = "" + order.topping3Count;
+                    break;
+
+                case Order.topping.t6:
+                    imgManager.toppingImg3.enabled = true;
+                    imgManager.toppingImg3.sprite = imgManager.topping3;
+                    imgManager.SpeechImg.sprite = imgManager.topping3;
+                    imgManager.toppingTxt3.text = "" + order.topping3Count;
+                    break;
+
+                case Order.topping.t7:
+                    imgManager.toppingImg3.enabled = true;
+                    imgManager.toppingImg3.sprite = imgManager.topping3;
+                    imgManager.SpeechImg.sprite = imgManager.topping3;
+                    imgManager.toppingTxt3.text = "" + order.topping3Count;
+                    break;
+
+                case Order.topping.t8:
                     imgManager.toppingImg3.enabled = true;
                     imgManager.toppingImg3.sprite = imgManager.topping3;
                     imgManager.SpeechImg.sprite = imgManager.topping3;
