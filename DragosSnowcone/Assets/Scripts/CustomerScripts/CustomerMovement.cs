@@ -31,7 +31,7 @@ public class CustomerMovement : MonoBehaviour
     private Vector2 startingPos;
     private int posBius;
     private bool isCounting = false;
-    private float counting;
+    public float counting;
 
     void Awake()
     {
