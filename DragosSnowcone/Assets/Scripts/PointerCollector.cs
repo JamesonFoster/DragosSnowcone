@@ -19,6 +19,8 @@ public class PointerCollector : MonoBehaviour
     private Vector3 targetPosition;
     private Vector3 zoneTargetPosition;
     public GameObject icecube;
+    public Sprite caughtIce;
+    public Sprite fishin;
     public bool canFishAgain = true;
 
     void Start()
@@ -45,7 +47,8 @@ public class PointerCollector : MonoBehaviour
         }
     }
 
-    void pointerMovement() {
+    void pointerMovement()
+    {
         // Move the pointer towards the target position
         pointerTransform.position = Vector3.MoveTowards(pointerTransform.position, targetPosition, moveSpeed * Time.deltaTime);
 
@@ -62,7 +65,8 @@ public class PointerCollector : MonoBehaviour
         }
     }
 
-    void zoneMovement() {
+    void zoneMovement()
+    {
         // Move the pointer towards the target position
         safeZone.position = Vector3.MoveTowards(safeZone.position, zoneTargetPosition, zoneSpeed * Time.deltaTime);
 
@@ -85,27 +89,38 @@ public class PointerCollector : MonoBehaviour
         if (RectTransformUtility.RectangleContainsScreenPoint(safeZone, pointerTransform.position, null))
         {
             Debug.Log("Success!");
-            icecube.SetActive(true);
+            icecube.GetComponent<SpriteRenderer>().sprite = caughtIce;
             StartCoroutine(Wait2sec());
         }
         else
         {
             Debug.Log("Fail!");
-            moveSpeed += 5f;
+            StartCoroutine(Wait3sec());
         }
     }
 
     IEnumerator Wait2sec()
     {
         canFishAgain = false;
-        GlobalPlayerVars.howHot-= 7;
+        GlobalPlayerVars.howHot -= 7;
         Debug.Log(GlobalPlayerVars.howHot);
 
         yield return new WaitForSeconds(2f);
 
-        
-        icecube.SetActive(false);
+
+        icecube.GetComponent<SpriteRenderer>().sprite = fishin;
         moveSpeed = oriSpeed;
         canFishAgain = true;
+    }
+
+    IEnumerator Wait3sec()
+    {
+        canFishAgain = false;
+
+        yield return new WaitForSeconds(3f);
+
+        moveSpeed += 5f;
+        canFishAgain = true;
+
     }
 }
