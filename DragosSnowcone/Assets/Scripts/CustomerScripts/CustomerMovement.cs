@@ -30,6 +30,8 @@ public class CustomerMovement : MonoBehaviour
     private int currentWaitPos;
     private Vector2 startingPos;
     private int posBius;
+    private bool isCounting = false;
+    private float counting;
 
     void Awake()
     {
@@ -51,6 +53,10 @@ public class CustomerMovement : MonoBehaviour
 
     void Update()
     {
+        if (isCounting)
+        {
+            counting += Time.deltaTime;
+        }
         if (mode == 0) // moving towards line spot
         {
             sprrend.sortingOrder = 50 + posBius + spawnWhen;
@@ -133,6 +139,7 @@ public class CustomerMovement : MonoBehaviour
         }
         if (mode == 3) // move back
         {
+            isCounting = true;
             sprrend.sortingOrder = 30 + posBius + spawnWhen;
             takeOrderButton.SetActive(false);
             sprrend.flipX = true;
