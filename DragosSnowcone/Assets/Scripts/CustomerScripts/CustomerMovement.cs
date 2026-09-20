@@ -242,6 +242,7 @@ public class CustomerMovement : MonoBehaviour
             Vector2 position2D = new Vector2(transform.position.x, transform.position.y);
             if (position2D == goToHere)
             {
+                GlobalPlayerVars.custToday += 1;
                 Destroy(gameObject);
             }
         }
