@@ -10,10 +10,14 @@ public class ButtonActiveIn : MonoBehaviour
     public bool isActiveInTicket = true;
     public bool isActiveInJudge = true;
     public GameObject target;
+    public bool isMove;
+    public Transform move1;
+    public Transform move2;
 
     void Start()
     {
         GlobalPlayerVars.lookingAt = 0;
+        move1.position = target.transform.position;
     }
 
     // Update is called once per frame
@@ -28,11 +32,21 @@ public class ButtonActiveIn : MonoBehaviour
         || (isActiveInJudge && GlobalPlayerVars.lookingAt == 5 && GlobalPlayerVars.endTalk)
         )
         {
-            target.SetActive(true);
+            if (!isMove)
+                target.SetActive(true);
+            else
+            {
+                target.transform.position = move1.position;
+            }
         }
         else
         {
-            target.SetActive(false);
+            if (!isMove)
+                target.SetActive(false);
+            else
+            {
+                target.transform.position = move2.position;
+            }
         }
     }
 }

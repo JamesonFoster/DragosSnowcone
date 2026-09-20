@@ -23,3 +23,4 @@ MonoBehaviour:
   walkSprChangeSpeed: 2
   orders: []
   joyful: 0
+  talkSpeed: 2.75
