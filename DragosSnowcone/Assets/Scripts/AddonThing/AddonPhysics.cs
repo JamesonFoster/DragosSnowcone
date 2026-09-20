@@ -7,6 +7,7 @@ public class AddonPhysics : MonoBehaviour
     private Camera mainCamera;
     private int mode;
     public GameObject targetParent;
+    public int key;
 
     void Start()
     {

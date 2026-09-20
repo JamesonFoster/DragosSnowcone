@@ -40,8 +40,13 @@ public class Order : ScriptableObject
     public enum topping
     {
         none,
-        princesPuree,
-        gummyWiz,
-        nuts
+        t1,
+        t2,
+        t3,
+        t4,
+        t5,
+        t6,
+        t7,
+        t8
     }
 }

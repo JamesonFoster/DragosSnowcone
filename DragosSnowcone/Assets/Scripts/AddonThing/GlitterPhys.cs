@@ -5,15 +5,18 @@ public class GlitterPhys : MonoBehaviour
 {
     private Rigidbody2D rb;
     private int mode;
+    private SnowConeController sCC;
     public GameObject targetParent;
     private float randomRotate;
     private float randomHSpeed;
     private float randomVSpeed;
     public int glitterCount;
     public bool isOriginal;
+    public int key;
 
     void Start()
     {
+        sCC = targetParent.GetComponent<SnowConeController>();
         mode = 0;
         rb = GetComponent<Rigidbody2D>();
         float randomZ = Random.Range(0f, 360f);

@@ -10,13 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: feca474a70ab3384e86876c61e298090, type: 3}
-  m_Name: TESTERORDER 1
+  m_Name: SugeryNice
   m_EditorClassIdentifier: Assembly-CSharp::Order
   orderLVL: 0
   cupSize: 0
-  syrup1: 3
+  syrup1: 1
   syrup2: 0
   syrup3: 0
-  topping1: 2
+  topping1: 1
   topping2: 0
   topping3: 0
+  topping1Count: 2
+  topping2Count: 0
+  topping3Count: 0
